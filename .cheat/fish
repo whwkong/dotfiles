@@ -1,0 +1,20 @@
+# fish shell - common commands
+
+functions               # print or erase functions
+functions [NAME]        # show function body
+
+# create a function 
+alias                   # show all aliases
+alias NAME=DEFINITION
+
+    alias py="python"
+    # This is equivalent to entering the following function:
+    function py --description 'alias py python'
+    	python  $argv;
+    end
+
+# save the current definition of a function
+funcsave FUNCTION_NAME
+funcsave py             # fish only
+
+
