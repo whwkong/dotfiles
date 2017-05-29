@@ -1,7 +1,5 @@
 # README #
 
-Note that in lieu of a README.md in the root directory, the repo README is in 
-`~/dotfiles`
 
 ## Resources ## 
 
