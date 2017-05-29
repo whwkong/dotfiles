@@ -5,13 +5,14 @@ Note that in lieu of a README.md in the root directory, the repo README is in
 
 ## Resources ## 
 
-[The best way to manage dotfiles : A bare Git repository](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/ )
+ * [The best way to manage dotfiles : A bare Git repository](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/ )
 
-[Ask HN: What do you use to manage dotfiles?](https://news.ycombinator.com/item?id=11070797)
+   * [Ask HN: What do you use to manage dotfiles?](https://news.ycombinator.com/item?id=11070797)
 
-<https://dotfiles.github.io/>
+ * <https://dotfiles.github.io/>
 
  ***
+ 
  
 ## Starting from scratch ##
 
