@@ -30,10 +30,7 @@
 ## Usage
 
 ```bash
-    config clone https://whwkong@bitbucket.org/whwkong/dotfiles.git
-    config add ~/.config
-    config commit -m 'adding fish config'
-    config push -u origin master
+    config clone https://github.com/whwkong/dotfiles.git
 ```
 
 
