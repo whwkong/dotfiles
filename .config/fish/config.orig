@@ -1,0 +1,21 @@
+# my fish config file
+# see : <https://hackercodex.com/guide/install-fish-shell-mac-ubuntu/#basic-configuration>
+# type
+#     $ fish_config 
+# then visit http://localhost:8000/ to change configurations. 
+
+set PATH ~/.config/fish . $PATH
+set PATH ~/dev/scripts/bash $PATH
+set PATH ~/dev/scripts/fish $PATH
+
+# for textmate
+set EDITOR "/usr/local/bin/mate -w"
+
+# setting environment variables
+# https://fishshell.com/docs/current/index.html#variables
+set PYTHONPATH ~/dev/python
+
+# see: https://virtualenvwrapper.readthedocs.io/en/latest/
+# eval /usr/local/bin/virtualenvwrapper.sh # can only be run within context of bash
+# Need tacklebox
+
