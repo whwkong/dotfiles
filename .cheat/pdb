@@ -1,0 +1,16 @@
+# list all breakpoints
+b 
+
+# b <line>, i > 10    
+b lineno, condition
+
+
+# clear bp
+cl <bpnum> 
+
+# skip over
+i(gnore) <bpnum> count
+i 1 10   # ignore bp 1 10 times
+
+# Print a stack trace, with the most recent frame at the bottom.
+w(here) 

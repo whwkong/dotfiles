@@ -1,5 +1,10 @@
 as grep was, so was ack, but faster  :)
 
-  -A --after [LINES]      Print lines after match (Default: 2)
-  -B --before [LINES]     Print lines before match (Default: 2)
+-w --word-regexp: Only match whole words
+
+-i --ignore-case: Match case-insensitively
+
+-A --after [LINES]      Print lines after match (Default: 2)
+
+-B --before [LINES]     Print lines before match (Default: 2)
 

@@ -3,7 +3,7 @@
 functions               # print or erase functions
 functions [NAME]        # show function body
 
-# create a function 
+# create a function; may be easier just to write out the function in ~/.config/fish/functions
 alias                   # show all aliases
 alias NAME=DEFINITION
 
