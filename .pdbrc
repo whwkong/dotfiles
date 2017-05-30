@@ -8,3 +8,5 @@ alias ppj print(json.dumps(%1, indent=4, separators=(',', ': ')))
 
 # temporary break
 alias tb tbreak %1
+
+alias wh where
