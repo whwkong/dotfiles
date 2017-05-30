@@ -1,0 +1,10 @@
+#Print instance variables (usage "pi classInst")
+alias pi for k in %1.__dict__.keys(): print "%1.",k,"=",%1.__dict__[k]
+#Print instance variables in self
+alias ps pi self
+
+# pretty print json dumps
+alias ppj print(json.dumps(%1, indent=4, separators=(',', ': ')))
+
+# temporary break
+alias tb tbreak %1
