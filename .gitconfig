@@ -2,7 +2,7 @@
 	name = John Doe
 	email = johndoe@example.com
 [include]
-	path = .gitconfig_vmfarms
+	path = .gitconfig_local
 [color]
 	ui = true
 [credential]
@@ -12,7 +12,7 @@
 	clean = git media clean %f
 	smudge = git media smudge %f
 [core]
-	excludesfile = /Users/williamkong/.gitignore_global
+	excludesfile = /Users/$USER/.gitignore_global
 	editor = emacs
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
@@ -89,6 +89,6 @@
 	required = true
 
 [commit]
-	template = /Users/williamkong/.stCommitMsg
+	template = /Users/$USER/.stCommitMsg
 [push]
 	default = current
