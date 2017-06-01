@@ -12,7 +12,7 @@
 	clean = git media clean %f
 	smudge = git media smudge %f
 [core]
-	excludesfile = /Users/$USER/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = emacs
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
@@ -87,8 +87,7 @@
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
-
 [commit]
-	template = /Users/$USER/.stCommitMsg
+    template = ~/.stCommitMsg
 [push]
 	default = current

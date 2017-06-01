@@ -4,6 +4,8 @@ cheat git_orig
 # alias ls = ls-files
 git ls          # git ls-files; shows file info in index and working tree
 
+# show 
+git config -l/--list    # List all variables set in config file
 
 # to only stash certain files, add the files you don't want stashed to the
 # index.  
