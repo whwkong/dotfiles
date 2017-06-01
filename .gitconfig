@@ -1,6 +1,8 @@
 [user]
 	name = John Doe
 	email = johndoe@example.com
+[include]
+	path = .gitconfig_vmfarms
 [color]
 	ui = true
 [credential]
