@@ -5,8 +5,6 @@
 
  * [The best way to manage dotfiles : A bare Git repository](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/ )
 
-   * [Ask HN: What do you use to manage dotfiles?](https://news.ycombinator.com/item?id=11070797)
-
  * <https://dotfiles.github.io/>
 
  ***
