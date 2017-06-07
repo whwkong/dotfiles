@@ -25,16 +25,14 @@
  * [config --local status.showUntrackedFiles no](https://git-scm.com/docs/git-config#git-config-statusshowUntrackedFiles)
      - set flag local to this repo; hide files we are not explicitly tracking.  This prevents `config status` from displaying files that you are not explictly tracking. 
 
-## Usage
+## Starting from scratch
 
 ```bash
-    config clone https://github.com/whwkong/dotfiles.git
+    alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+    echo ".cfg" >> .gitignore
+    git init --bare $HOME/.cfg
+    config config --local status.showUntrackedFiles no
+    git clone https://github.com/whwkong/dotfiles.git
+    config checkout    
 ```
-
-
-
-
-
-
-
 
