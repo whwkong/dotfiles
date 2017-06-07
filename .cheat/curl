@@ -7,3 +7,6 @@ curl -H "Content-Type: application/json" -X POST -d '{"data":"xyz"}' http://loca
 # Add post data
 curl http://localhost:5000/todo2 -d "data=Change my brakepads" 
 
+# include protocol headers (eg status code) in output 
+curl -i http://localhost:5000/todo2 -d "data=Change my brakepads" 
+
