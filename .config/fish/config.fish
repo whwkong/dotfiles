@@ -56,4 +56,7 @@ ssh-add -K ~/.ssh/id_rsa-2 # add key
 # for cheat
 set -gx CHEATCOLORS true
 
-
+# virtualfish hook : http://virtualfish.readthedocs.io/en/latest/extend.html?highlight=hooks
+function myfunc --on-event virtualenv_did_activate
+    # echo "The virtualenv" (basename $VIRTUAL_ENV) "was activated"
+end
