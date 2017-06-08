@@ -46,9 +46,11 @@ set -gx tacklebox_plugins extract grc pip python up
 # for brew
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 
+set -gx abc
 
 # Load Tacklebox configuration
 . ~/.tacklebox/tacklebox.fish
+
 
 ssh-add -K ~/.ssh/id_rsa   # add key
 ssh-add -K ~/.ssh/id_rsa-2 # add key
@@ -57,6 +59,20 @@ ssh-add -K ~/.ssh/id_rsa-2 # add key
 set -gx CHEATCOLORS true
 
 # virtualfish hook : http://virtualfish.readthedocs.io/en/latest/extend.html?highlight=hooks
-function myfunc --on-event virtualenv_did_activate
-    # echo "The virtualenv" (basename $VIRTUAL_ENV) "was activated"
+function __venv_activated --on-event virtualenv_did_activate
+    set venv_activation_file ~/.config/fish/localfish/__(basename $VIRTUAL_ENV)_activate.fish
+    
+    # run activation script associated with venv
+    if test -e $venv_activation_file  # test if file exists
+        . $venv_activation_file
+    end
+end
+
+function __venv_deactivated --on-event virtualenv_did_deactivate
+    set venv_deactivation_file ~/.config/fish/localfish/__(basename $VIRTUAL_ENV)_deactivate.fish
+    
+    # run deactivation script associated with venv
+    if test -e $venv_deactivation_file  # test if file exists
+        . $venv_deactivation_file
+    end
 end
