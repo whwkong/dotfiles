@@ -51,9 +51,15 @@ set -gx abc
 # Load Tacklebox configuration
 . ~/.tacklebox/tacklebox.fish
 
+if test -e ~/.ssh/id_rsa
+    ssh-add -K ~/.ssh/id_rsa   # add key
+end
 
-ssh-add -K ~/.ssh/id_rsa   # add key
-ssh-add -K ~/.ssh/id_rsa-2 # add key
+if test -e ~/.ssh/id_rsa-2
+    ssh-add -K ~/.ssh/id_rsa-2 # add key
+end
+
+
 
 # for cheat
 set -gx CHEATCOLORS true
@@ -61,7 +67,7 @@ set -gx CHEATCOLORS true
 # virtualfish hook : http://virtualfish.readthedocs.io/en/latest/extend.html?highlight=hooks
 function __venv_activated --on-event virtualenv_did_activate
     set venv_activation_file ~/.config/fish/localfish/__(basename $VIRTUAL_ENV)_activate.fish
-    
+
     # run activation script associated with venv
     if test -e $venv_activation_file  # test if file exists
         . $venv_activation_file
@@ -70,7 +76,7 @@ end
 
 function __venv_deactivated --on-event virtualenv_did_deactivate
     set venv_deactivation_file ~/.config/fish/localfish/__(basename $VIRTUAL_ENV)_deactivate.fish
-    
+
     # run deactivation script associated with venv
     if test -e $venv_deactivation_file  # test if file exists
         . $venv_deactivation_file
