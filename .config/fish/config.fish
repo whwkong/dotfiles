@@ -46,20 +46,12 @@ set -gx tacklebox_plugins extract grc pip python up
 # for brew
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 
-set -gx abc
-
 # Load Tacklebox configuration
 . ~/.tacklebox/tacklebox.fish
 
-if test -e ~/.ssh/id_rsa
-    ssh-add -K ~/.ssh/id_rsa   # add key
-end
-
-if test -e ~/.ssh/id_rsa-2
-    ssh-add -K ~/.ssh/id_rsa-2 # add key
-end
-
-
+if test -e ~/.config/fish/localfish/config_local.fish 
+    . ~/.config/fish/localfish/config_local.fish # run local config
+end 
 
 # for cheat
 set -gx CHEATCOLORS true
