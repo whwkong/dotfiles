@@ -23,10 +23,6 @@ set -gx PYTHONDONTWRITEBYTECODE true # -x == export
 # directory where all your virtualenvs are kept
 set -gx VIRTUALFISH_HOME ~/.virtualenvs
 
-# TODO: move this to local.
-# set env variables required to run docker on vm dev
-eval (docker-machine env dev)
-
 # Paths to your tackle
 set -gx tacklebox_path ~/.tackle ~/.tacklebox
 
@@ -57,11 +53,10 @@ end
 # for cheat
 set -gx CHEATCOLORS true
 
-# virtualfish hook : http://virtualfish.readthedocs.io/en/latest/extend.html?highlight=hooks
+# virtualfish hooks 
+# see: http://virtualfish.readthedocs.io/en/latest/extend.html?highlight=hooks
 function __venv_activated --on-event virtualenv_did_activate
     set venv_activation_file ~/.config/fish/localfish/__(basename $VIRTUAL_ENV)_activate.fish
-
-    # run activation script associated with venv
     if test -e $venv_activation_file  # test if file exists
         . $venv_activation_file
     end
@@ -69,9 +64,7 @@ end
 
 function __venv_deactivated --on-event virtualenv_did_deactivate
     set venv_deactivation_file ~/.config/fish/localfish/__(basename $VIRTUAL_ENV)_deactivate.fish
-
-    # run deactivation script associated with venv
-    if test -e $venv_deactivation_file  # test if file exists
+    if test -e $venv_deactivation_file  
         . $venv_deactivation_file
     end
 end
