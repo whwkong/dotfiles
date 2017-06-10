@@ -23,6 +23,7 @@ set -gx PYTHONDONTWRITEBYTECODE true # -x == export
 # directory where all your virtualenvs are kept
 set -gx VIRTUALFISH_HOME ~/.virtualenvs
 
+# TODO: move this to local.
 # set env variables required to run docker on vm dev
 eval (docker-machine env dev)
 
@@ -49,9 +50,9 @@ set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 # Load Tacklebox configuration
 . ~/.tacklebox/tacklebox.fish
 
-if test -e ~/.config/fish/localfish/config_local.fish 
+if test -e ~/.config/fish/localfish/config_local.fish
     . ~/.config/fish/localfish/config_local.fish # run local config
-end 
+end
 
 # for cheat
 set -gx CHEATCOLORS true
