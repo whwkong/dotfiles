@@ -8,8 +8,6 @@ set PATH ~/.config/fish . $PATH
 set PATH ~/dev/scripts/bash $PATH
 set PATH ~/dev/scripts/fish $PATH
 set PATH $PATH ~/Library/google-cloud-sdk/bin
-set PATH $PATH /usr/local/mysql/bin   # move locally
-set PATH $PATH ~/node_modules/.bin  # move locally
 
 # for textmate
 set -gx EDITOR "/usr/local/bin/mate -w"
