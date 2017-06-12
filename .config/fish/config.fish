@@ -7,9 +7,9 @@
 set PATH ~/.config/fish . $PATH
 set PATH ~/dev/scripts/bash $PATH
 set PATH ~/dev/scripts/fish $PATH
-set PATH $PATH /usr/local/mysql/bin
 set PATH $PATH ~/Library/google-cloud-sdk/bin
-set PATH $PATH ~/node_modules/.bin
+set PATH $PATH /usr/local/mysql/bin   # move locally
+set PATH $PATH ~/node_modules/.bin  # move locally
 
 # for textmate
 set -gx EDITOR "/usr/local/bin/mate -w"
@@ -53,7 +53,7 @@ end
 # for cheat
 set -gx CHEATCOLORS true
 
-# virtualfish hooks 
+# virtualfish hooks
 # see: http://virtualfish.readthedocs.io/en/latest/extend.html?highlight=hooks
 function __venv_activated --on-event virtualenv_did_activate
     set venv_activation_file ~/.config/fish/localfish/__(basename $VIRTUAL_ENV)_activate.fish
@@ -64,7 +64,7 @@ end
 
 function __venv_deactivated --on-event virtualenv_did_deactivate
     set venv_deactivation_file ~/.config/fish/localfish/__(basename $VIRTUAL_ENV)_deactivate.fish
-    if test -e $venv_deactivation_file  
+    if test -e $venv_deactivation_file
         . $venv_deactivation_file
     end
 end
