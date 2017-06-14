@@ -1,0 +1,2 @@
+ls -r   # reverse output
+ls -R   # Recurse directories

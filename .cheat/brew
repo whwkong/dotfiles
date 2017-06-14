@@ -1,0 +1,3 @@
+brew update         # updates package lists
+brew list           # list packages
+brew cask list      # list items installed via caskroom
