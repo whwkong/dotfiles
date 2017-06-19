@@ -15,7 +15,6 @@ set -gx EDITOR "/usr/local/bin/mate -w"
 # setting environment variables
 # https://fishshell.com/docs/current/index.html#variables
 set -gx PYTHONPATH ~/dev/python
-
 set -gx PYTHONDONTWRITEBYTECODE true # -x == export
 
 # directory where all your virtualenvs are kept
