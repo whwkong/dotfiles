@@ -2,6 +2,7 @@
 	name = John Doe
 	email = johndoe@example.com
 [include]
+    # place local config here
 	path = .gitconfig_local
 [color]
 	ui = true
@@ -91,3 +92,8 @@
     template = ~/.stCommitMsg
 [push]
 	default = current
+
+[filter "lfs"]
+	# clean = git lfs clean %f
+	# smudge = git lfs smudge %f
+	# required = true
