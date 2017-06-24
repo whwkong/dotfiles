@@ -1,0 +1,1 @@
+echo "init.fish here"
