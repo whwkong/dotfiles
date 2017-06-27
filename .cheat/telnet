@@ -1,0 +1,2 @@
+telnet [host-name [port]
+# GET /path/to/resource HTTP/1.0
