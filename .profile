@@ -4,12 +4,6 @@
 
 echo .profile
 
-# Set pretty bash prompt
-#export PS1=":) \W $ "
-#set prompt
-#e[<escape code>m   #denotes escape codes for color setting
-export PS1="\`if [ \$? = 0 ]; then echo \[\e[33m\]':)'\[\e[0m\]; else echo \[\e[31m\]O_o\[\e[0m\]; fi\` \u@\W \\$ " 
-
 # Set environment variables
 # export EDITOR=nano
 export EDITOR="/usr/local/bin/mate -w" # see Textmate | Preferences | Terminal

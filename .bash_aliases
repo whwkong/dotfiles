@@ -6,6 +6,8 @@ echo .bash_aliases
 alias lsl="ls -l"
 alias lsa="ls -lah"
 
+alias mkdir="mkdir -p -v"
+
 # 'graph' alias also duplicated in .gitconfig
 alias gitgraph="git log --graph --oneline --decorate --all"
 

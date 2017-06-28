@@ -17,6 +17,22 @@ if [ -f ~/.bash_aliases ]; then
 	. ~/.bash_aliases
 fi
 
+[[ -f ~/.bash_colors ]] && . ~/.bash_colors
+
+git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/git:\1 /'
+}
+
+# Set pretty bash prompt
+#export PS1=":) \W $ "
+#set prompt
+#e[<escape code>m   #denotes escape codes for color setting
+export PS1="\`if [ \$? = 0 ]; then echo \[\e[33m\]':)'\[\e[0m\]; else echo \[\e[31m\]O_o\[\e[0m\]; fi\` \u@\W \\$ " 
+
+# alternate ... 
+# export PS1="\[$c197\]\$(git_branch)\[$c69\]\u@\h \[$c227\]\w \[$c0\]
+# \$ "
+
 # note that ssh-agent is automatically running on OS X
 ssh-add ~/.ssh/id_rsa-2 # add key 
 
