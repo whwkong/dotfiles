@@ -1,10 +1,15 @@
 as grep was, so was ack, but faster  :)
 
--w --word-regexp: Only match whole words
 
--i --ignore-case: Match case-insensitively
+-w --word-regexp        # Only match whole words
 
--A --after [LINES]      Print lines after match (Default: 2)
+-i --ignore-case        # Match case-insensitively
 
--B --before [LINES]     Print lines before match (Default: 2)
+-A --after [LINES]      # Print lines after match (Default: 2)
 
+-B --before [LINES]     # Print lines before match (Default: 2)
+
+-U --skip-vcs-ignores   # Ignore VCS ignore files
+                        #  (.gitignore, .hgignore; still obey .ignore)
+
+--list-file-types       
