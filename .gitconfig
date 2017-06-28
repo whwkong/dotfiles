@@ -77,7 +77,18 @@
 	logstatus = log --name-status
 	graph = log --graph --oneline --decorate --all #log graph
 	tree = log --graph --oneline --all --pretty=format:'%C(yellow)%h%Creset -%Cred%d%Creset %s %Cgreen%cr%Creset %Cblue%an%Creset %gn'
+
+	# reset commands {{{
+    r1 = reset HEAD^		# reset --mixed
+    r2 = reset HEAD^^		# reset --mixed
+    rh = reset --hard
+    rh1 = reset HEAD^ --hard
+    rh2 = reset HEAD^^ --hard
     
+    # undo from here http://megakemp.com/2016/08/25/git-undo/
+    # git undo = git undo 1
+    undo = "!f() { git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}}; }; f"
+    # }}}
     
 
 [pull]
