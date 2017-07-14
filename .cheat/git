@@ -24,3 +24,6 @@ git reset --hard HEAD~2     # modifies both stage + working directory
 # commits: - A - B - C (master)
 # To leave index + working directory alone; HEAD simply rolls back to B.  
 git reset --soft B    
+
+# del tag
+git tag --delete tagname
