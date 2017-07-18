@@ -1,1 +1,1 @@
-echo "init.fish here"
+echo "...running init.fish"

@@ -49,6 +49,7 @@ end
 
 # for cheat
 set -gx CHEATCOLORS true
+set -gx CHEATPATH "$HOME/.cheat/local"
 
 # virtualfish hooks
 # see: http://virtualfish.readthedocs.io/en/latest/extend.html?highlight=hooks
