@@ -27,3 +27,11 @@ git reset --soft B
 
 # del tag
 git tag --delete tagname
+
+# show contributors to file 
+git shortlog -s -n <object> 
+    -n, –numbered
+        Sort output according to the number of commits per author
+    -s, –summary
+        Suppress commit descriptions, only provide commit count
+
