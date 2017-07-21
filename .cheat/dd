@@ -1,4 +1,4 @@
-# dd can be slow; xfs_mkfile
+# dd can be slow; see truncate
 
 # Read from {/dev/urandom} 2*512 Bytes and put it into {/tmp/test.txt}
 # Note: At the first iteration, we read 512 Bytes.

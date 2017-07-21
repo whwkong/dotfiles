@@ -1,3 +1,4 @@
+# see truncate as well
 # quickly create 10GB file
 xfs_mkfile 10240m 10Gigfile     # not available on CentOS
 fallocate -l 10G 10Gigfile 
