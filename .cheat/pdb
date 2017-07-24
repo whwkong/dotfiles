@@ -14,3 +14,10 @@ i 1 10   # ignore bp 1 10 times
 
 # Print a stack trace, with the most recent frame at the bottom.
 w(here) 
+
+
+# create bp, if i > 10
+# for i in range(100):
+#     print i
+b 3, i > 10
+
