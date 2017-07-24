@@ -1,0 +1,2 @@
+# running playbook with ip addr, and no dynamic inventory file
+ansible-playbook -i 123.123.123.123, my_playbook.yml    # yes, you need a comma

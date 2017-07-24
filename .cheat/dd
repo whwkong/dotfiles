@@ -1,5 +1,12 @@
-# dd can be slow; see truncate
+# dd can be slow; see truncate or fallocate
 
+# create 100MB file
+dd if=/dev/zero of=test.img bs=1024 count=0 seek=$[1024*100]
+
+# create 1GB file
+dd if=/dev/zero of=1g.img bs=1 count=0 seek=1G
+
+### 
 # Read from {/dev/urandom} 2*512 Bytes and put it into {/tmp/test.txt}
 # Note: At the first iteration, we read 512 Bytes.
 # Note: At the second iteration, we read 512 Bytes.
