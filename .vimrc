@@ -3,3 +3,5 @@ set wrap
 
 " set line numbers
 set number
+
+syntax on
