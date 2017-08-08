@@ -28,6 +28,9 @@ git reset --soft B
 # del tag
 git tag --delete tagname
 
+# list the author of each line
+git blame <file>  
+
 # show contributors to file 
 git shortlog -s -n <object> 
     -n, –numbered
