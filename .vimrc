@@ -6,3 +6,13 @@ set number
 
 syntax on
 set tabstop=4 shiftwidth=4 expandtab
+
+" highlight search
+set hlsearch
+
+" ignore case as default
+set ic
+" set incremental search
+set is
+ 
+
