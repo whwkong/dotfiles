@@ -47,6 +47,10 @@ if [ -f /Users/williamkong/Downloads/google-cloud-sdk/completion.bash.inc ]; the
   source '/Users/williamkong/Library/google-cloud-sdk/completion.bash.inc'
 fi
 
+### grep for near words 
+fucntion grepNear() {
+ grep -EHn "\b$1\W+(\w+\W+){1,20}$2\b"
+}.
 
 ### Function Definitions 
 # show all system files; relaunch Finder

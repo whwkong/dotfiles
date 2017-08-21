@@ -38,3 +38,5 @@ git shortlog -s -n <object>
     -s, –summary
         Suppress commit descriptions, only provide commit count
 
+# prunes all obsolete branches locally
+git remote update --prune

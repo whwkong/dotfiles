@@ -13,3 +13,6 @@ as grep was, so was ack, but faster  :)
                         #  (.gitignore, .hgignore; still obey .ignore)
 
 --list-file-types       
+
+# search two words near each other (use grep for now)
+grep -ERHn "\bWORD1\W+(\w+\W+){1,10}WORD2"
