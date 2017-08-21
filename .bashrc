@@ -49,8 +49,8 @@ fi
 
 ### grep for near words 
 fucntion grepNear() {
- grep -EHn "\b$1\W+(\w+\W+){1,20}$2\b"
-}.
+ grep -EHn "\b$1\W+(\w+\W+){1,20}$2\b" *
+}
 
 ### Function Definitions 
 # show all system files; relaunch Finder
