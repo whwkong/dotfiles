@@ -3,6 +3,15 @@ docker-machine start <VM>
 eval "$(docker-machine env dev)"  # bash
 eval (docker-machine env dev)     # fish
 
+
+# associates local image with a repository on a registry
+docker tag local_image username/repo:tag
+
+# puts image in get-started repo, and tags it
+# (the repo is docker cloud login.)
+docker tag friendlyhello john/get-started:part1
+
+
 # Start docker daemon
 docker -d
 
