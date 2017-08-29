@@ -14,5 +14,11 @@ as grep was, so was ack, but faster  :)
 
 --list-file-types       
 
-# search two words near each other (use grep for now)
-grep -ERHn "\bWORD1\W+(\w+\W+){1,10}WORD2"
+
+ag PATTERN -i --ignore '*PATTERN'   # ignore files, directories 
+                                    # ignore doesn't take regex
+
+# search two words near each other 
+grep -ERHn "\bPATTERN11\W+(\w+\W+){1,10}PATTERN2"
+grepnear word1 word2
+agnear word1 word2 COUNT    # where COUNT = number of words apart, default = 10
