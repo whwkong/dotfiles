@@ -14,7 +14,7 @@
 	smudge = git media smudge %f
 [core]
 	excludesfile = ~/.gitignore_global
-	editor = emacs
+	editor = vim 
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
