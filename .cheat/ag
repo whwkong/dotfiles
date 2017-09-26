@@ -1,5 +1,5 @@
-as grep was, so was ack, but faster  :)
-
+# as grep was, so was ack, but faster  :)
+# https://www.mankier.com/1/ag
 
 -w --word-regexp        # Only match whole words
 
@@ -15,8 +15,14 @@ as grep was, so was ack, but faster  :)
 --list-file-types       
 
 
-ag PATTERN -i --ignore '*PATTERN'   # ignore files, directories 
+ag searchterm -G js$     # Only search Javascript files. 
+                         # -G allows for regular expressions
+
+
+# see : http://minimul.com/ignoring-files-with-ag-silver-searcher.html
+ag PATTERN --ignore '*PATTERN'      # ignore files, directories 
                                     # ignore doesn't take regex
+ag PATTERN --ignore '*.json'        # ignore json files, use SINGLE QUOTES 
 
 # search two words near each other 
 grep -ERHn "\bPATTERN11\W+(\w+\W+){1,10}PATTERN2"
