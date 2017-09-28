@@ -34,7 +34,8 @@ export PS1="\`if [ \$? = 0 ]; then echo \[\e[33m\]':)'\[\e[0m\]; else echo \[\e[
 # \$ "
 
 # note that ssh-agent is automatically running on OS X
-ssh-add ~/.ssh/id_rsa-2 # add key 
+ssh-add -K ~/.ssh/id_rsa     # add key 
+ssh-add -K ~/.ssh/id_rsa-old # ssh-add -K = Store passphrases in your keychain.
 
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -48,7 +49,7 @@ if [ -f /Users/williamkong/Downloads/google-cloud-sdk/completion.bash.inc ]; the
 fi
 
 ### grep for near words 
-fucntion grepNear() {
+function grepNear() {
  grep -EHn "\b$1\W+(\w+\W+){1,20}$2\b" *
 }
 

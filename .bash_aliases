@@ -6,6 +6,8 @@ echo .bash_aliases
 alias lsl="ls -l"
 alias lsa="ls -lah"
 
+alias config=/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME
+
 alias mkdir="mkdir -p -v"
 
 # 'graph' alias also duplicated in .gitconfig
