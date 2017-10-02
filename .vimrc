@@ -107,6 +107,6 @@ set ic
 " set incremental search
 set is
 " enable mouse
-set mouse=a 
+set mouse-=a 
  
 
