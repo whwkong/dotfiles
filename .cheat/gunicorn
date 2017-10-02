@@ -1,0 +1,2 @@
+# standard launch for Bottle app
+gunicorn <module>:app --bind='0.0.0.0:8080'
