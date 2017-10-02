@@ -1,0 +1,8 @@
+# location of config 
+# /usr/local/etc/nginx/nginx.conf
+
+# start nginx 
+nginx
+
+# stop nginx
+nginx -s stop          
