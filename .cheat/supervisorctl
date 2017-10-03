@@ -1,0 +1,4 @@
+sudo supervisorctl status   
+sudo supervisorctl start <process>
+sudo supervisorctl stop  <process>
+
