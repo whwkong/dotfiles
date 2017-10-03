@@ -48,6 +48,16 @@ if [ -f /Users/williamkong/Downloads/google-cloud-sdk/completion.bash.inc ]; the
   source '/Users/williamkong/Library/google-cloud-sdk/completion.bash.inc'
 fi
 
+# powerline-shell 
+function _update_ps1() {
+    PS1="$(powerline-shell $?)"
+}
+
+# powerline-shell 
+if [ "$TERM" != "linux" ]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
+
 ### grep for near words 
 function grepNear() {
  grep -EHn "\b$1\W+(\w+\W+){1,20}$2\b" *

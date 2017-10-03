@@ -1,0 +1,16 @@
+{
+  "segments": [ 
+    "virtual_env",
+    "username",
+    "ssh", 
+    "cwd",
+    "newline",
+    "git",
+    "set_term_title",  
+    "root",
+    "exit_code"
+  ],
+  "cwd": {
+    "mode": "plain"
+  }
+}

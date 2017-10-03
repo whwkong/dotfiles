@@ -13,17 +13,20 @@
 # Note that ~/.tacklebox/tacklebox.fish has no shebang and is called by another
 # fish-script.
 
-set PATH ~/.config/fish . $PATH
-set PATH ~/dev/scripts/bash $PATH
-set PATH ~/dev/scripts/fish $PATH
-set PATH $PATH ~/Library/google-cloud-sdk/bin
+set -gx PATH ~/.config/fish . $PATH
+set -gx PATH ~/dev/scripts/bash $PATH
+set -gx PATH ~/dev/scripts/fish $PATH
+set -gx PATH $PATH ~/Library/google-cloud-sdk/bin
+
+# for powerline
+set -gx TERM "xterm-256color"
 
 # for textmate
 set -gx EDITOR "/usr/local/bin/mate -w"
 
 # setting environment variables
 # https://fishshell.com/docs/current/index.html#variables
-set -gx PYTHONPATH ~/dev/python
+set -gx PYTHONPATH ~/dev
 set -gx PYTHONDONTWRITEBYTECODE true # -x == export
 
 # directory where all your virtualenvs are kept
@@ -47,7 +50,7 @@ set -gx tacklebox_modules virtualfish virtualhooks
 set -gx tacklebox_plugins extract grc pip python up
 
 # for brew
-set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
+set -gx fish_user_paths "/usr/local/sbin" $fish_user_paths
 
 # Load Tacklebox configuration
 . ~/.tacklebox/tacklebox.fish

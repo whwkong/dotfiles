@@ -18,3 +18,5 @@ export WORKON_HOME=~/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
 export PYTHONDONTWRITEBYTECODE=true
+
+export TERM="xterm-256color"
