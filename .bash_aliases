@@ -19,6 +19,7 @@ alias tm='function _textmate(){ open -a textmate $1; }; _textmate'
 alias master='git checkout master'
 alias st='open -a "Sublime Text"'
 alias server="python -m SimpleHTTPServer"
+alias ..='cd ..'
 
 # in ~/.bashrc_local
 # alias mysql=/usr/local/mysql/bin/mysql  
