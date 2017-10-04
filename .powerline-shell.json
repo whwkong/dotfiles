@@ -1,16 +1,17 @@
 {
-  "segments": [ 
+  "segments": [
     "virtual_env",
     "username",
-    "ssh", 
+    "ssh",
     "cwd",
     "newline",
     "git",
-    "set_term_title",  
+    "set_term_title",
     "root",
     "exit_code"
   ],
   "cwd": {
     "mode": "plain"
-  }
+  },
+  "theme": "default"
 }
