@@ -1,4 +1,4 @@
 echo .sshrc enabled!
 alias ..='cd ..'
-alias lsa='alias -la'
+alias lsa='ls -la'
 
