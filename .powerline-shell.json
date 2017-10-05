@@ -6,7 +6,6 @@
     "cwd",
     "newline",
     "git",
-    "set_term_title",
     "root",
     "exit_code"
   ],
