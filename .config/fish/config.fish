@@ -1,12 +1,12 @@
-# config.config 
+# config.config
 # see : <https://hackercodex.com/guide/install-fish-shell-mac-ubuntu/#basic-configuration>
 # type
 #     $ fish_config
 # then visit http://localhost:8000/ to change configurations.
-# 
-# fish will find scripts in ~/.config/fish/functions.  None of the scripts 
+#
+# fish will find scripts in ~/.config/fish/functions.  None of the scripts
 # require a shebang.
-# 
+#
 # If you place a fish-script in ~/dev/scripts or ~/.tacklebox/tacklebox.fish
 # then you need add a shebang, chmod to executable.  Then the script runs within
 # context of new shell (config.fish will be executed)
