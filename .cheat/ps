@@ -1,6 +1,7 @@
-ps aux | grep ssh-agent
+ps aux 
     # a = show processes for all users
     # u = display the process's user/owner
     # x = also show processes not attached to a terminal
 
-
+ps axfw     # displays processes in tree format
+            # not available on all flavours of linux
