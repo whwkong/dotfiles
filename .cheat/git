@@ -40,3 +40,5 @@ git shortlog -s -n <object>
 
 # prunes all obsolete branches locally
 git remote update --prune
+git fetch --all --prune
+
