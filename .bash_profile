@@ -3,7 +3,4 @@
 echo ".bash_profile"
 
 [[ -s ~/.bashrc ]] && source ~/.bashrc
-
-if [ -f ~/.profile ]; then
-    . ~/.profile
-fi
+[[ -s ~/.profile ]] && source ~/.profile

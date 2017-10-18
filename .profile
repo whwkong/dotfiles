@@ -15,6 +15,7 @@ export EDITOR="/usr/local/bin/mate -w" # see Textmate | Preferences | Terminal
 # path 
 export PATH=$PATH:~/dev/scripts/bash
 export PATH=$PATH:/usr/local/mysql/bin
+export PATH=$PATH:~/Library/google-cloud-sdk/bin
 
 # python specifics 
 export PYTHONPATH=~/dev/python
@@ -25,3 +26,6 @@ export WORKON_HOME=~/.virtualenvs
 export PROJECT_HOME=~/dev
 source /usr/local/bin/virtualenvwrapper.sh
 
+# cheat
+export CHEATCOLORS=true
+export CHEATPATH="$HOME/.cheat/local"

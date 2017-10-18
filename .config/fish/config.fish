@@ -26,7 +26,7 @@ set -gx EDITOR "/usr/local/bin/mate -w"
 
 # setting environment variables
 # https://fishshell.com/docs/current/index.html#variables
-set -gx PYTHONPATH ~/dev
+set -gx PYTHONPATH ~/dev/python
 set -gx PYTHONDONTWRITEBYTECODE true # -x == export
 
 # directory where all your virtualenvs are kept
@@ -56,8 +56,9 @@ set -gx fish_user_paths "/usr/local/sbin" $fish_user_paths
 # Load Tacklebox configuration
 . ~/.tacklebox/tacklebox.fish
 
+# Load local config
 if test -e ~/.config/fish/localfish/config_local.fish
-    . ~/.config/fish/localfish/config_local.fish # run local config
+    . ~/.config/fish/localfish/config_local.fish 
 end
 
 # for cheat
