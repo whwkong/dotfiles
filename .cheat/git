@@ -25,6 +25,12 @@ git reset --hard HEAD~2     # modifies both stage + working directory
 # To leave index + working directory alone; HEAD simply rolls back to B.  
 git reset --soft B    
 
+# remove file from repo + filesystem
+git rm 
+
+# remove only from git repo; leave filesystem untouched
+git rm --cached 
+
 # del tag
 git tag --delete tagname
 

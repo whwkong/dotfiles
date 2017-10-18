@@ -11,10 +11,7 @@
 #
 echo .bashrc
 
-if [ -f ~/.bash_aliases ]; then
-  . ~/.bash_aliases
-fi
-
+[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 [[ -f ~/.bash_colors ]] && . ~/.bash_colors
 
 git_branch() {
@@ -97,4 +94,6 @@ showpath() {
 
 [ -f /usr/local/etc/bash_completion.d/password-store ] && source /usr/local/etc/bash_completion.d/password-store
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
+
+[[ -f ~/.bashrc_local ]] && . ~/.bashrc_local

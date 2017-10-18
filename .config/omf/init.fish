@@ -1,1 +1,1 @@
-echo "...running init.fish"
+echo "...omf/running init.fish"
