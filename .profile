@@ -29,3 +29,6 @@ source /usr/local/bin/virtualenvwrapper.sh
 # cheat
 export CHEATCOLORS=true
 export CHEATPATH="$HOME/.cheat/local"
+
+# dotfiles
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
