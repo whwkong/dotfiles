@@ -30,7 +30,8 @@ set -gx PYTHONPATH ~/dev
 set -gx PYTHONDONTWRITEBYTECODE true # -x == export
 
 # directory where all your virtualenvs are kept
-set -gx VIRTUALFISH_HOME ~/.virtualenvs
+#   virtualenvwrapper's WORKON_HOME is for bash only
+set -gx VIRTUALFISH_HOME ~/.virtualenvs_vf
 
 # Paths to your tackle
 set -gx tacklebox_path ~/.tackle ~/.tacklebox
@@ -64,6 +65,8 @@ set -gx CHEATCOLORS true
 set -gx CHEATPATH "$HOME/.cheat/local"
 
 # virtualfish hooks
+#   unlike virtualenvwrapper, vf emits fish events rather than using 
+#   preactivate/postdeactivate hooks of virtualenvwrapper. 
 # see: http://virtualfish.readthedocs.io/en/latest/extend.html?highlight=hooks
 function __venv_activated --on-event virtualenv_did_activate
     set venv_activation_file ~/.config/fish/localfish/__(basename $VIRTUAL_ENV)_activate.fish
