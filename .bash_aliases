@@ -1,8 +1,5 @@
 echo .bash_aliases
 
-# The command . ~/.bash_aliases will source (load) ~/.bash_aliases in the 
-# context of the currently running shell.
-
 alias lsl="ls -l"
 alias lsa="ls -lah"
 
@@ -20,7 +17,3 @@ alias master='git checkout master'
 alias st='open -a "Sublime Text"'
 alias server="python -m SimpleHTTPServer"
 alias ..='cd ..'
-
-# in ~/.bashrc_local
-# alias mysql=/usr/local/mysql/bin/mysql  
-# alias mysqladmin=/usr/local/mysql/bin/mysqladmin
