@@ -13,4 +13,5 @@ alias tm='function _textmate(){ open -a textmate $1; }; _textmate'
 alias st='open -a "Sublime Text"'
 alias server="python -m SimpleHTTPServer"
 alias ..='cd ..'
-alias py="python"
+alias py='python'
+alias pwd='pwd -P'
