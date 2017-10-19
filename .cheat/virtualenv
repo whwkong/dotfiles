@@ -37,3 +37,8 @@ deactivate
 
 # Delete environmment (with virtualenvwrapper)
 rmvirtualenv env_name
+
+# Navigate into the directory of the currently activated virtual environment,
+# so you can browse its site-packages,
+cdvirtualenv 
+
