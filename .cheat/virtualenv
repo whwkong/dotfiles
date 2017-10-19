@@ -38,7 +38,10 @@ deactivate
 # Delete environmment (with virtualenvwrapper)
 rmvirtualenv env_name
 
-# Navigate into the directory of the currently activated virtual environment,
-# so you can browse its site-packages,
+# Change directory to active project; must be specified in virtualenv's 
+# .project file
+cdproject 
+
+# Change to the $VIRTUAL_ENV directory
 cdvirtualenv 
 
