@@ -1,6 +1,7 @@
-[user]
-	name = William Kong
-	email = willim@vmfarms.com
+# place user in local config
+# [user]
+	# name = John Doe
+	# email = someone@example.com
 [include]
     # place local config here
 	path = .gitconfig_local
