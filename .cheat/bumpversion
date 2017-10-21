@@ -1,0 +1,14 @@
+# part must be [major|minor|patch]
+bumpversion [options] part [file]
+
+# .bumpversion.cfg
+current_version = x.y.z
+commit = True
+tag = False
+
+[bumpversion:file:setup.py]         # changing multiple files
+[bumpversion:file:settings.py]      
+
+# bumpversion will modify any string of form: 
+# version="x.y.z" 
+# __version__="x.y.z"

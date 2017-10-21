@@ -1,0 +1,13 @@
+# psql
+
+/q  #quit
+
+/l      # list all dbs
+/c DB   # connect to db
+/dt *.* # list all tables
+
+
+# command line
+createdb <db>
+dropdb   <db>
+ 
