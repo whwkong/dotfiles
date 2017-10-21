@@ -14,6 +14,10 @@ git config -l/--list    # List all variables set in config file
 #     git add <stuff I want to keep> 
 git stash --keep-index       
 
+# discard all unsaved changes in git
+git checkout -- . 
+git checkout path/to/file/to/revert
+
 # To remove staged and working directory changes
 git reset --hard
 
