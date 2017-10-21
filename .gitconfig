@@ -1,6 +1,6 @@
 [user]
-	name = John Doe
-	email = johndoe@example.com
+	name = William Kong
+	email = willim@vmfarms.com
 [include]
     # place local config here
 	path = .gitconfig_local
@@ -14,66 +14,66 @@
 	smudge = git media smudge %f
 [core]
 	excludesfile = ~/.gitignore_global
-	editor = vim 
+	editor = vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 	difftool = opendiff
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [alias]
 	############# see https://gist.github.com/pksunkara/988716 for samples
-	
+
 	### bourne shell example https://git.wiki.kernel.org/index.php/Aliases#Advanced_aliases_with_arguments
 	swaparg = !sh -c 'ls $2 $1' -
-	############# 
-	
+	#############
+
 	ch = checkout
 	br = branch
 	st = status
-	############# 
+	#############
 	brm = branch --merged
 	brnm = branch --no-merged
-	
-	############# 
+
+	#############
 	lsf = "!git ls-files | grep -i"
 	ls = ls-files
-	
-	### lsac= ls ALL-files in commit <branch>|<commit> (guid) 
+
+	### lsac= ls ALL-files in commit <branch>|<commit> (guid)
 	###   ls-tree - List the contents of a tree object; includes UUID info
-	### --name-only 
-	lst = ls-tree --name-only -r 
-	
-	
-    #### lsc - list changes in a commit 
+	### --name-only
+	lst = ls-tree --name-only -r
+
+
+    #### lsc - list changes in a commit
 	#### lsc = list <in commit>      (show files involved in that commit)
 	#### 	functionally same as :
 	###### 		lfc = diff-tree --no-commit-id --name-only -r
-	########### alternate command: 
-	######  		git show --pretty="format:" --name-only <branch> 
-	lsc = "!f() { git diff-tree --no-commit-id --name-only -r $1;}; f" 
-    listcommit = "!f() { git diff-tree --no-commit-id --name-only -r $1;}; f" 
-    
-    
-    ###### 
+	########### alternate command:
+	######  		git show --pretty="format:" --name-only <branch>
+	lsc = "!f() { git diff-tree --no-commit-id --name-only -r $1;}; f"
+    listcommit = "!f() { git diff-tree --no-commit-id --name-only -r $1;}; f"
+
+
+    ######
     ls-aliases = config --get-regexp alias
-    
+
     rewind = revert HEAD^1
 
 	############# whois takes a name or email address of author
 	whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
 
 	### takes a commit #
-	filechanges = diff-tree --no-commit-id --name-only -r 
+	filechanges = diff-tree --no-commit-id --name-only -r
 	############# takes a commit #
 	whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
-	
-	############# 
 
-	lol = log --oneline 
+	#############
+
+	lol = log --oneline
 	oneline = log --oneline
-	lognames = log --name-only 
+	lognames = log --name-only
 	logstatus = log --name-status
 	graph = log --graph --oneline --decorate --all #log graph
 	tree = log --graph --oneline --all --pretty=format:'%C(yellow)%h%Creset -%Cred%d%Creset %s %Cgreen%cr%Creset %Cblue%an%Creset %gn'
@@ -84,12 +84,12 @@
     rh = reset --hard
     rh1 = reset HEAD^ --hard
     rh2 = reset HEAD^^ --hard
-    
+
     # undo from here http://megakemp.com/2016/08/25/git-undo/
     # git undo = git undo 1
     undo = "!f() { git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}}; }; f"
     # }}}
-    
+
 
 [pull]
 	rebase = true
