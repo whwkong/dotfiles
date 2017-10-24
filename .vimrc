@@ -108,5 +108,44 @@ set ic
 set is
 " enable mouse
 set mouse-=a 
- 
+
+set laststatus=2
+
+set pastetoggle=<F2>
+
+" amazing vim trick; works with tmux as well.
+" see : https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
+function! WrapForTmux(s)
+  if !exists('$TMUX')
+    return a:s
+  endif
+
+  let tmux_start = "\<Esc>Ptmux;"
+  let tmux_end = "\<Esc>\\"
+
+  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
+endfunction
+
+let &t_SI .= WrapForTmux("\<Esc>[?2004h")
+let &t_EI .= WrapForTmux("\<Esc>[?2004l")
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+" more on statuslines: see: http://got-ravings.blogspot.ca/search/label/statuslines
+" below from : https://github.com/sk1418/myConf/blob/master/common/.vimrc
+"-------[ Status bar ]------------------------------------❱----{{{1
+
+set statusline =%7*[%n]%*
+set statusline +=%1*%F\ %*%8*%m%r%*%1*%h%w%* "filename
+set statusline +=%7*\|%*
+set statusline+=%2*\ %Y: "filetype
+set statusline+=%{&ff}:  "dos/unix
+set statusline+=%{&fenc!=''?&fenc:&enc}\ %* "encoding
+
 

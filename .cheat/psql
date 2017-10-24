@@ -5,9 +5,10 @@
 /l      # list all dbs
 /c DB   # connect to db
 /dt *.* # list all tables
-
+/du     # list users
 
 # command line
 createdb <db>
 dropdb   <db>
+
  
