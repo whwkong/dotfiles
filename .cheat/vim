@@ -25,6 +25,8 @@ i               insert/edit mode
   H/L           jump to top/bottom of screen
   M             jump to middle of screen
 
+CTRL O/I        goto prev/next cursor position
+
 w               next start of word
 W               next start of whitespace-delimited word
 e               next end of word
@@ -54,6 +56,7 @@ R               enter insert mode but replace instead of inserting chars
 # Editing
 
 u               undo
+yw              yank word
 yy              yank (copy) a line
 y{motion}       yank text that {motion} moves over
 p               paste after cursor
@@ -64,6 +67,8 @@ d{motion}       delete text that {motion} moves over
 
 # Search and replace with the `:substitute` (aka `:s`) command
 
+/               search forward
+?               search backwards
 :s/foo/bar/	replace the first match of 'foo' with 'bar' on the current line only
 :s/foo/bar/g	replace all matches (`g` flag) of 'foo' with 'bar' on the current line only
 :%s/foo/bar/g	replace all matches of 'foo' with 'bar' in the entire file (`:%s`)
@@ -74,8 +79,13 @@ d{motion}       delete text that {motion} moves over
 50k         moves 50 lines up
 2dw         deletes 2 words
 5yy         copies 5 lines
+
+
+
 42G         go to line 42
 
 # options
 set nu/nonu             # no numbers; for pasting. 
 set paste/nopaste       # change paste option
+
+

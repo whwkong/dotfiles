@@ -1,8 +1,12 @@
 # list original curl cheat
 cheat curl_orig
 
-# send JSON data; requires header 
+# send JSON data; requires header
+# post requires -X POST -d '<data>' 
 curl -H "Content-Type: application/json" -X POST -d '{"data":"xyz"}' http://localhost:3000/api/
+
+# multiple headers
+curl -H 'key1: value1' -H 'key2: value2' http://localhost/api
 
 # DELETE request
 curl -X DELETE http://www.url.com/page
