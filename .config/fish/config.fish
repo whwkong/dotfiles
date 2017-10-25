@@ -33,6 +33,10 @@ set -gx PYTHONDONTWRITEBYTECODE true # -x == export
 #   virtualenvwrapper's WORKON_HOME is for bash only
 set -gx VIRTUALFISH_HOME ~/.virtualenvs
 
+# activate plugins 
+# http://virtualfish.readthedocs.io/en/latest/plugins.html#auto-activation
+eval (python -m virtualfish auto_activation projects)
+
 # Paths to your tackle
 set -gx tacklebox_path ~/.tackle ~/.tacklebox
 
