@@ -35,6 +35,9 @@ git rm
 # remove only from git repo; leave filesystem untouched
 git rm --cached 
 
+# push tags
+git push --tags
+
 # del tag
 git tag --delete tagname
 
