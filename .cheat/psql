@@ -11,4 +11,6 @@
 createdb <db>
 dropdb   <db>
 
- 
+# dump data only 
+pg_dump --data-only <db>
+

@@ -1,3 +1,5 @@
 # snippets
 html:5              # html template
 
+# find matching tag
+SHIFT ^ T
