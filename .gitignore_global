@@ -43,3 +43,6 @@ Thumbs.db
 
 # todo files
 todo/
+
+# pycharm
+.idea/

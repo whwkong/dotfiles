@@ -13,5 +13,5 @@ dropdb   <db>
 
 # exporting 
 pg_dump --data-only <db>
-pg_dump --schema-only <db> 
+pg_dump --schema-only --no-owner <db> 
 
