@@ -11,6 +11,7 @@
 createdb <db>
 dropdb   <db>
 
-# dump data only 
+# exporting 
 pg_dump --data-only <db>
+pg_dump --schema-only <db> 
 
