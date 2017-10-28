@@ -3,14 +3,17 @@
     "virtual_env",
     "username",
     "ssh",
+    "git",
+    "newline",
     "cwd",
     "newline",
-    "git",
     "root",
     "exit_code"
   ],
   "cwd": {
-    "mode": "plain"
+    "mode": "plain",
+    "max_depth": 4,
+    "max_dir_size": 15
   },
   "theme": "default"
 }
