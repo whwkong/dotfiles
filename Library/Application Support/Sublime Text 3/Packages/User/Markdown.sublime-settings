@@ -1,0 +1,8 @@
+// These settings override both User and Default settings for the Markdown syntax
+{
+	// Trims white space added by auto_indent when moving the caret off the
+    // line.
+    "trim_automatic_white_space": false,
+    // "color_scheme": "Packages/MarkdownEditing/MarkdownEditor-Dark.tmTheme",
+    // "color_scheme": "Packages/MarkdownEditing/MarkdownEditor-Yellow.tmTheme",
+}

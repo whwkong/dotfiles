@@ -1,0 +1,22 @@
+{
+	"extensions":
+	[
+		"py"
+	],
+    // 171028 experimental 
+    "indent_guide_options": ["draw_active"],
+
+	"trim_trailing_white_space_on_save": true,
+	"translate_tabs_to_spaces": true,
+	"tab_size": 4,
+    // turning off detect_indentation is especially important, 
+    // as it forces Sublime to honor these settings in every file, 
+    // as opposed to the View -> Indentation settings.
+    "detect_indentation": false,
+	"show_full_path": true,
+    "find_selected_text": true,
+    "pep8_ignore":
+    [
+        "E501", "E402"
+    ],
+}

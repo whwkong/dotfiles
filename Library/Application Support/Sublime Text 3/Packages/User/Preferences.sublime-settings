@@ -1,0 +1,64 @@
+{
+	"always_show_minimap_viewport": true,
+	"autocomplete": true,
+	"bold_folder_labels": true,
+	"caret_extra_bottom": 1,
+	"caret_extra_top": 1,
+	"caret_extra_width": 1,
+	"caret_style": "blink",
+	"color_scheme": "Packages/Neon Color Scheme/Neon.tmTheme",
+	"default_encoding": "UTF-8",
+	"draw_white_space": "all",
+	"fade_fold_buttons": false,
+	"find_selected_text": true,
+	"font_size": 15,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"line_padding_bottom": 2,
+	"line_padding_top": 2,
+	"overlay_scroll_bars": "enabled",
+    "tab_size": 4,
+	"paths":
+	{
+		"linux":
+		[
+		],
+		"osx":
+		[
+		],
+		"windows":
+		[
+		]
+	},
+	"rulers":
+	[
+		80
+	],
+	"show_encoding": true,
+	"show_full_path": true,
+	"show_line_endings": true,
+	"theme": "Boxy Monokai.sublime-theme",
+	"theme_accent_numix": true,
+	"theme_autocomplete_item_selected_colored": true,
+	"theme_dropdown_atomized": true,
+	"theme_find_panel_materialized": true,
+	"theme_grid_border_size_xs": true,
+	"theme_popup_border_visible": true,
+	"theme_quick_panel_border_visible": true,
+	"theme_quick_panel_item_selected_colored": true,
+	"theme_scrollbar_colored": true,
+	"theme_scrollbar_line": true,
+	"theme_sidebar_disclosure": true,
+	"theme_tab_selected_transparent": true,
+	"theme_tab_selected_underlined": true,
+	"theme_tab_size_lg": true,
+	"theme_unified": true,
+	"translate_tabs_to_spaces": true
+}
