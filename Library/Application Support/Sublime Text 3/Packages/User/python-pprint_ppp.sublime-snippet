@@ -1,5 +1,6 @@
 <snippet>
     <content><![CDATA[
+import pprint
 pp = pprint.PrettyPrinter(indent=4)
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->

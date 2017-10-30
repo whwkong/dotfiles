@@ -18,6 +18,7 @@ git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/git:\1 /'
 }
 
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f ~/Library/google-cloud-sdk/path.bash.inc ]; then
   source ~/Library/google-cloud-sdk/path.bash.inc
