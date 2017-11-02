@@ -29,6 +29,9 @@ set -gx EDITOR "/usr/local/bin/mate -w"
 set -gx PYTHONPATH ~/dev/python
 set -gx PYTHONDONTWRITEBYTECODE true # -x == export
 
+# pyenv
+status --is-interactive; and source (pyenv init -|psub)
+
 # directory where all your virtualenvs are kept
 #   virtualenvwrapper's WORKON_HOME is for bash only
 set -gx VIRTUALFISH_HOME ~/.virtualenvs

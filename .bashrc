@@ -93,6 +93,9 @@ showpath() {
     IFS=$old
 }
 
+# pyenv
+eval "$(pyenv init -)"
+
 [ -f /usr/local/etc/bash_completion.d/password-store ] && source /usr/local/etc/bash_completion.d/password-store
 
 [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
