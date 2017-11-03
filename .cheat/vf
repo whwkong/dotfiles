@@ -1,0 +1,3 @@
+# using vf with diff versions of python
+vf new --python my_python3_env
+vf new -p python3 my_python3_env
