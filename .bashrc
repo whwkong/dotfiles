@@ -93,6 +93,7 @@ showpath() {
     IFS=$old
 }
 
+export VIRTUALENV_PYTHON=$(which python3)
 # pyenv
 eval "$(pyenv init -)"
 

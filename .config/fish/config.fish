@@ -32,6 +32,10 @@ set -gx PYTHONDONTWRITEBYTECODE true # -x == export
 # pyenv
 status --is-interactive; and source (pyenv init -|psub)
 
+# set python version to version pointed to by pyenv 
+# unfortunately, not seem to be working wth vf
+set -gx VIRTUALFISH_DEFAULT_PYTHON (which python)
+
 # directory where all your virtualenvs are kept
 #   virtualenvwrapper's WORKON_HOME is for bash only
 set -gx VIRTUALFISH_HOME ~/.virtualenvs
