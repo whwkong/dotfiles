@@ -4,9 +4,15 @@ b
 # b <line>, i > 10    
 b lineno, condition
 
-
 # clear bp
 cl <bpnum> 
+
+n(ext)      # continue execution along the logic of the current function
+unt(il)     # continue execution past the current line number. 
+            # Good for stepping out of a loop.
+
+# temporary break
+tb, tbreak
 
 # skip over
 i(gnore) <bpnum> count
