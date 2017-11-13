@@ -17,3 +17,11 @@ curl http://localhost:5000/todo2 -d "data=Change my brakepads"
 # include protocol headers (eg status code) in output 
 curl -i http://localhost:5000/todo2 -d "data=Change my brakepads" 
 
+# prompt for user/passwd
+curl -u <user> http://localhost:5000 
+
+# user ~/.netrc for user/passwd
+curl --netrc http://example.com
+
+# specifiy file for user/passwd
+curl --netrc-file my-password-file http://example.com

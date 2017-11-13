@@ -43,6 +43,8 @@ git tag --delete tagname
 
 # list the author of each line
 git blame <file>  
+git blame <file> -L 1000,+5
+
 
 # show contributors to file 
 git shortlog -s -n <object> 
