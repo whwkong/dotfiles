@@ -57,3 +57,7 @@ git shortlog -s -n <object>
 git remote update --prune
 git fetch --all --prune
 
+# filtering a subdirectory to its own repo
+git filter-branch --subdirectory-filter <directory/> -f  
+git remote set-url origin <>  # remember to set the new origin
+
