@@ -102,3 +102,7 @@ eval "$(pyenv init -)"
 [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
 
 [[ -f ~/.bashrc_local ]] && . ~/.bashrc_local
+
+# Don't use fish as default shell  
+# https://wiki.archlinux.org/index.php/Fish
+exec fish
