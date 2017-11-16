@@ -3,3 +3,9 @@
 ⌘⌥ K        # Bookmarks toggle
 ⌘⌥ J/L      # Bookmarks prev/next
 
+# Code Navigation
+# https://code.visualstudio.com/Docs/editor/editingevolved
+## peek
+⬆️  F12      # Find all references
+⌥  F12      # Peek definition
+
