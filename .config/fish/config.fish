@@ -29,8 +29,8 @@ set -gx EDITOR "/usr/local/bin/mate -w"
 set -gx PYTHONPATH ~/dev/python
 set -gx PYTHONDONTWRITEBYTECODE true # -x == export
 
-# pyenv
-if command -v pyenv >/dev/null
+# pyenv 
+if command -v pyenv >/dev/null # check for pyenv
     status --is-interactive; and source (pyenv init -|psub)
 end
 
