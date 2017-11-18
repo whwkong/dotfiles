@@ -30,7 +30,9 @@ set -gx PYTHONPATH ~/dev/python
 set -gx PYTHONDONTWRITEBYTECODE true # -x == export
 
 # pyenv
-status --is-interactive; and source (pyenv init -|psub)
+if command -v pyenv >/dev/null
+    status --is-interactive; and source (pyenv init -|psub)
+end
 
 # set python version to version pointed to by pyenv 
 # unfortunately, not seem to be working wth vf
