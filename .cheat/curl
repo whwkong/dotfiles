@@ -23,5 +23,9 @@ curl -u <user> http://localhost:5000
 # user ~/.netrc for user/passwd
 curl --netrc http://example.com
 
-# specifiy file for user/passwd
-curl --netrc-file my-password-file http://example.com
+# specify file for user/passwd
+curl --netrc        # read .netrc for user name and password
+curl --netrc-file FILE http://example.com  # specify FILE for netrc
+
+# supply login/password
+curl -u username http://example.com   # specify user name, prompt for passwd
