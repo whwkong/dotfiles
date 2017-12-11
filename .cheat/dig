@@ -1,0 +1,4 @@
+dig +trace NS address.com       # recursive trace from root domain
+
+dig A address.com               # resolve A-record for address
+
