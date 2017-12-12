@@ -4,3 +4,4 @@ echo ".bash_profile"
 
 [[ -s ~/.bashrc ]] && source ~/.bashrc
 [[ -s ~/.profile ]] && source ~/.profile
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
