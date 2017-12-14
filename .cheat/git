@@ -1,21 +1,21 @@
 # see: https://goo.gl/GC5BKQ for some ideas
-# list original git cheat 
-cheat git_orig  
+# list original git cheat
+cheat git_orig
 
 # alias ls = ls-files
 git ls          # git ls-files; shows file info in index and working tree
 
-# show 
+# show
 git config -l/--list    # List all variables set in config file
 
 # to only stash certain files, add the files you don't want stashed to the
-# index.  
+# index.
 # eg.
-#     git add <stuff I want to keep> 
-git stash --keep-index       
+#     git add <stuff I want to keep>
+git stash --keep-index
 
 # discard all unsaved changes in git
-git checkout -- . 
+git checkout -- .
 git checkout path/to/file/to/revert
 
 # To remove staged and working directory changes
@@ -24,16 +24,16 @@ git reset --hard
 # To go 2 commits back
 git reset --hard HEAD~2     # modifies both stage + working directory
 
-# hard vs soft reset 
+# hard vs soft reset
 # commits: - A - B - C (master)
-# To leave index + working directory alone; HEAD simply rolls back to B.  
-git reset --soft B    
+# To leave index + working directory alone; HEAD simply rolls back to B.
+git reset --soft B
 
 # remove file from repo + filesystem
-git rm 
+git rm
 
 # remove only from git repo; leave filesystem untouched
-git rm --cached 
+git rm --cached
 
 # push tags
 git push --tags
@@ -46,12 +46,12 @@ git tag --delete tagname
 git branch -vv
 
 # list the author of each line
-git blame <file>  
+git blame <file>
 git blame <file> -L 1000,+5
 
 
-# show contributors to file 
-git shortlog -s -n <object> 
+# show contributors to file
+git shortlog -s -n <object>
     -n, –numbered
         Sort output according to the number of commits per author
     -s, –summary
@@ -62,8 +62,28 @@ git remote update --prune
 git fetch --all --prune
 
 # filtering a subdirectory (eg: stripping out a subdirectory like w statpage into its own repo)
-git filter-branch --subdirectory-filter <directory/> -f  
+git filter-branch --subdirectory-filter <directory/> -f
 git remote set-url origin <>  # remember to set the new origin
 
 
+# squashing merges
+# squashes all commits.  To squash a subset of commits,
+# see: https://davidwalsh.name/squash-commits-git
+git merge –squash feature-branch-name
+
+# check links above
+git rebase -i master
+
+# https://gist.github.com/patik/b8a9dc5cd356f9f6f980
+# to squash last 3 commits
+git ch -b squash-feature            # do this; don't mess with the branch just in case.
+git reset --soft HEAD~3
+git commit -m <message>
+git push origin +name-of-branch     # + sign forces the remote branch to accept your rewritten history, otherwise you will end up with divergent branches
+
+# see: https://makandracards.com/makandra/527-squash-several-git-commits-into-a-single-commit
+git ch -b squashed_feature
+git rebase -i master
+git ch master
+git merge squashed_feature
 
