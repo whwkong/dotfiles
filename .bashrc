@@ -103,6 +103,12 @@ eval "$(pyenv init -)"
 
 [[ -f ~/.bashrc_local ]] && . ~/.bashrc_local
 
+
+# ruby stuff (for zubtasks)
+. /usr/local/share/chruby/auto.sh
+. /usr/local/share/chruby/chruby.sh
+
 # Don't use fish as default shell
 # https://wiki.archlinux.org/index.php/Fish
 # exec fish
+

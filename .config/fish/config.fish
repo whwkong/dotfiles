@@ -29,12 +29,12 @@ set -gx EDITOR "/usr/local/bin/mate -w"
 set -gx PYTHONPATH ~/dev/python
 set -gx PYTHONDONTWRITEBYTECODE true # -x == export
 
-# pyenv 
+# pyenv
 if command -v pyenv >/dev/null # check for pyenv
     status --is-interactive; and source (pyenv init -|psub)
 end
 
-# set python version to version pointed to by pyenv 
+# set python version to version pointed to by pyenv
 # unfortunately, not seem to be working wth vf
 set -gx VIRTUALFISH_DEFAULT_PYTHON (which python)
 
@@ -42,7 +42,7 @@ set -gx VIRTUALFISH_DEFAULT_PYTHON (which python)
 #   virtualenvwrapper's WORKON_HOME is for bash only
 set -gx VIRTUALFISH_HOME ~/.virtualenvs
 
-# activate plugins 
+# activate plugins
 # http://virtualfish.readthedocs.io/en/latest/plugins.html#auto-activation
 eval (python -m virtualfish auto_activation projects)
 
@@ -71,16 +71,22 @@ set -gx fish_user_paths "/usr/local/sbin" $fish_user_paths
 
 # Load local config
 if test -e ~/.config/fish/localfish/config_local.fish
-    . ~/.config/fish/localfish/config_local.fish 
+    . ~/.config/fish/localfish/config_local.fish
 end
 
 # for cheat
 set -gx CHEATCOLORS true
 set -gx CHEATPATH "$HOME/.cheat/local"
 
-# virtualfish event handlers
-#   unlike virtualenvwrapper, vf emits fish events rather than using 
-#   preactivate/postdeactivate hooks of virtualenvwrapper. 
+# for ruby 2.4.2
+set -g fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths
+export LDFLAGS=-L/usr/local/opt/openssl/lib
+export CPPFLAGS=-I/usr/local/opt/openssl/include
+export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
+
+# virtualfish event handlers must be placed in init file; they cannot be auto-loaded
+#   unlike virtualenvwrapper, vf emits fish events rather than using
+#   preactivate/postdeactivate hooks of virtualenvwrapper.
 # see: http://virtualfish.readthedocs.io/en/latest/extend.html?highlight=hooks
 function __venv_activated --on-event virtualenv_did_activate
     set venv_activation_file ~/.config/fish/localfish/__(basename $VIRTUAL_ENV)_activate.fish
@@ -95,3 +101,4 @@ function __venv_deactivated --on-event virtualenv_did_deactivate
         . $venv_deactivation_file
     end
 end
+
