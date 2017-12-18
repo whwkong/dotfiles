@@ -1,0 +1,5 @@
+# create package.json
+npm init
+
+# see: https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb
+eslint --init

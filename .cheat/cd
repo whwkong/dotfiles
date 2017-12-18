@@ -1,0 +1,4 @@
+# see also: prevd/nextd fish command
+cd -   # goto prev directory
+prevd -l/--list
+nextd -l/--list
