@@ -3,3 +3,6 @@ npm init
 
 # see: https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb
 eslint --init
+
+# use local version, not global!
+./node_modules/.bin/eslint --fix-dry-run app.js
