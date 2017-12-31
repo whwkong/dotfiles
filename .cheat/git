@@ -42,8 +42,13 @@ git push --tags
 git tag --delete tagname
 
 
-# show which branches are tracking what
-git branch -vv
+# show which branches are tracking a remote branche
+git branch -vv 
+
+# set up-stream tracking branch
+git branch -u upstream/foo
+git branch --set-upstream-to=upstream/foo
+
 
 # list the author of each line
 git blame <file>
