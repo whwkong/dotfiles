@@ -43,7 +43,7 @@ git tag --delete tagname
 
 
 # show which branches are tracking a remote branche
-git branch -vv 
+git branch -vv
 
 # set up-stream tracking branch
 git branch -u upstream/foo

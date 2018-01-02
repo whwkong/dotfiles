@@ -1,0 +1,7 @@
+# anki
+
+# cards with interval of 10 days or more
+prop:ivl>=10
+# cards that have been answered less than 10 times
+prop:reps<10
+
