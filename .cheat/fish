@@ -1,4 +1,5 @@
 # fish shell - common commands
+# see: https://devhints.io/fish-shell
 
 functions               # print or erase functions
 functions [NAME]        # show function body
