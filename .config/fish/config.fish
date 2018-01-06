@@ -34,6 +34,11 @@ if command -v pyenv >/dev/null # check for pyenv
     status --is-interactive; and source (pyenv init -|psub)
 end
 
+# rbenv
+if command -v rbenv >dev/null
+    status --is-interactive; and source (rbenv init -|psub)
+end
+
 # set python version to version pointed to by pyenv
 # unfortunately, not seem to be working wth vf
 set -gx VIRTUALFISH_DEFAULT_PYTHON (which python)
