@@ -1,0 +1,20 @@
+# see: https://fishshell.com/docs/current/commands.html#set_color
+alias RED="set_color red"
+alias BLUE="set_color blue"
+alias GREEN="set_color green"
+alias YELLOW="set_color yellow"
+alias MAGENTA="set_color magenta"
+alias CYAN="set_color cyan"
+alias WHITE="set_color white"
+
+alias BRBLACK="set_color brblack"
+alias BRRED="set_color brred"
+alias BRGREEN="set_color brgreen"
+alias BRYELLOW="set_color bryellow"
+alias BRBLUE="set_color brblue"
+alias BRMAGENTA="set_color brmagenta"
+alias BRCYAN="set_color brcyan"
+alias BRWHITE="set_color brwhite"
+
+alias NC="set_color normal"
+alias DPURPLE="set_color 62A"

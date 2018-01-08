@@ -18,6 +18,12 @@ set -gx PATH ~/dev/scripts/bash $PATH
 set -gx PATH ~/dev/scripts/fish $PATH
 set -gx PATH $PATH ~/Library/google-cloud-sdk/bin
 
+if test -e ~/.config/fish/fish_colors.fish
+    . ~/.config/fish/fish_colors.fish
+end
+
+GREEN; echo "loading config.fish..."; NC;
+
 # for powerline
 set -gx TERM "xterm-256color"
 
