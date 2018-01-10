@@ -13,6 +13,8 @@
 -U --skip-vcs-ignores   # Ignore VCS ignore files
                         #  (.gitignore, .hgignore; still obey .ignore)
 
+-Q --literal            Don't parse PATTERN as a regular expression
+
 --list-file-types
 
 
