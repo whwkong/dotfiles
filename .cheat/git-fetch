@@ -1,0 +1,10 @@
+# `fetch` updates local copies of remote branches, but does not update local branches.
+# fetch all branches; note that this neither updates local branches (which track remote branches)
+# nor will it create any local branches.
+# To list all remote branches : git branch -a
+git fetch --all
+
+# prunes all obsolete branches locally
+git remote update --prune
+git fetch --all --prune
+
