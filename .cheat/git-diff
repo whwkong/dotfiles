@@ -1,2 +1,9 @@
+# diff on two specific commits
+git diff commit1..commit2
+
 # Compare a single file between two branches or commits:
 git diff branch_1..branch_2 [--] path/to/file
+
+# Only show diff file names between two commits
+git diff --name-only commit1..commit2
+
