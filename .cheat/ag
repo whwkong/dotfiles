@@ -1,6 +1,8 @@
 # as grep was, so was ack, but faster  :)
 # https://www.mankier.com/1/ag
 # add files to .ignore: eg *.min.js
+# PCRE (Perl Compatible Regex) - escape these characters: 
+# . ^ $ * + - ? ( ) [ ] { } \ |
 
 -w --word-regexp        # Only match whole words
 
