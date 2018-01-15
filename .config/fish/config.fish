@@ -89,6 +89,11 @@ end
 set -gx CHEATCOLORS true
 set -gx CHEATPATH "$HOME/.cheat/local"
 
+# docker-machine
+if test (docker-machine ls -q | grep '^dev$') != 'dev'
+    docker-machine start dev
+end
+
 # for ruby 2.4.2
 set -g fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths
 export LDFLAGS=-L/usr/local/opt/openssl/lib
