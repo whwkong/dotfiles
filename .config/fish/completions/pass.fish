@@ -1,4 +1,8 @@
+#!/usr/local/bin/fish
 # https://git.zx2c4.com/password-store/tree/src/completion/pass.fish-completion
+# Copyright (C) 2012-2014 Dmitry Medvinsky <me@dmedvinsky.name>. All Rights Reserved.
+# This file is licensed under the GPLv2+. Please see COPYING for more information.
+
 set PROG 'pass'
 
 function __fish_pass_get_prefix
