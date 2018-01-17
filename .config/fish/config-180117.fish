@@ -18,10 +18,6 @@ set -gx PATH ~/dev/scripts/bash $PATH
 set -gx PATH ~/dev/scripts/fish $PATH
 set -gx PATH $PATH ~/Library/google-cloud-sdk/bin
 
-# activate plugins
-# http://virtualfish.readthedocs.io/en/latest/plugins.html#auto-activation
-eval (python -m virtualfish auto_activation projects)
-
 if test -e ~/.config/fish/fish_colors.fish
     . ~/.config/fish/fish_colors.fish
 end
@@ -57,9 +53,9 @@ if type -q pyenv # check for pyenv
     status --is-interactive; and source (pyenv init -|psub)
 end
 
-if not eval test -d "/Users/(whoami)/node_modules/.bin/"
-    BLUE; echo "warning: ~/node_modules/ does not exist"; NC;
-end
+# activate plugins
+# http://virtualfish.readthedocs.io/en/latest/plugins.html#auto-activation
+eval (python -m virtualfish auto_activation projects)
 
 # Paths to your tackle
 set -gx tacklebox_path ~/.tackle ~/.tacklebox
@@ -84,7 +80,7 @@ set -gx fish_user_paths "/usr/local/bin" $fish_user_paths
 # Load Tacklebox configuration
 . ~/.tacklebox/tacklebox.fish
 
-# # Load local config
+# Load local config
 if test -e ~/.config/fish/localfish/config_local.fish
     . ~/.config/fish/localfish/config_local.fish
 end
