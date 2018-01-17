@@ -18,10 +18,6 @@ set -gx PATH ~/dev/scripts/bash $PATH
 set -gx PATH ~/dev/scripts/fish $PATH
 set -gx PATH $PATH ~/Library/google-cloud-sdk/bin
 
-# activate plugins
-# http://virtualfish.readthedocs.io/en/latest/plugins.html#auto-activation
-eval (python -m virtualfish auto_activation projects)
-
 if test -e ~/.config/fish/fish_colors.fish
     . ~/.config/fish/fish_colors.fish
 end
@@ -39,6 +35,15 @@ set -gx EDITOR "/usr/local/bin/mate -w"
 set -gx PYTHONPATH ~/dev/python
 set -gx PYTHONDONTWRITEBYTECODE true # -x == export
 
+# pyenv
+if type -q pyenv # check for pyenv
+    status --is-interactive; and source (pyenv init -|psub)
+end
+
+if not eval test -d "/Users/(whoami)/node_modules/.bin/"
+    BLUE; echo "warning: ~/node_modules/ does not exist"; NC;
+end
+
 # rbenv
 if type -q rbenv
     status --is-interactive; and source (rbenv init -|psub)
@@ -52,14 +57,9 @@ set -gx VIRTUALFISH_DEFAULT_PYTHON (which python)
 #   virtualenvwrapper's WORKON_HOME is for bash only
 set -gx VIRTUALFISH_HOME ~/.virtualenvs
 
-# pyenv
-if type -q pyenv # check for pyenv
-    status --is-interactive; and source (pyenv init -|psub)
-end
-
-if not eval test -d "/Users/(whoami)/node_modules/.bin/"
-    BLUE; echo "warning: ~/node_modules/ does not exist"; NC;
-end
+# activate plugins
+# http://virtualfish.readthedocs.io/en/latest/plugins.html#auto-activation
+eval (python -m virtualfish auto_activation projects)
 
 # Paths to your tackle
 set -gx tacklebox_path ~/.tackle ~/.tacklebox
