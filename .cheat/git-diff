@@ -1,4 +1,5 @@
 # diff on two specific commits
+#   commit1 should be prior to commit2
 git diff commit1..commit2
 
 # use HEAD~
