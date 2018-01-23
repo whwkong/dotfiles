@@ -24,6 +24,8 @@ end
 
 GREEN; echo "loading config.fish..."; NC;
 
+MAGENTA; status; NC;
+
 # for powerline
 set -gx TERM "xterm-256color"
 
