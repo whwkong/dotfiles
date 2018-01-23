@@ -3,6 +3,7 @@ cheat curl_orig
 
 # send JSON data; requires header
 # post requires -X POST -d '<data>'
+curl -H --header
 curl -H "Content-Type: application/json" -X POST -d '{"data":"xyz"}' http://localhost:3000/api/
 
 # multiple headers
@@ -33,4 +34,4 @@ curl --netrc-file FILE http://example.com  # specify FILE for netrc
 # supply login/password
 curl -u username http://example.com   # specify user name, prompt for passwd
 
-curl -S 
+curl -S
