@@ -71,24 +71,7 @@ git filter-branch --subdirectory-filter <directory/> -f
 git remote set-url origin <>  # remember to set the new origin
 
 
-# squashing merges
-# squashes all commits.  To squash a subset of commits,
-# see: https://davidwalsh.name/squash-commits-git
-git merge –squash feature-branch-name
-
-# check links above
+# rebase and interactive squash
+# see: cheat git-squash
 git rebase -i master
-
-# https://gist.github.com/patik/b8a9dc5cd356f9f6f980
-# to squash last 3 commits
-git ch -b squash-feature            # do this; don't mess with the branch just in case.
-git reset --soft HEAD~3
-git commit -m <message>
-git push origin +name-of-branch     # + sign forces the remote branch to accept your rewritten history, otherwise you will end up with divergent branches
-
-# see: https://makandracards.com/makandra/527-squash-several-git-commits-into-a-single-commit
-git ch -b squashed_feature
-git rebase -i master
-git ch master
-git merge squashed_feature
 
