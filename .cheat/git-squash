@@ -15,7 +15,8 @@ git commit -m <message>
 git push origin +name-of-branch     # + sign forces the remote branch to accept your rewritten history, otherwise you will end up with divergent branches
 
 # see: https://makandracards.com/makandra/527-squash-several-git-commits-into-a-single-commit
-git ch -b squashed_feature
+git ch -b squashed_feature_bak  # make a backup just in case!
+git ch squashed_feature
 git rebase -i master
 git ch master
 git merge squashed_feature
