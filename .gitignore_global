@@ -57,3 +57,8 @@ todo/
 *.sublime-workspace
 *.sublime-project
 
+# bak files
+*.bak.*
+
+tmp/
+.project
