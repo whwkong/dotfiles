@@ -14,6 +14,10 @@ git reset --soft HEAD~3
 git commit -m <message>
 git push origin +name-of-branch     # + sign forces the remote branch to accept your rewritten history, otherwise you will end up with divergent branches
 
+# much easier way to squash last 3 commits
+git ch -b squash-feature
+git rebase -i HEAD^3
+
 # see: https://makandracards.com/makandra/527-squash-several-git-commits-into-a-single-commit
 git ch -b squashed_feature_bak  # make a backup just in case!
 git ch squashed_feature
