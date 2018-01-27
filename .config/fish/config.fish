@@ -22,12 +22,10 @@ if test -e ~/.config/fish/fish_colors.fish
     . ~/.config/fish/fish_colors.fish
 end
 
-GREEN; echo "loading config.fish..."; NC;
 
 if status --is-interactive
+    GREEN; echo "loading config.fish..."; NC;
     MAGENTA; echo "This is a login shell :)"; NC;
-else 
-    BLUE; echo "This is a not login shell :) "; NC;
 end
 
 # for powerline
