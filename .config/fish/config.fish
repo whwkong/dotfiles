@@ -86,9 +86,11 @@ set -gx fish_user_paths "/usr/local/bin" $fish_user_paths
 # Load Tacklebox configuration
 . ~/.tacklebox/tacklebox.fish
 
-# # Load local config
-if test -e ~/.config/fish/localfish/config_local.fish
-    . ~/.config/fish/localfish/config_local.fish
+# Load local config
+if status --is-interactive 
+    if test -e ~/.config/fish/localfish/config_local.fish
+        . ~/.config/fish/localfish/config_local.fish
+    end
 end
 
 # for cheat
@@ -96,11 +98,17 @@ set -gx CHEATCOLORS true
 set -gx CHEATPATH "$HOME/.cheat/local"
 
 # docker-machine
+# TODO: fix this:
+# error in HOME env:
+# $ test: Missing argument at index 2
 if type -q docker-machine
-    if test (docker-machine ls -q | grep '^dev$') != 'dev'
-        docker-machine start dev
-    end
+    if status --is-interactive
+        if test (docker-machine ls -q | grep '^dev$') != 'dev'
+            docker-machine start dev
+        end
+    end 
 end
+
 
 # for ruby 2.4.2
 set -g fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths
