@@ -24,7 +24,11 @@ end
 
 GREEN; echo "loading config.fish..."; NC;
 
-MAGENTA; status; NC;
+if status --is-interactive
+    MAGENTA; echo "This is a login shell :)"; NC;
+else 
+    BLUE; echo "This is a not login shell :) "; NC;
+end
 
 # for powerline
 set -gx TERM "xterm-256color"
@@ -42,8 +46,10 @@ if type -q pyenv # check for pyenv
     status --is-interactive; and source (pyenv init -|psub)
 end
 
-if not eval test -d "/Users/(whoami)/node_modules/.bin/"
-    BLUE; echo "warning: ~/node_modules/ does not exist"; NC;
+if status --is-interactive
+    if not eval test -d "/Users/(whoami)/node_modules/.bin/"
+        BLUE; echo "warning: ~/node_modules/ does not exist"; NC;
+    end
 end
 
 # rbenv
