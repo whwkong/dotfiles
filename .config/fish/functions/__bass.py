@@ -1,1 +1,0 @@
-/Users/williamkong/.config/fisherman/bass/functions/__bass.py
