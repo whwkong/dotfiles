@@ -1,9 +1,16 @@
-# fisher - fish plug-in manager
+# fisherman - fish plug-in manager
 #   https://github.com/fisherman/fisherman
+#   config is in:
+#   ~/.config/fish/fishfile
+#   Prefer fisherman over omf
+#       complex tree vs omf's flat tree 
 
 # omf - The Fishshell Framework
+#   good for themes
 #   https://github.com/oh-my-fish/oh-my-fish
 
 # bass - allows usage of utilities written for Bash in fish shell
 #   https://github.com/edc/bass
+
+# tacklebox - framework for the Fish shell that makes it easy to organize and share collections of useful shell functions, tools, and themes.
 

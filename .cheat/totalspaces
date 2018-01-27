@@ -1,0 +1,10 @@
+# totalspaces2
+SHFT+OPT arrow      # change space 
+CTRL+OPT arrow      # move current window
+
+# spectacle
+CTRL+CMD ←          # left half
+CTRL+CMD →          # right half
+CTRL+CMD down       # bottom half
+CTRL+CMD up         # upper half
+

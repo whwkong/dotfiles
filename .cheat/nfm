@@ -1,0 +1,7 @@
+# https://github.com/fisherman/fnm
+
+Use a .fnmrc file.
+
+    echo 5.10.1 > .fnmrc
+    node -v
+    v5.10.1
