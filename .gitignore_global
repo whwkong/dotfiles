@@ -52,6 +52,7 @@ todo/
 
 # vscode
 *.code-workspace
+.vscode/
 
 # sublime
 *.sublime-workspace
@@ -62,3 +63,10 @@ todo/
 
 tmp/
 .project
+
+# py venv
+.venv
+
+env/
+sublime/
+todo/
