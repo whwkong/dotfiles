@@ -1,1 +1,6 @@
+# run bash script within fish-shell
 # see https://github.com/edc/bass
+
+bass <script>
+bass source <script>
+
