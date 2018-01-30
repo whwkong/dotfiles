@@ -18,3 +18,6 @@ export VAULT_ADDR="https://vault.vmfarms.net"
 export VAULT_TOKEN="$(vmpass VMFarms/vault-stage.on-1.vmcluster.com/ops-token)"
 
 if which rbenv > /dev/null; then eval "$(end)"; fi
+
+if which pipenv > /dev/null; then eval "$(pipenv --completion)"; fi
+
