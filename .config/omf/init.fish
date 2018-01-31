@@ -1,1 +1,1 @@
-echo "...omf/running init.fish"
+echo "loading ~/.config/omf/init.fish"

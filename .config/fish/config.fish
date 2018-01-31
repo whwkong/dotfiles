@@ -13,6 +13,7 @@
 # Note that ~/.tacklebox/tacklebox.fish has no shebang and is called by another
 # fish-script.
 
+# see also: $fish_user_paths
 set -gx PATH ~/.config/fish . $PATH
 set -gx PATH ~/dev/scripts/bash $PATH
 set -gx PATH ~/dev/scripts/fish $PATH
@@ -21,7 +22,6 @@ set -gx PATH $PATH ~/Library/google-cloud-sdk/bin
 if test -e ~/.config/fish/fish_colors.fish
     . ~/.config/fish/fish_colors.fish
 end
-
 
 if status --is-interactive
     GREEN; echo "loading config.fish..."; NC;
@@ -39,7 +39,18 @@ set -gx EDITOR "/usr/local/bin/mate -w"
 set -gx PYTHONPATH ~/dev/python
 set -gx PYTHONDONTWRITEBYTECODE true # -x == export
 
-# pyenv
+# for brew
+set -gx fish_user_paths $fish_user_paths "/usr/local/bin"
+
+# for ruby 2.4.2
+set -g fish_user_paths $fish_user_paths "/usr/local/opt/openssl/bin"
+export LDFLAGS=-L/usr/local/opt/openssl/lib
+export CPPFLAGS=-I/usr/local/opt/openssl/include
+export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
+
+# pyenv; adds ~/.pyenv/shims to path
+# make sure to run this AFTER brew/ruby config.  shims path must be before
+# usr/local/bin
 if type -q pyenv # check for pyenv
     status --is-interactive; and source (pyenv init -|psub)
 end
@@ -49,6 +60,7 @@ if status --is-interactive
         BLUE; echo "warning: ~/node_modules/ does not exist"; NC;
     end
 end
+
 
 # rbenv
 if type -q rbenv
@@ -84,14 +96,11 @@ set -gx tacklebox_modules virtualfish virtualhooks
 # Example format: set tacklebox_plugins python extract
 set -gx tacklebox_plugins extract grc pip python up
 
-# for brew
-set -gx fish_user_paths "/usr/local/bin" $fish_user_paths
-
 # Load Tacklebox configuration
 . ~/.tacklebox/tacklebox.fish
 
 # Load local config
-if status --is-interactive 
+if status --is-interactive
     if test -e ~/.config/fish/localfish/config_local.fish
         . ~/.config/fish/localfish/config_local.fish
     end
@@ -107,18 +116,12 @@ set -gx CHEATPATH "$HOME/.cheat/local"
 # $ test: Missing argument at index 2
 if type -q docker-machine
     if status --is-interactive
-        if test (docker-machine ls -q | grep '^dev$') != 'dev'
-            docker-machine start dev
+        if test (docker-machine ls -q | grep '^default$') != 'default'
+            docker-machine start default
+            # eval (docker-machine env default --shell fish)
         end
-    end 
+    end
 end
-
-
-# for ruby 2.4.2
-set -g fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths
-export LDFLAGS=-L/usr/local/opt/openssl/lib
-export CPPFLAGS=-I/usr/local/opt/openssl/include
-export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
 
 # virtualfish event handlers must be placed in init file; they cannot be auto-loaded
 #   unlike virtualenvwrapper, vf emits fish events rather than using
@@ -137,4 +140,3 @@ function __venv_deactivated --on-event virtualenv_did_deactivate
         . $venv_deactivation_file
     end
 end
-
