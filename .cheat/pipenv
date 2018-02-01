@@ -1,0 +1,5 @@
+# https://github.com/pypa/pipenv
+pipenv shell    # activate project's virtualenv
+exit            # exit the virtualenv
+
+pipenv install --dev <package>
