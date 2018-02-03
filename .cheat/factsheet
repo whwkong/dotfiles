@@ -3,6 +3,10 @@
     $ pipenv shell
     $ python manage.py shell_plus
     $ ./manage.py shell_plus --ipython
+    
     from facts.tasks import <my-task>
-
     from imp import reload
+    
+    
+    import facts.tasks
+    
