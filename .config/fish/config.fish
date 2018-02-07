@@ -116,8 +116,9 @@ set -gx CHEATPATH "$HOME/.cheat/local"
 # $ test: Missing argument at index 2
 if type -q docker-machine
     if status --is-interactive
-        if test (docker-machine ls -q | grep '^default$') != 'default'
-            docker-machine start default
+        # if test (docker-machine ls -q | grep '^default$') != 'default'
+        if test (docker-machine status dev) = 'Stopped'
+            docker-machine start dev
             # eval (docker-machine env default --shell fish)
         end
     end
