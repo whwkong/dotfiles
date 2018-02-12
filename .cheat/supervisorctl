@@ -1,3 +1,6 @@
+# config is usually stored at:
+# /etc/supervisord.d/<app>.ini
+
 sudo supervisorctl status   
 sudo supervisorctl start <process>
 sudo supervisorctl stop  <process>
