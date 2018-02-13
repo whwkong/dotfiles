@@ -9,3 +9,14 @@
 ⬆️  F12      # Find all references
 ⌥  F12      # Peek definition
 
+# to use vscode with pipenv:
+$ pipenv --venv
+> /Users/user/path/to/virtualenv/
+# append '/bin/python' to the above path.
+# Edit .vscode/settings.json
+{
+    "python.linting.pep8Enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.pythonPath": "/Users/user/path/to/virtualenv/bin/python",
+}
+
