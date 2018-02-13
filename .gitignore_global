@@ -53,6 +53,7 @@ todo/
 # vscode
 *.code-workspace
 .vscode/
+jsconfig.json
 
 # sublime
 *.sublime-workspace
