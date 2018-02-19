@@ -4,7 +4,7 @@
 #     $ fish_config
 # then visit http://localhost:8000/ to change configurations.
 #
-# fish will find scripts in ~/.config/fish/functions.  
+# fish will find scripts in ~/.config/fish/functions.
 #
 # If you place a fish-script in ~/dev/scripts or ~/.tacklebox/tacklebox.fish
 # then you need add a shebang, then chmod to executable.  Then the script runs within
@@ -51,7 +51,7 @@ export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
 # make sure to run this AFTER brew/ruby config.  shims path must be before
 # usr/local/bin
 if type -q pyenv # check for pyenv
-    status --is-interactive; and source (pyenv init -|psub)  
+    status --is-interactive; and source (pyenv init -|psub)
 end
 
 if status --is-interactive
@@ -115,16 +115,14 @@ set -gx CHEATPATH "$HOME/.cheat/local"
 # $ test: Missing argument at index 2
 if type -q docker-machine
     if status --is-interactive
-        if test (docker-machine ls -q | grep '^default$')   
-            if test (docker-machine status default) = 'Stopped'
-                docker-machine start default 
+        if test (docker-machine ls -q | grep '^default$')
+            if test (docker-machine status default) = 'Running'
                 eval (docker-machine env default --shell fish)
             end
         end
 
-        if test (docker-machine ls -q | grep '^dev$')   
-            if test (docker-machine status dev) = 'Stopped'
-                docker-machine start dev  
+        if test (docker-machine ls -q | grep '^dev$')
+            if test (docker-machine status dev) = 'Running'
                 eval (docker-machine env default --shell fish)
             end
         end
