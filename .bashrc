@@ -111,3 +111,4 @@ eval "$(pyenv init -)"
 # https://wiki.archlinux.org/index.php/Fish
 # exec fish
 
+source /usr/local/etc/bash_completion.d/password-store
