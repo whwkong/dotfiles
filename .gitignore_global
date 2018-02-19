@@ -71,3 +71,5 @@ tmp/
 env/
 sublime/
 todo/
+
+.pytest_cache
