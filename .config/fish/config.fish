@@ -42,10 +42,10 @@ set -gx PYTHONDONTWRITEBYTECODE true # -x == export
 set -gx fish_user_paths $fish_user_paths "/usr/local/bin"
 
 # for ruby 2.4.2
-set -g fish_user_paths $fish_user_paths "/usr/local/opt/openssl/bin"
-export LDFLAGS=-L/usr/local/opt/openssl/lib
-export CPPFLAGS=-I/usr/local/opt/openssl/include
-export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
+set -gx fish_user_paths $fish_user_paths "/usr/local/opt/openssl/bin"
+set -gx LDFLAGS "-L/usr/local/opt/openssl/lib"
+set -gx CPPFLAGS "-I/usr/local/opt/openssl/include"
+set -gx PKG_CONFIG_PATH /usr/local/opt/openssl/lib/pkgconfig
 
 # pyenv; adds ~/.pyenv/shims to path
 # make sure to run this AFTER brew/ruby config.  shims path must be before
