@@ -1,4 +1,7 @@
 # visual studio code
+# Goto Symbol in Workspace not working?
+# use `brew install ctags`.  see: https://github.com/Microsoft/vscode-python#optional-steps
+# if Symbols not working, delete .vscode/tags file.
 
 ⌘⌥ K        # Bookmarks toggle
 ⌘⌥ J/L      # Bookmarks prev/next
