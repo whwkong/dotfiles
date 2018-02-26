@@ -22,11 +22,6 @@ if test -e ~/.config/fish/fish_colors.fish
     . ~/.config/fish/fish_colors.fish
 end
 
-if status --is-interactive
-    GREEN; echo "loading config.fish..."; NC;
-    MAGENTA; echo "This is a login shell :)"; NC;
-end
-
 # for powerline
 set -gx TERM "xterm-256color"
 
