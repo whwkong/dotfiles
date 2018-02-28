@@ -69,10 +69,12 @@ d{motion}       delete text that {motion} moves over
 
 /               search forward
 ?               search backwards
-:s/foo/bar/	replace the first match of 'foo' with 'bar' on the current line only
-:s/foo/bar/g	replace all matches (`g` flag) of 'foo' with 'bar' on the current line only
-:%s/foo/bar/g	replace all matches of 'foo' with 'bar' in the entire file (`:%s`)
-:%s/foo/bar/gc	ask to manually confirm (`c` flag) each replacement 
+:s/search/replace/	    replace the first match on the current line only
+:s/search/replace/g	    replace all matches (`g` flag) on the current line only
+
+:8,10s/search/replace/g    replace within line range
+:%s/search/replace/g	    replace all matches in the entire file (`:%s`)
+:%s/search/replace/gc	    ask to manually confirm (`c` flag) each replacement
 
 # Preceding a motion or edition with a number repeats it 'n' times
 # Examples:
@@ -85,7 +87,7 @@ d{motion}       delete text that {motion} moves over
 42G         go to line 42
 
 # options
-set nu/nonu             # no numbers; for pasting. 
+set nu/nonu             # no numbers; for pasting.
 set paste/nopaste       # change paste option
 
 
