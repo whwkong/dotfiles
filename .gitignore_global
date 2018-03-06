@@ -63,6 +63,7 @@ jsconfig.json
 *.bak.*
 
 tmp/
+tmp*/
 .project
 
 # py venv
