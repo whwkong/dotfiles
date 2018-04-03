@@ -2,6 +2,8 @@
 # see: https://devhints.io/fish-shell
 # see: cheat fish-shell
 
+Ctrl +w                 # delete word to the left
+
 functions               # print or erase functions
 functions [NAME]        # show function body
 
