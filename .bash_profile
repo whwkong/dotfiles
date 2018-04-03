@@ -14,3 +14,7 @@ export PKG_CONFIG_PATH=$(brew --prefix)/opt/openssl/lib/pkgconfig
 
 if which rbenv > /dev/null; then eval "$(end)"; fi
 if which pipenv > /dev/null; then eval "$(pipenv --completion)"; fi
+
+# directory based history bash profile
+# see: https://gist.github.com/leipzig/1651133
+. $HOME/.mycd/mycd.sh

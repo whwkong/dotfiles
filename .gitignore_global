@@ -74,3 +74,5 @@ sublime/
 todo/
 
 .pytest_cache
+
+.dir_bash_history
