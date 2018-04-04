@@ -90,7 +90,8 @@ set -gx tacklebox_modules virtualfish virtualhooks
 # Example format: set tacklebox_plugins python extract
 set -gx tacklebox_plugins extract grc pip python up
 
-# Load Tacklebox configuration
+# Load and initialize Tacklebox configuration.  All tacklebox_* settings must
+# be set prior to this line.
 . ~/.tacklebox/tacklebox.fish
 
 # Load local config
@@ -124,20 +125,26 @@ if type -q docker-machine
     end
 end
 
+
+## Below code is deprecated.
+## Use the virtualhooks tackle module instead.  Place all venv initialization in
+## $VIRTUAL_ENV/virtual_hooks.fish file.
+## see: https://github.com/justinmayer/tackle/tree/master/modules/virtualhooks
+#
 # virtualfish event handlers must be placed in init file; they cannot be auto-loaded
 #   unlike virtualenvwrapper, vf emits fish events rather than using
 #   preactivate/postdeactivate hooks of virtualenvwrapper.
 # see: http://virtualfish.readthedocs.io/en/latest/extend.html?highlight=hooks
-function __venv_activated --on-event virtualenv_did_activate
-    set venv_activation_file ~/.config/fish/localfish/__(basename $VIRTUAL_ENV)_activate.fish
-    if test -e $venv_activation_file  # test if file exists
-        . $venv_activation_file
-    end
-end
+# function __venv_activated --on-event virtualenv_did_activate
+#     set venv_activation_file ~/.config/fish/localfish/__(basename $VIRTUAL_ENV)_activate.fish
+#     if test -e $venv_activation_file  # test if file exists
+#         . $venv_activation_file
+#     end
+# end
 
-function __venv_deactivated --on-event virtualenv_did_deactivate
-    set venv_deactivation_file ~/.config/fish/localfish/__(basename $VIRTUAL_ENV)_deactivate.fish
-    if test -e $venv_deactivation_file
-        . $venv_deactivation_file
-    end
-end
+# function __venv_deactivated --on-event virtualenv_did_deactivate
+#     set venv_deactivation_file ~/.config/fish/localfish/__(basename $VIRTUAL_ENV)_deactivate.fish
+#     if test -e $venv_deactivation_file
+#         . $venv_deactivation_file
+#     end
+# end
