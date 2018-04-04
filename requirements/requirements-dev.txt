@@ -1,0 +1,8 @@
+-r requirements.txt
+
+autopep8
+flake8
+ipython
+isort
+pdbpp
+pep8

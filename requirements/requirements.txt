@@ -1,0 +1,6 @@
+cheat
+click
+pipenv
+requests
+virtualenv
+virtualfish
