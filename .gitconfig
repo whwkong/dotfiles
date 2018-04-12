@@ -14,7 +14,7 @@
 	clean = git media clean %f
 	smudge = git media smudge %f
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.config/git/.gitignore_global
 	editor = vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
