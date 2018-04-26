@@ -21,7 +21,7 @@ git checkout path/to/file/to/revert
 # To remove staged and working directory changes
 git reset --hard
 
-# To go 2 commits back
+# To go 2 commits back; see `git ls-aliases`
 git reset --hard HEAD~2     # modifies both stage + working directory
 
 # hard vs soft reset
@@ -75,3 +75,5 @@ git remote set-url origin <>  # remember to set the new origin
 # see: cheat git-squash
 git rebase -i master
 
+# reset master back to origin/master
+git checkout -B master origin/master
