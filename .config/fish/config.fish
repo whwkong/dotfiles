@@ -17,6 +17,7 @@ set -gx PATH ~/.config/fish . $PATH
 set -gx PATH ~/dev/scripts/bash $PATH
 set -gx PATH ~/dev/scripts/fish $PATH
 set -gx PATH $PATH ~/Library/google-cloud-sdk/bin
+set -gx PATH ~/.local/bin $PATH
 
 if test -e ~/.config/fish/fish_colors.fish
     . ~/.config/fish/fish_colors.fish
@@ -113,13 +114,15 @@ if type -q docker-machine
     if status --is-interactive
         if test (docker-machine ls -q | grep '^default$')
             if test (docker-machine status default) = 'Running'
+                MAGENTA; echo "eval (docker-machine env default --shell fish)"; NC;
                 eval (docker-machine env default --shell fish)
             end
         end
 
         if test (docker-machine ls -q | grep '^dev$')
             if test (docker-machine status dev) = 'Running'
-                eval (docker-machine env default --shell fish)
+                MAGENTA; echo "eval (docker-machine env dev --shell fish)"; NC;
+                eval (docker-machine env dev --shell fish)
             end
         end
     end
