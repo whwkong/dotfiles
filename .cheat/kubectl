@@ -1,0 +1,30 @@
+# list resources
+kubectl get deployments
+kubectl get replicasets
+kubectl get pods
+kubectl get services (svc)
+
+# list pods with attached labels
+kubectl get pods -L k8s-app,stage
+
+# select pod with given label
+kubectl get pods -l k8s-app=webserver
+
+# examine pod's details
+kubectl describe pod <webserver-#####-####>
+
+# delete deployment
+kubectl delete deployments [webserver]
+
+# create deployment
+kubectl create -f [webserver.yaml]
+
+# list ip of minikube
+minikube ip
+192.168.99.100
+
+# list services running
+minikube service list
+
+# open up service
+minikube service <web-service>
