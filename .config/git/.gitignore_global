@@ -78,3 +78,6 @@ todo/
 .python-version
 
 .dir_bash_history
+
+# pytest-cov
+htmlcov/
