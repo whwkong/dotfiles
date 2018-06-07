@@ -56,11 +56,11 @@ if status --is-interactive
     end
 end
 
-
+    
 # rbenv
-if type -q rbenv
-    status --is-interactive; and source (rbenv init -|psub)
-end
+# if type -q rbenv
+#     status --is-interactive; and source (rbenv init -|psub)
+# end
 
 # set python version to version pointed to by pyenv
 # unfortunately, not seem to be working wth vf
