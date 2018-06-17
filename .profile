@@ -16,6 +16,8 @@ export EDITOR="/usr/local/bin/mate -w" # see Textmate | Preferences | Terminal
 export PATH=$PATH:~/dev/scripts/bash
 export PATH=$PATH:/usr/local/mysql/bin
 export PATH=$PATH:~/Library/google-cloud-sdk/bin
+# pipsi
+export PATH=~/.local/bin-2.7/:$PATH
 
 # python specifics
 export PYTHONPATH=~/dev/python
