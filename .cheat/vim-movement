@@ -1,0 +1,11 @@
+# see: http://vim.wikia.com/wiki/Copy,_cut_and_paste
+M - move to top of screen
+H - move to middle fo screen
+L - move to bottom of screen
+
+zt - scroll line with cursor to top of screen
+zz - scroll line with cursor to center of screen 
+zb - scroll line with cursor to bottom of screen 
+
+CTRL-F/B - page down/up (forward/back)
+CTRL-D/U - 1/2 page down/up 
