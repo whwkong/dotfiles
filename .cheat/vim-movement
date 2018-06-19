@@ -9,3 +9,6 @@ zb - scroll line with cursor to bottom of screen
 
 CTRL-F/B - page down/up (forward/back)
 CTRL-D/U - 1/2 page down/up 
+
+f{char} - move to [count]'th occurrence of {char} to the right.
+
