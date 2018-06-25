@@ -76,6 +76,7 @@ todo/
 
 .pytest_cache
 .python-version
+*.egg-info/
 
 .dir_bash_history
 
