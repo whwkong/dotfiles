@@ -22,6 +22,10 @@ set showcmd     " display incomplete commands
 set incsearch       " do incremental searching
 set showmode        " displays mode
 
+" Shift-enter inserts <CR>
+nmap <S-Enter> O<Esc>j
+nmap <CR> o<Esc>k
+
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
 
