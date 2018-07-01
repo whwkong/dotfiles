@@ -1,3 +1,6 @@
+#Help
+ctrl ]          open help topic
+
 # Basic modes
 ESC             command/normal mode
 i               insert/edit mode
