@@ -7,8 +7,12 @@ zt - scroll line with cursor to top of screen
 zz - scroll line with cursor to center of screen 
 zb - scroll line with cursor to bottom of screen 
 
+f{char} - move to [count]'th occurrence of {char} to the right.
+
+## CTRL-movements
 CTRL-F/B - page down/up (forward/back)
 CTRL-D/U - 1/2 page down/up 
-
-f{char} - move to [count]'th occurrence of {char} to the right.
+CTRL O   - go to prev stored cursor location - will even go to previous files. 
+CTRL I   - go to next stored cursor location
+CTRL E/Y - scroll screen up/down
 

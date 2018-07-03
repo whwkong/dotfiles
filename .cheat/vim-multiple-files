@@ -2,6 +2,7 @@
 
 vim foo.txt bar.txt
 :args           # see file list
+:S              # Split & Explore current file directory
 `:next` or `:prev`   # to navigate files
 
 # list files 

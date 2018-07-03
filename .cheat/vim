@@ -1,5 +1,6 @@
 #Help
 ctrl ]          open help topic
+ctrl O          jump back 
 
 # Basic modes
 ESC             command/normal mode
