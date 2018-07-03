@@ -1,3 +1,5 @@
+" if porting to a new setup, remember to brew install vim  :)
+
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
@@ -207,7 +209,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Unmanaged plugin (manually installed and updated)
 Plug '~/my-prototype-plugin'
 
-" Make yanked region apparent. Must have.  
+" Make yanked region apparent. Must have.  (brew install vim first)
 Plug 'machakann/vim-highlightedyank'
 
 " Initialize plugin system
@@ -218,3 +220,4 @@ colorscheme codedark
 
 " vim-javascript: htts://github.com/pangloss/vim-javascript
 let g:javascript_plugin_jsdoc = 1
+
