@@ -170,6 +170,10 @@ call plug#begin('~/.vim/plugged')
 " A small sensible Vim config. see: https://github.com/tpope/vim-sensible
 Plug 'tpope/vim-sensible' 
 
+" Amazing color schemes :) 
+" Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'tomasiser/vim-code-dark'  " vscode inspired dark+ scheme
+
 " see: https://github.com/pangloss/vim-javascript
 Plug 'pangloss/vim-javascript'
 
@@ -180,7 +184,9 @@ Plug 'junegunn/vim-easy-align'
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
 " Multiple Plug commands can be written in a single line using | separators
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+"Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+"Plug 'SirVer/ultisnips' " ultisnips is raising warnings; disable for now.
+Plug 'honza/vim-snippets'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -201,9 +207,14 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Unmanaged plugin (manually installed and updated)
 Plug '~/my-prototype-plugin'
 
+" Make yanked region apparent. Must have.  
+Plug 'machakann/vim-highlightedyank'
+
 " Initialize plugin system
 call plug#end()
 
+"for vim-code-dark scheme
+colorscheme codedark
+
 " vim-javascript: htts://github.com/pangloss/vim-javascript
 let g:javascript_plugin_jsdoc = 1
-
