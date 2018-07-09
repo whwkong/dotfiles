@@ -1,4 +1,5 @@
 # config.config
+#
 # see : <https://hackercodex.com/guide/install-fish-shell-mac-ubuntu/#basic-configuration>
 # type
 #     $ fish_config
@@ -50,13 +51,6 @@ set -gx PKG_CONFIG_PATH /usr/local/opt/openssl/lib/pkgconfig
 if type -q pyenv # check for pyenv
     status --is-interactive; and source (pyenv init -|psub)
 end
-
-if status --is-interactive
-    if not eval test -d "/Users/(whoami)/node_modules/.bin/"
-        BLUE; echo "warning: ~/node_modules/ does not exist"; NC;
-    end
-end
-
 
 # rbenv
 # if type -q rbenv
