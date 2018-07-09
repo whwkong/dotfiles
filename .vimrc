@@ -221,6 +221,8 @@ call plug#end()
 
 "for vim-code-dark scheme
 colorscheme codedark
+"tab bar highlighting
+hi TabLineSel ctermfg=Blue ctermbg=Yellow
 
 " vim-javascript: htts://github.com/pangloss/vim-javascript
 let g:javascript_plugin_jsdoc = 1
