@@ -193,6 +193,7 @@ Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 "Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 "Plug 'SirVer/ultisnips' " ultisnips is raising warnings; disable for now.
 Plug 'honza/vim-snippets'
+Plug 'gabrielelana/vim-markdown'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
