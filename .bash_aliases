@@ -1,5 +1,6 @@
 echo .bash_aliases
 
+alias ll="ls -alF"
 alias lsl="ls -l"
 alias lsa="ls -lah"
 

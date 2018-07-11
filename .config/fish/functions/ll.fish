@@ -1,3 +1,3 @@
 function ll --description 'alias ll = ls -lh'
-        ls -lh $argv
+        ls -alF $argv
 end
