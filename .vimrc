@@ -1,4 +1,8 @@
-" if porting to a new setup, remember to brew install vim  :)
+" vim needs a more POSIX compatible shell than fish to work
+" see github.com/dag/vim-fish
+if &shell =~# 'fish$'
+    set shell=sh
+endif
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -107,7 +111,8 @@ set wrap
 " set line numbers
 set number
 
-syntax on
+" use syntax enable rather than 'on' for vim-fish
+syntax enable 
 set tabstop=4 shiftwidth=4 expandtab
 
 " highlight search
@@ -180,8 +185,8 @@ Plug 'tpope/vim-sensible'
 " Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'tomasiser/vim-code-dark'  " vscode inspired dark+ scheme
 
-" see: https://github.com/pangloss/vim-javascript
 Plug 'pangloss/vim-javascript'
+Plug 'dag/vim-fish'
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
@@ -224,7 +229,6 @@ call plug#end()
 colorscheme codedark
 "tab bar highlighting
 hi TabLineSel ctermfg=Blue ctermbg=Yellow
-
 " vim-javascript: htts://github.com/pangloss/vim-javascript
 let g:javascript_plugin_jsdoc = 1
 
