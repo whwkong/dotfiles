@@ -200,6 +200,9 @@ Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'honza/vim-snippets'
 Plug 'gabrielelana/vim-markdown'
 
+" Commenter functions 
+Plug 'scrooloose/nerdcommenter'
+
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
@@ -231,4 +234,6 @@ colorscheme codedark
 hi TabLineSel ctermfg=Blue ctermbg=Yellow
 " vim-javascript: htts://github.com/pangloss/vim-javascript
 let g:javascript_plugin_jsdoc = 1
+" paste with a space
+let @p='a p'
 
