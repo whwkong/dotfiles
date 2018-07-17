@@ -18,8 +18,6 @@ set -gx PATH ~/.config/fish . $PATH
 set -gx PATH ~/dev/scripts/bash $PATH
 set -gx PATH ~/dev/scripts/fish $PATH
 set -gx PATH $PATH ~/Library/google-cloud-sdk/bin
-set -gx PATH ~/.local/bin $PATH
-set -gx PATH ~/.local/bin-2.7/ $PATH  # pipsi
 
 if test -e ~/.config/fish/fish_colors.fish
     source ~/.config/fish/fish_colors.fish
@@ -56,6 +54,10 @@ end
 # if type -q rbenv
 #     status --is-interactive; and source (rbenv init -|psub)
 # end
+
+# pipsi; this must come after pyenv
+set -gx PATH ~/.local/bin $PATH
+set -gx PATH ~/.local/bin-2.7 $PATH
 
 # set python version to version pointed to by pyenv
 # unfortunately, not seem to be working wth vf
