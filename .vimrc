@@ -237,3 +237,13 @@ let g:javascript_plugin_jsdoc = 1
 " paste with a space
 let @p='a p'
 
+" call with :DiffSaved.  Exit diff view with :diffoff
+function! s:DiffWithSaved()
+  let filetype=&ft
+  diffthis
+  vnew | r # | normal! 1Gdd
+  diffthis
+  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+com! DiffSaved call s:DiffWithSaved()
+
