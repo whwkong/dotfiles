@@ -42,6 +42,9 @@
 ehthumbs.db
 Thumbs.db
 
+# vim
+*.swp
+
 # todo files
 todo/
 
@@ -82,3 +85,4 @@ todo/
 
 # pytest-cov
 htmlcov/
+
