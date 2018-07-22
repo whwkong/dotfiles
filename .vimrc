@@ -23,10 +23,12 @@ else
   set undofile      " keep an undo file (undo changes after closing)
 endif
 set history=50      " keep 50 lines of command line history
-set ruler       " show the cursor position all the time
-set showcmd     " display incomplete commands
+set ruler           " show the cursor position all the time
+set showcmd         " display incomplete commands
 set incsearch       " do incremental searching
 set showmode        " displays mode
+set splitbelow      " split panes to bottom and right
+set splitright
 
 " MacVim; yank now works with system clipboard. No need to prefix '"+' 
 set clipboard=unnamed
@@ -180,6 +182,8 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 " A small sensible Vim config. see: https://github.com/tpope/vim-sensible
 Plug 'tpope/vim-sensible' 
+
+Plug 'vim-syntastic/syntastic'
 
 " Amazing color schemes :) 
 " Plug 'dracula/vim', { 'as': 'dracula' }
