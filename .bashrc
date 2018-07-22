@@ -1,6 +1,7 @@
 # .bashrc - everything within interactive command line, aliases, etc.
 # Ideally should not output anything.
 
+
 # On OS X, this file is invoked by ~.\bash_profile, otherwise it is not
 # loaded.  The alternative solution is to rename this file to .profile
 # see : http://hayne.net/MacDev/Notes/unixFAQ.html
@@ -97,13 +98,18 @@ export VIRTUALENV_PYTHON=$(which python3)
 # pyenv
 eval "$(pyenv init -)"
 
+# aliases
+alias ll="ls -alF"
+alias lsl="ls -l"
+alias lsa="ls -lah"
+
 [ -f /usr/local/etc/bash_completion.d/password-store ] && source /usr/local/etc/bash_completion.d/password-store
 
 [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
 
 [[ -f ~/.bashrc_local ]] && . ~/.bashrc_local
 
-# ruby stuff (for zubtasks)
+# ruby stuff
 . /usr/local/share/chruby/auto.sh
 . /usr/local/share/chruby/chruby.sh
 
