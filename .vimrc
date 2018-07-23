@@ -241,6 +241,16 @@ let g:javascript_plugin_jsdoc = 1
 " paste with a space
 let @p='a p'
 
+" vim-syntastic recommended settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " call with :DiffSaved.  Exit diff view with :diffoff
 function! s:DiffWithSaved()
   let filetype=&ft
