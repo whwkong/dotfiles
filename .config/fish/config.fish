@@ -107,23 +107,23 @@ set -gx CHEATPATH "$HOME/.cheat/local"
 # TODO: fix this:
 # error in HOME env:
 # $ test: Missing argument at index 2
-if type -q docker-machine
-    if status --is-interactive
-        if test (docker-machine ls -q | grep '^default$')
-            if test (docker-machine status default) = 'Running'
-                MAGENTA; echo "eval (docker-machine env default --shell fish)"; NC;
-                eval (docker-machine env default --shell fish)
-            end
-        end
+# if type -q docker-machine
+#     if status --is-interactive
+#         if test (docker-machine ls -q | grep '^default$')
+#             if test (docker-machine status default) = 'Running'
+#                 MAGENTA; echo "eval (docker-machine env default --shell fish)"; NC;
+#                 eval (docker-machine env default --shell fish)
+#             end
+#         end
 
-        if test (docker-machine ls -q | grep '^dev$')
-            if test (docker-machine status dev) = 'Running'
-                MAGENTA; echo "eval (docker-machine env dev --shell fish)"; NC;
-                eval (docker-machine env dev --shell fish)
-            end
-        end
-    end
-end
+#         if test (docker-machine ls -q | grep '^dev$')
+#             if test (docker-machine status dev) = 'Running'
+#                 MAGENTA; echo "eval (docker-machine env dev --shell fish)"; NC;
+#                 eval (docker-machine env dev --shell fish)
+#             end
+#         end
+#     end
+# end
 
 
 ## If you need to set envvars for venvs, use the virtualhooks tackle module.
