@@ -30,11 +30,11 @@ set showmode        " displays mode
 set splitbelow      " split panes to bottom and right
 set splitright
 
-" MacVim; yank now works with system clipboard. No need to prefix '"+' 
+" MacVim; yank now works with system clipboard. No need to prefix '"+'
 set clipboard=unnamed
- 
-" Shift-enter inserts <CR>; <S-Enter> does not work on Mac. 
-nmap <S-Enter> O<Esc>j 
+
+" Shift-enter inserts <CR>; <S-Enter> does not work on Mac.
+nmap <S-Enter> O<Esc>j
 nmap <CR> o<Esc>k
 
 nnoremap o o<Esc>
@@ -109,12 +109,14 @@ endif
 
 " Always wrap long lines;
 set wrap
+" Wrap around search
+set wrapscan
 
 " set line numbers
 set number
 
 " use syntax enable rather than 'on' for vim-fish
-syntax enable 
+syntax enable
 set tabstop=4 shiftwidth=4 expandtab
 
 " highlight search
@@ -181,16 +183,18 @@ call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
 " A small sensible Vim config. see: https://github.com/tpope/vim-sensible
-Plug 'tpope/vim-sensible' 
+Plug 'tpope/vim-sensible'
 
 Plug 'vim-syntastic/syntastic'
 
-" Amazing color schemes :) 
+" Amazing color schemes :)
 " Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'tomasiser/vim-code-dark'  " vscode inspired dark+ scheme
 
 Plug 'pangloss/vim-javascript'
 Plug 'dag/vim-fish'
+
+Plug 'wesQ3/vim-windowswap'
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
@@ -204,7 +208,7 @@ Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'honza/vim-snippets'
 Plug 'gabrielelana/vim-markdown'
 
-" Commenter functions 
+" Commenter functions
 Plug 'scrooloose/nerdcommenter'
 
 " On-demand loading
@@ -250,6 +254,11 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let g:windowswap_map_keys = 0 "prevent default bindings
+nnoremap <silent> <leader>yw :call WindowSwap#MarkWindowSwap()<CR>
+nnoremap <silent> <leader>pw :call WindowSwap#DoWindowSwap()<CR>
+nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<CR>
 
 " call with :DiffSaved.  Exit diff view with :diffoff
 function! s:DiffWithSaved()
