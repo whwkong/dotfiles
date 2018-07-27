@@ -10,7 +10,6 @@
 # Always loads .bash-aliases
 # from http://ss64.com/bash/syntax-bashrc.html
 #
-echo .bashrc
 
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 [[ -f ~/.bash_colors ]] && . ~/.bash_colors
@@ -52,7 +51,7 @@ if [ "$TERM" != "linux" ]; then
 fi
 
 ### grep for near words
-function grepNear() {
+function grepnear() {
  grep -EHn "\b$1\W+(\w+\W+){1,20}$2\b" *
 }
 
@@ -102,6 +101,7 @@ eval "$(pyenv init -)"
 alias ll="ls -alF"
 alias lsl="ls -l"
 alias lsa="ls -lah"
+alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 
 [ -f /usr/local/etc/bash_completion.d/password-store ] && source /usr/local/etc/bash_completion.d/password-store
 
@@ -118,3 +118,9 @@ alias lsa="ls -lah"
 # exec fish
 
 source /usr/local/etc/bash_completion.d/password-store
+
+# virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/dev
+source /usr/local/bin/virtualenvwrapper.sh
+
