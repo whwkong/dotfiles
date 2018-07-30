@@ -50,7 +50,8 @@ if [ "$TERM" != "linux" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
-### grep for near words
+### grep for near words 
+# grepnear word1 word2 *
 function grepnear() {
  grep -EHn "\b$1\W+(\w+\W+){1,20}$2\b" *
 }
