@@ -50,9 +50,6 @@ map Q gq
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
 
-" In many terminal emulators the mouse works just fine, thus enable it.
-set mouse=a
-
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
@@ -130,7 +127,7 @@ set ic
 " set incremental search
 set is
 " enable mouse
-set mouse-=a
+set mouse=a
 
 set laststatus=2
 
@@ -173,6 +170,7 @@ set statusline+=%{&fenc!=''?&fenc:&enc}\ %* "encoding
 
 " vim plugin
 " see: https://github.com/junegunn/vim-plug
+"
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
@@ -189,6 +187,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 
 Plug 'vim-syntastic/syntastic'
+Plug 'easymotion/vim-easymotion'
 
 " Amazing color schemes :)
 " Plug 'dracula/vim', { 'as': 'dracula' }
