@@ -50,7 +50,7 @@ if [ "$TERM" != "linux" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
-### grep for near words 
+### grep for near words
 # grepnear word1 word2 *
 function grepnear() {
  grep -EHn "\b$1\W+(\w+\W+){1,20}$2\b" *
@@ -98,6 +98,10 @@ export VIRTUALENV_PYTHON=$(which python3)
 # pyenv
 eval "$(pyenv init -)"
 
+# pipsi; this must come after pyenv
+export PATH=~/.local/bin:$PATH
+export PATH=~/.local/bin-2.7:$PATH
+
 # aliases
 alias ll="ls -alF"
 alias lsl="ls -l"
@@ -124,4 +128,12 @@ source /usr/local/etc/bash_completion.d/password-store
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/dev
 source /usr/local/bin/virtualenvwrapper.sh
+
+
+# added by travis gem
+[ -f /Users/williamkong/.travis/travis.sh ] && source /Users/williamkong/.travis/travis.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
