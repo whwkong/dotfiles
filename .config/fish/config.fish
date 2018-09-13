@@ -50,6 +50,15 @@ if type -q pyenv # check for pyenv
     status --is-interactive; and source (pyenv init -|psub)
 end
 
+# if test -e /usr/local/share/chruby/chruby.fish
+#     source /usr/local/share/chruby/chruby.fish
+# end
+
+# if test -e /usr/local/share/chruby/auto.fish
+#     source /usr/local/share/chruby/auto.fish
+# end
+
+
 # rbenv
 # if type -q rbenv
 #     status --is-interactive; and source (rbenv init -|psub)

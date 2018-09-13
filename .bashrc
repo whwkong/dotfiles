@@ -103,6 +103,7 @@ export PATH=~/.local/bin:$PATH
 export PATH=~/.local/bin-2.7:$PATH
 
 # aliases
+alias ls="ls -G"
 alias ll="ls -alF"
 alias lsl="ls -l"
 alias lsa="ls -lah"
@@ -115,8 +116,9 @@ alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 [[ -f ~/.bashrc_local ]] && . ~/.bashrc_local
 
 # ruby stuff
-. /usr/local/share/chruby/auto.sh
-. /usr/local/share/chruby/chruby.sh
+[ -f /usr/local/share/chruby/chruby.sh ] && . /usr/local/share/chruby/chruby.sh
+[ -f /usr/local/share/chruby/auto.sh ] && . /usr/local/share/chruby/auto.sh
+
 
 # Don't use fish as default shell
 # https://wiki.archlinux.org/index.php/Fish
