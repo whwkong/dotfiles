@@ -87,3 +87,6 @@ todo/
 # pytest-cov
 htmlcov/
 
+# whk- docs
+whk-*
+
