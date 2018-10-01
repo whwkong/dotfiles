@@ -109,28 +109,16 @@ alias lsl="ls -l"
 alias lsa="ls -lah"
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 
-[ -f /usr/local/etc/bash_completion.d/password-store ] && source /usr/local/etc/bash_completion.d/password-store
-
 [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
-
-[[ -f ~/.bashrc_local ]] && . ~/.bashrc_local
 
 # ruby stuff
 [ -f /usr/local/share/chruby/chruby.sh ] && . /usr/local/share/chruby/chruby.sh
 [ -f /usr/local/share/chruby/auto.sh ] && . /usr/local/share/chruby/auto.sh
 
-
-# Don't use fish as default shell
-# https://wiki.archlinux.org/index.php/Fish
-# exec fish
-
-source /usr/local/etc/bash_completion.d/password-store
-
 # virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/dev
 source /usr/local/bin/virtualenvwrapper.sh
-
 
 # added by travis gem
 [ -f /Users/williamkong/.travis/travis.sh ] && source /Users/williamkong/.travis/travis.sh
@@ -139,3 +127,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+[[ -f ~/.bashrc_local ]] && . ~/.bashrc_local
