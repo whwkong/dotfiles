@@ -71,6 +71,9 @@ tmp/
 tmp*/
 .project
 
+# ruby
+.ruby-version
+
 # py venv
 .venv
 
@@ -89,4 +92,4 @@ htmlcov/
 
 # whk- docs
 whk-*
-
+whk_*

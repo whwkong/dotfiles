@@ -60,9 +60,9 @@ end
 
 
 # rbenv
-# if type -q rbenv
-#     status --is-interactive; and source (rbenv init -|psub)
-# end
+if type -q rbenv
+    status --is-interactive; and source (rbenv init -|psub)
+end
 
 # pipsi; this must come after pyenv
 set -gx PATH ~/.local/bin $PATH
