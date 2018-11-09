@@ -112,8 +112,15 @@ alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
 
 # ruby stuff
-[ -f /usr/local/share/chruby/chruby.sh ] && . /usr/local/share/chruby/chruby.sh
-[ -f /usr/local/share/chruby/auto.sh ] && . /usr/local/share/chruby/auto.sh
+# [ -f /usr/local/share/chruby/chruby.sh ] && . /usr/local/share/chruby/chruby.sh
+# [ -f /usr/local/share/chruby/auto.sh ] && . /usr/local/share/chruby/auto.sh
+
+# rbenv init
+eval "$(rbenv init -)"
+
+# Ruby exports
+export GEM_HOME=$HOME/gems
+export PATH=$HOME/gems/bin:$PATH
 
 # virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
