@@ -1,5 +1,4 @@
 function fish_prompt  --description 'Write out the powerline prompt'
-    # powerline-shell --shell bare $status
     # see ~/.powerline-shell.json
     powerline-shell --shell bare $status
 end

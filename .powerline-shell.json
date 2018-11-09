@@ -1,6 +1,7 @@
 {
   "segments": [
     "virtual_env",
+    "newline",
     "username",
     "ssh",
     "git",

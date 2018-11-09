@@ -50,19 +50,14 @@ if type -q pyenv # check for pyenv
     status --is-interactive; and source (pyenv init -|psub)
 end
 
-# if test -e /usr/local/share/chruby/chruby.fish
-#     source /usr/local/share/chruby/chruby.fish
-# end
-
-# if test -e /usr/local/share/chruby/auto.fish
-#     source /usr/local/share/chruby/auto.fish
-# end
-
-
 # rbenv
 if type -q rbenv
     status --is-interactive; and source (rbenv init -|psub)
 end
+
+# Ruby exports
+set -gx GEM_HOME $HOME/.gems
+set -gx PATH $HOME/.gems/bin $PATH
 
 # pipsi; this must come after pyenv
 set -gx PATH ~/.local/bin $PATH
@@ -139,4 +134,11 @@ set -gx CHEATPATH "$HOME/.cheat/local"
 ## Place all venv initialization in the
 ## $VIRTUAL_ENV/virtualhooks.fish file.
 ## see: https://github.com/justinmayer/tackle/tree/master/modules/virtualhooks#usage
+#
+
+# if using the [pipenv extension for fisherman](https://github.com/kennethreitz/fish-pipenv),
+# then it launches `pipenv shell` whenever you enter a directory with a Pipfile.
+# To automatically with `pipenv shell` you have to modify this file
+#   .config/fish/conf.d/pipenv.fish
+# see: https://github.com/kennethreitz/fish-pipenv/issues/18
 #
