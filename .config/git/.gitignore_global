@@ -65,6 +65,7 @@ jsconfig.json
 *.sublime-project
 
 # bak files
+*.bak*
 *.bak.*
 
 tmp/
