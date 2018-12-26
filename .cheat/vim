@@ -71,8 +71,10 @@ d{motion}       delete text that {motion} moves over
 
 # Search and replace with the `:substitute` (aka `:s`) command
 
-/               search forward
-?               search backwards
+/<word>         search forward
+?<word>         search backwards
+n/N             next/prev match
+#/*             search prev/next word undercursor
 :s/search/replace/	    replace the first match on the current line only
 :s/search/replace/g	    replace all matches (`g` flag) on the current line only
 
