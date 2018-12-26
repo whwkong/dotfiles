@@ -1,23 +1,15 @@
-# config.config
-#
-# see : <https://hackercodex.com/guide/install-fish-shell-mac-ubuntu/#basic-configuration>
-# type
+# for web-based fish config, use:
 #     $ fish_config
 # then visit http://localhost:8000/ to change configurations.
 #
 # fish will find scripts in ~/.config/fish/functions.
-#
-# If you place a fish-script in ~/dev/scripts or ~/.tacklebox/tacklebox.fish
-# then you need add a shebang, then chmod to executable.  Then the script runs within
-# context of new shell (config.fish will be executed)
-# Note that ~/.tacklebox/tacklebox.fish has no shebang and is called by another
-# fish-script.
 
 # see also: $fish_user_paths
 set -gx PATH ~/.config/fish . $PATH
 set -gx PATH ~/dev/scripts/bash $PATH
 set -gx PATH ~/dev/scripts/fish $PATH
 set -gx PATH $PATH ~/Library/google-cloud-sdk/bin
+set -gx PATH $PATH /usr/local/lib/ruby/gems/2.6.0/bin
 
 if test -e ~/.config/fish/fish_colors.fish
     source ~/.config/fish/fish_colors.fish
@@ -38,6 +30,7 @@ set -gx PYTHONDONTWRITEBYTECODE true # -x == export
 set -gx fish_user_paths $fish_user_paths "/usr/local/bin"
 
 # for ruby 2.4.2
+set -gx fish_user_paths $fish_user_paths "/usr/local/opt/ruby/bin"
 set -gx fish_user_paths $fish_user_paths "/usr/local/opt/openssl/bin"
 set -gx LDFLAGS "-L/usr/local/opt/openssl/lib"
 set -gx CPPFLAGS "-I/usr/local/opt/openssl/include"
