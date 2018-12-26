@@ -4,126 +4,113 @@
 #
 # fish will find scripts in ~/.config/fish/functions.
 
-# see also: $fish_user_paths
-set -gx PATH ~/.config/fish . $PATH
-set -gx PATH ~/dev/scripts/bash $PATH
-set -gx PATH ~/dev/scripts/fish $PATH
-set -gx PATH $PATH ~/Library/google-cloud-sdk/bin
-set -gx PATH $PATH /usr/local/lib/ruby/gems/2.6.0/bin
+# path configuration
+if status --is-login
+    # For PATH debugging, fish also prepends PATH with the universal variable
+    # fish_user_paths
+    # see: https://fishshell.com/docs/current/tutorial.html#tut_path
+    if test -e ~/.config/fish/fish_colors.fish
+        source ~/.config/fish/fish_colors.fish
+    end
 
-if test -e ~/.config/fish/fish_colors.fish
-    source ~/.config/fish/fish_colors.fish
+    set -gx PATH ~/.config/fish . $PATH
+    set -gx PATH ~/dev/scripts/bash $PATH
+    set -gx PATH ~/dev/scripts/fish $PATH
+    set -gx PATH $PATH ~/Library/google-cloud-sdk/bin
+    set -gx PATH $PATH /usr/local/lib/ruby/gems/2.6.0/bin
+
+    # pyenv; adds ~/.pyenv/shims to path
+    # Make sure shim paths are before usr/local/bini
+    # use: 'which -a python' to debug.
+    if type -q pyenv # check for pyenv
+        # pyenv can interfere with pipenv in sub-shells
+        # see: https://pipenv.readthedocs.io/en/latest/basics/#about-shell-configuration
+        # see: https://www.bountysource.com/issues/41572382-wrong-python-inside-of-pipenv-shell
+        status --is-interactive; and source (pyenv init -|psub)
+    end
+
+    set -gx PATH "/usr/local/opt/ruby/bin" $PATH
+    set -gx PATH "/usr/local/opt/openssl/bin" $PATH
+    set -gx PATH ~/.gems/bin $PATH
+
+    # pipsi paths; this must come after pyenv
+    set -gx PATH ~/.local/bin-2.7 $PATH
+    set -gx PATH ~/.local/bin $PATH
 end
 
-# for powerline
-set -gx TERM "xterm-256color"
+# env var configuration
+if status --is-login
+    # for powerline
+    set -gx TERM "xterm-256color"
 
-# for textmate
-set -gx EDITOR "/usr/local/bin/mate -w"
+    # for textmate
+    set -gx EDITOR "/usr/local/bin/mate -w"
 
-# setting environment variables
-# https://fishshell.com/docs/current/index.html#variables
-set -gx PYTHONPATH ~/dev/python
-set -gx PYTHONDONTWRITEBYTECODE true # -x == export
+    # python
+    set -gx PYTHONPATH ~/dev/python
+    set -gx PYTHONDONTWRITEBYTECODE true # -x == export
 
-# for brew
-set -gx fish_user_paths $fish_user_paths "/usr/local/bin"
+    # pipenv
+    # disable below to run pipenv shell in compatibility mode
+    set -gx PIPENV_SHELL_FANCY 1 # 'pipenv shell' always runs in fancy mode
 
-# for ruby 2.4.2
-set -gx fish_user_paths $fish_user_paths "/usr/local/opt/ruby/bin"
-set -gx fish_user_paths $fish_user_paths "/usr/local/opt/openssl/bin"
-set -gx LDFLAGS "-L/usr/local/opt/openssl/lib"
-set -gx CPPFLAGS "-I/usr/local/opt/openssl/include"
-set -gx PKG_CONFIG_PATH /usr/local/opt/openssl/lib/pkgconfig
+    # requirements for ruby
+    set -gx LDFLAGS "-L/usr/local/opt/openssl/lib"
+    set -gx CPPFLAGS "-I/usr/local/opt/openssl/include"
+    set -gx PKG_CONFIG_PATH /usr/local/opt/openssl/lib/pkgconfig
 
-# pyenv; adds ~/.pyenv/shims to path
-# make sure to run this AFTER brew/ruby config.  shims path must be before
-# usr/local/bin
-if type -q pyenv # check for pyenv
-    status --is-interactive; and source (pyenv init -|psub)
-end
+    # rbenv
+    if type -q rbenv
+        status --is-interactive; and source (rbenv init -|psub)
+    end
 
-# rbenv
-if type -q rbenv
-    status --is-interactive; and source (rbenv init -|psub)
-end
+    # Ruby exports
+    set -gx GEM_HOME $HOME/.gems
 
-# Ruby exports
-set -gx GEM_HOME $HOME/.gems
-set -gx PATH $HOME/.gems/bin $PATH
+    # set python version to version pointed to by pyenv
+    # unfortunately, not seem to be working wth vf
+    set -gx VIRTUALFISH_DEFAULT_PYTHON (which python)
 
-# pipsi; this must come after pyenv
-set -gx PATH ~/.local/bin $PATH
-set -gx PATH ~/.local/bin-2.7 $PATH
+    # directory where all your virtualenvs are kept
+    #   virtualenvwrapper's WORKON_HOME is for bash only
+    set -gx VIRTUALFISH_HOME ~/.virtualenvs
 
-# set python version to version pointed to by pyenv
-# unfortunately, not seem to be working wth vf
-set -gx VIRTUALFISH_DEFAULT_PYTHON (which python)
+    # activate plugins
+    # http://virtualfish.readthedocs.io/en/latest/plugins.html#auto-activation
+    eval (python -m virtualfish auto_activation projects)
 
-# directory where all your virtualenvs are kept
-#   virtualenvwrapper's WORKON_HOME is for bash only
-set -gx VIRTUALFISH_HOME ~/.virtualenvs
+    # Paths to your tackle
+    set -gx tacklebox_path ~/.tackle ~/.tacklebox
 
-# activate plugins
-# http://virtualfish.readthedocs.io/en/latest/plugins.html#auto-activation
-eval (python -m virtualfish auto_activation projects)
+    # Theme
+    #set tacklebox_theme entropy
+    set -gx tacklebox_theme entropy
 
-# Paths to your tackle
-set -gx tacklebox_path ~/.tackle ~/.tacklebox
+    # Which modules would you like to load? (modules can be found in ~/.tackle/modules/*)
+    # Custom modules may be added to ~/.tacklebox/modules/
+    # Example format: set tacklebox_modules virtualfish virtualhooks
+    set -gx tacklebox_modules virtualfish virtualhooks
 
-# Theme
-#set tacklebox_theme entropy
-set -gx tacklebox_theme entropy
+    # Which plugins would you like to enable? (plugins can be found in ~/.tackle/plugins/*)
+    # Custom plugins may be added to ~/.tacklebox/plugins/
+    # Example format: set tacklebox_plugins python extract
+    set -gx tacklebox_plugins extract grc pip python up
 
-# Which modules would you like to load? (modules can be found in ~/.tackle/modules/*)
-# Custom modules may be added to ~/.tacklebox/modules/
-# Example format: set tacklebox_modules virtualfish virtualhooks
-set -gx tacklebox_modules virtualfish virtualhooks
+    # Load and initialize Tacklebox configuration.  All tacklebox_* settings must
+    # be set prior to this line.
+    . ~/.tacklebox/tacklebox.fish
 
-# Which plugins would you like to enable? (plugins can be found in ~/.tackle/plugins/*)
-# Custom plugins may be added to ~/.tacklebox/plugins/
-# Example format: set tacklebox_plugins python extract
-set -gx tacklebox_plugins extract grc pip python up
+    # for cheat
+    set -gx CHEATCOLORS true
+    set -gx CHEATPATH "$HOME/.cheat/local"
 
-# Load and initialize Tacklebox configuration.  All tacklebox_* settings must
-# be set prior to this line.
-. ~/.tacklebox/tacklebox.fish
-
-# Load local config
-if status --is-interactive
+    # Load local config
     if test -e ~/.config/fish/localfish/config_local.fish
         . ~/.config/fish/localfish/config_local.fish
     end
 end
 
-# for cheat
-set -gx CHEATCOLORS true
-set -gx CHEATPATH "$HOME/.cheat/local"
-
-# docker-machine
-# TODO: fix this:
-# error in HOME env:
-# $ test: Missing argument at index 2
-# if type -q docker-machine
-#     if status --is-interactive
-#         if test (docker-machine ls -q | grep '^default$')
-#             if test (docker-machine status default) = 'Running'
-#                 MAGENTA; echo "eval (docker-machine env default --shell fish)"; NC;
-#                 eval (docker-machine env default --shell fish)
-#             end
-#         end
-
-#         if test (docker-machine ls -q | grep '^dev$')
-#             if test (docker-machine status dev) = 'Running'
-#                 MAGENTA; echo "eval (docker-machine env dev --shell fish)"; NC;
-#                 eval (docker-machine env dev --shell fish)
-#             end
-#         end
-#     end
-# end
-
-
-## If you need to set envvars for venvs, use the virtualhooks tackle module.
+## If you need to auto-set envvars for venvs, use the virtualhooks tackle module.
 ## Place all venv initialization in the
 ## $VIRTUAL_ENV/virtualhooks.fish file.
 ## see: https://github.com/justinmayer/tackle/tree/master/modules/virtualhooks#usage
