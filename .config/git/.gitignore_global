@@ -86,6 +86,7 @@ todo/
 .python-version
 *.egg-info/
 
+# for mycd.sh: https://gist.github.com/leipzig/1651133
 .dir_bash_history
 
 # pytest-cov
