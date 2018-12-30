@@ -20,13 +20,13 @@ if status --is-login
     set -gx PATH $PATH /usr/local/lib/ruby/gems/2.6.0/bin
 
     # pyenv; adds ~/.pyenv/shims to path
-    # Make sure shim paths are before usr/local/bini
+    # Make sure shim paths are before usr/local/bin
     # use: 'which -a python' to debug.
     if type -q pyenv # check for pyenv
         # pyenv can interfere with pipenv in sub-shells
         # see: https://pipenv.readthedocs.io/en/latest/basics/#about-shell-configuration
         # see: https://www.bountysource.com/issues/41572382-wrong-python-inside-of-pipenv-shell
-        status --is-interactive; and source (pyenv init -|psub)
+        source (pyenv init -|psub)
     end
 
     set -gx PATH "/usr/local/opt/ruby/bin" $PATH
@@ -59,19 +59,6 @@ if status --is-login
     set -gx CPPFLAGS "-I/usr/local/opt/openssl/include"
     set -gx PKG_CONFIG_PATH /usr/local/opt/openssl/lib/pkgconfig
 
-    # rbenv
-    if type -q rbenv
-        status --is-interactive; and source (rbenv init -|psub)
-    end
-
-    # chruby
-    if test -e /usr/local/share/chruby/chruby.fish
-        source /usr/local/share/chruby/chruby.fish
-        # only for auto-switching ruby versions when changing dirs
-        # see: https://github.com/postmodern/chruby#auto-switching
-        source /usr/local/share/chruby/auto.fish
-    end
-
     # Ruby exports
     set -gx GEM_HOME $HOME/.gems
 
@@ -83,9 +70,6 @@ if status --is-login
     #   virtualenvwrapper's WORKON_HOME is for bash only
     set -gx VIRTUALFISH_HOME ~/.virtualenvs
 
-    # activate plugins
-    # http://virtualfish.readthedocs.io/en/latest/plugins.html#auto-activation
-    eval (python -m virtualfish auto_activation projects)
 
     # Paths to your tackle
     set -gx tacklebox_path ~/.tackle ~/.tacklebox
@@ -104,9 +88,6 @@ if status --is-login
     # Example format: set tacklebox_plugins python extract
     set -gx tacklebox_plugins extract grc pip python up
 
-    # Load and initialize Tacklebox configuration.  All tacklebox_* settings must
-    # be set prior to this line.
-    . ~/.tacklebox/tacklebox.fish
 
     # for cheat
     set -gx CHEATCOLORS true
@@ -114,9 +95,34 @@ if status --is-login
 
     # Load local config
     if test -e ~/.config/fish/localfish/config_local.fish
-        . ~/.config/fish/localfish/config_local.fish
+        source ~/.config/fish/localfish/config_local.fish
     end
 end
+
+
+if status --is-interactive  # run in both login and interactive mode
+    # rbenv
+    if type -q rbenv
+        status --is-interactive; and source (rbenv init -|psub)
+    end
+
+    # chruby
+    if test -e /usr/local/share/chruby/chruby.fish
+        source /usr/local/share/chruby/chruby.fish
+        # only for auto-switching ruby versions when changing dirs
+        # see: https://github.com/postmodern/chruby#auto-switching
+        source /usr/local/share/chruby/auto.fish
+    end
+
+    # activate plugins
+    # http://virtualfish.readthedocs.io/en/latest/plugins.html#auto-activation
+    eval (python -m virtualfish auto_activation projects)
+
+     # Load and initialize Tacklebox configuration.  All tacklebox_* settings must
+    # be set prior to this line.
+    source ~/.tacklebox/tacklebox.fish
+end
+
 
 ## If you need to auto-set envvars for venvs, use the virtualhooks tackle module.
 ## Place all venv initialization in the
