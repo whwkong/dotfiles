@@ -1,3 +1,3 @@
-function lsl --description 'alias lsl=ls -l'
+function lsl --description 'alias lsl ls -lh'
 	command ls -lh $argv
 end

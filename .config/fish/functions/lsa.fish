@@ -1,3 +1,3 @@
-function lsa --description 'alias lsa = ls -lah'
+function lsa --description 'alias lsa ls -lah'
 	ls -lah $argv
 end
