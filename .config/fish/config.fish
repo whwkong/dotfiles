@@ -13,7 +13,7 @@ if status --is-login
         source ~/.config/fish/fish_colors.fish
     end
 
-    set -gx PATH ~/.config/fish . $PATH
+    set -gx PATH . $PATH
     set -gx PATH ~/dev/scripts/bash $PATH
     set -gx PATH ~/dev/scripts/fish $PATH
     set -gx PATH $PATH ~/Library/google-cloud-sdk/bin
