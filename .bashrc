@@ -30,7 +30,12 @@ fi
 [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
 
 # chruby
-[ -f /usr/local/share/chruby/chruby.sh ] && . /usr/local/share/chruby/chruby.sh
+if [ -f /usr/local/share/chruby/chruby.sh ]; then
+    . /usr/local/share/chruby/chruby.sh
+    # default version
+    chruby ruby-2.6.0
+fi
+
 [ -f /usr/local/share/chruby/auto.sh ] && . /usr/local/share/chruby/auto.sh
 
 # rbenv
