@@ -19,16 +19,6 @@ if status --is-login
     set -gx PATH $PATH ~/Library/google-cloud-sdk/bin
     set -gx PATH $PATH /usr/local/lib/ruby/gems/2.6.0/bin
 
-    # pyenv; adds ~/.pyenv/shims to path
-    # Make sure shim paths are before usr/local/bin
-    # use: 'which -a python' to debug.
-    if type -q pyenv # check for pyenv
-        # pyenv can interfere with pipenv in sub-shells
-        # see: https://pipenv.readthedocs.io/en/latest/basics/#about-shell-configuration
-        # see: https://www.bountysource.com/issues/41572382-wrong-python-inside-of-pipenv-shell
-        # source (pyenv init -|psub)
-    end
-
     set -gx PATH "/usr/local/opt/ruby/bin" $PATH
     set -gx PATH "/usr/local/opt/openssl/bin" $PATH
     set -gx PATH ~/.gems/bin $PATH
@@ -50,10 +40,6 @@ if status --is-login
     set -gx PYTHONPATH ~/dev/python
     set -gx PYTHONDONTWRITEBYTECODE true # -x == export
 
-    # pipenv
-    # disable below to run pipenv shell in compatibility mode
-    set -gx PIPENV_SHELL_FANCY 1 # 'pipenv shell' always runs in fancy mode
-
     # requirements for ruby
     set -gx LDFLAGS "-L/usr/local/opt/openssl/lib"
     set -gx CPPFLAGS "-I/usr/local/opt/openssl/include"
@@ -62,29 +48,25 @@ if status --is-login
     # Ruby exports
     set -gx GEM_HOME $HOME/.gems
 
-
     # directory where all your virtualenvs are kept
     #   virtualenvwrapper's WORKON_HOME is for bash only
     set -gx VIRTUALFISH_HOME ~/.virtualenvs
 
-
-    # Paths to your tackle
+    # Paths to tackle
     set -gx tacklebox_path ~/.tackle ~/.tacklebox
 
     # Theme
     #set tacklebox_theme entropy
     set -gx tacklebox_theme entropy
 
-    # Which modules would you like to load? (modules can be found in ~/.tackle/modules/*)
+    # Load tacklebox modules (modules can be found in ~/.tackle/modules/*)
     # Custom modules may be added to ~/.tacklebox/modules/
-    # Example format: set tacklebox_modules virtualfish virtualhooks
     set -gx tacklebox_modules virtualfish virtualhooks
 
     # Which plugins would you like to enable? (plugins can be found in ~/.tackle/plugins/*)
     # Custom plugins may be added to ~/.tacklebox/plugins/
     # Example format: set tacklebox_plugins python extract
     set -gx tacklebox_plugins extract grc pip python up
-
 
     # for cheat
     set -gx CHEATCOLORS true
@@ -118,24 +100,27 @@ if status --is-interactive  # run in both login and interactive mode
 end
 
 if status --is-interactive
-    # pyenv; adds ~/.pyenv/shims to path
-    # make sure to run this AFTER brew/ruby config.  shims path must be before
-    # usr/local/bin
+    # Note that fish adds in paths from /etc/paths and /etc/paths.d, so this has
+    # to be placed here.
+
+    # pyenv; adds ~/.pyenv/shims to path, and sets pyenv auto-completions.
+    # make sure to run this AFTER brew/ruby config (which prepends /usr/local/bin to path).
+    # shims path must be before /usr/local/bin
     if type -q pyenv # check for pyenv
         source (pyenv init -|psub)
     end
 
-    # set python version to version pointed to by pyenv
-    # must be placed after pyenv
-    set -gx VIRTUALFISH_DEFAULT_PYTHON (which python)
+    if status --is-login  # exclude for sub-shell
+        # set python version to version pointed to by pyenv
+        set -gx VIRTUALFISH_DEFAULT_PYTHON (which -p python)
 
-    # activate plugins
-    # Must be placed after pyenv
-    # http://virtualfish.readthedocs.io/en/latest/plugins.html#auto-activation
-    eval (python -m virtualfish auto_activation projects)
+        # activate plugins
+        # http://virtualfish.readthedocs.io/en/latest/plugins.html#auto-activation
+        eval (python -m virtualfish auto_activation projects)
+    end
 end
 
-## If you need to auto-set envvars for venvs, use the virtualhooks tackle module.
+## If you need to auto-set envvars for specific venvs, use the virtualhooks tackle module.
 ## Place all venv initialization in the
 ## $VIRTUAL_ENV/virtualhooks.fish file.
 ## see: https://github.com/justinmayer/tackle/tree/master/modules/virtualhooks#usage
