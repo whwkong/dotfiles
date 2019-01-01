@@ -26,7 +26,7 @@ if status --is-login
         # pyenv can interfere with pipenv in sub-shells
         # see: https://pipenv.readthedocs.io/en/latest/basics/#about-shell-configuration
         # see: https://www.bountysource.com/issues/41572382-wrong-python-inside-of-pipenv-shell
-        source (pyenv init -|psub)
+        # source (pyenv init -|psub)
     end
 
     set -gx PATH "/usr/local/opt/ruby/bin" $PATH
@@ -62,9 +62,6 @@ if status --is-login
     # Ruby exports
     set -gx GEM_HOME $HOME/.gems
 
-    # set python version to version pointed to by pyenv
-    # unfortunately, not seem to be working wth vf
-    set -gx VIRTUALFISH_DEFAULT_PYTHON (which python)
 
     # directory where all your virtualenvs are kept
     #   virtualenvwrapper's WORKON_HOME is for bash only
@@ -114,15 +111,29 @@ if status --is-interactive  # run in both login and interactive mode
         source /usr/local/share/chruby/auto.fish
     end
 
-    # activate plugins
-    # http://virtualfish.readthedocs.io/en/latest/plugins.html#auto-activation
-    eval (python -m virtualfish auto_activation projects)
 
      # Load and initialize Tacklebox configuration.  All tacklebox_* settings must
     # be set prior to this line.
     source ~/.tacklebox/tacklebox.fish
 end
 
+if status --is-interactive
+    # pyenv; adds ~/.pyenv/shims to path
+    # make sure to run this AFTER brew/ruby config.  shims path must be before
+    # usr/local/bin
+    if type -q pyenv # check for pyenv
+        source (pyenv init -|psub)
+    end
+
+    # set python version to version pointed to by pyenv
+    # must be placed after pyenv
+    set -gx VIRTUALFISH_DEFAULT_PYTHON (which python)
+
+    # activate plugins
+    # Must be placed after pyenv
+    # http://virtualfish.readthedocs.io/en/latest/plugins.html#auto-activation
+    eval (python -m virtualfish auto_activation projects)
+end
 
 ## If you need to auto-set envvars for venvs, use the virtualhooks tackle module.
 ## Place all venv initialization in the
