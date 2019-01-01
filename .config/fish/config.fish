@@ -22,10 +22,6 @@ if status --is-login
     set -gx PATH "/usr/local/opt/ruby/bin" $PATH
     set -gx PATH "/usr/local/opt/openssl/bin" $PATH
     set -gx PATH ~/.gems/bin $PATH
-
-    # pipsi paths; this must come after pyenv
-    set -gx PATH ~/.local/bin-2.7 $PATH
-    set -gx PATH ~/.local/bin $PATH
 end
 
 # env var configuration
@@ -109,6 +105,10 @@ if status --is-interactive
     if type -q pyenv # check for pyenv
         source (pyenv init -|psub)
     end
+
+    # pipsi must come after pyenv
+    # added by pipsi (https://github.com/mitsuhiko/pipsi)
+    set -x PATH /Users/thepathunfolds/.local/bin $PATH
 
     if status --is-login  # exclude for sub-shell
         # set python version to version pointed to by pyenv
