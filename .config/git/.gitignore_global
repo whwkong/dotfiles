@@ -47,6 +47,7 @@ Thumbs.db
 *.swp
 
 # todo files
+TODO*
 todo/
 
 # pycharm
