@@ -4,5 +4,11 @@
         "key": "ctrl+cmd+m",
         "command": "editor.emmet.action.matchTag",
         "when": "editorTextFocus"
+    },
+    // used to resolve Python extension bug
+    // see https://github.com/Microsoft/vscode/issues/41319
+    {
+        "key": "shift+cmd+r",
+        "command": "python.buildWorkspaceSymbols"
     }
 ]
