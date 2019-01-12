@@ -18,6 +18,7 @@ if status --is-login
     set -gx PATH ~/dev/scripts/fish $PATH
     set -gx PATH $PATH ~/Library/google-cloud-sdk/bin
     set -gx PATH $PATH /usr/local/lib/ruby/gems/2.6.0/bin
+    set -gx PATH $PATH /usr/local/sbin
 
     set -gx PATH "/usr/local/opt/ruby/bin" $PATH
     set -gx PATH "/usr/local/opt/openssl/bin" $PATH
