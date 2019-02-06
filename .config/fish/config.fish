@@ -3,6 +3,11 @@
 # then visit http://localhost:8000/ to change configurations.
 #
 # fish will find scripts in ~/.config/fish/functions.
+#
+# To run old versions of fish:
+# $ brew list fish --versions
+# $ brew switch fish x.y.z
+# see: https://zoltanaltfatter.com/2017/09/07/Install-a-specific-version-of-formula-with-homebrew/
 
 # path configuration
 if status --is-login
