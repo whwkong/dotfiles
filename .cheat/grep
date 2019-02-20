@@ -3,8 +3,10 @@ grep pattern file
 
 # search for a particular file name (but not within file)
 find . -name "*.txt" | grep word
-# search for a word within a list of files
+# search for a word within a list of text files
 find . -name "*.txt" | xargs grep -l word
+# search for a word within all files 
+find . -type f | xargs grep -i word
 
 
 # Case insensitive search (with line numbers)
