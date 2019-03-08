@@ -41,6 +41,8 @@ git push --tags
 # del tag
 git tag --delete tagname
 
+# delete remote branch
+git push <remote_name> --delete <branch_name>
 
 # show which branches are tracking a remote branche
 git branch -vv

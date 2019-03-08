@@ -18,7 +18,7 @@
 	editor = vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 	difftool = opendiff
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
@@ -91,6 +91,10 @@
     undo = "!f() { git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}}; }; f"
     # }}}
 
+    # clean up branches
+    bclean = "!f() { git fetch -p ; git branch --merged | egrep -v '(^\\*|master|dev|development|production)' | xargs git branch -d ; }; f"
+    all = "!f() { ls | xargs -I{} git -C {} $1; }; f"
+    lastcommit = show --name-status HEAD
 
 [pull]
 	rebase = true
