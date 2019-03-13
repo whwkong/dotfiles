@@ -108,7 +108,7 @@ if status --is-interactive
 
     # pipsi must come after pyenv
     # added by pipsi (https://github.com/mitsuhiko/pipsi)
-    set -x PATH /Users/thepathunfolds/.local/bin $PATH
+    set -x PATH $HOME/.local/bin $PATH
 
     if status --is-login  # exclude for sub-shell
         # set python version to version pointed to by pyenv
