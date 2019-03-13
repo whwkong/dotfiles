@@ -1,1 +1,0 @@
-/Users/thepathunfolds/.config/fisherman/bass/functions/bass.fish

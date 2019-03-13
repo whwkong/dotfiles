@@ -1,1 +1,0 @@
-/Users/thepathunfolds/.config/fisherman/get/functions/get.fish

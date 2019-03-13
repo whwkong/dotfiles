@@ -1,1 +1,0 @@
-/Users/thepathunfolds/.config/fisherman/menu/menu.fish

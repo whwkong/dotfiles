@@ -1,1 +1,0 @@
-/Users/thepathunfolds/.config/fisherman/fnm/functions/fnm.fish

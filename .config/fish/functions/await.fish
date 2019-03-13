@@ -1,1 +1,0 @@
-/Users/thepathunfolds/.config/fisherman/await/functions/await.fish

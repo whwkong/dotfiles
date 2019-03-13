@@ -1,1 +1,0 @@
-/Users/thepathunfolds/.config/fisherman/nvm/functions/npx.fish
