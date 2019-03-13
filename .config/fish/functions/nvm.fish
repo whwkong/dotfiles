@@ -1,0 +1,1 @@
+/Users/thepathunfolds/.config/fisherman/nvm/functions/nvm.fish

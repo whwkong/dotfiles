@@ -1,0 +1,1 @@
+/Users/thepathunfolds/.fzf/shell/key-bindings.fish

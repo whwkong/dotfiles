@@ -1,0 +1,1 @@
+/Users/thepathunfolds/.config/fisherman/z/functions/__z.fish
