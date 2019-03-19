@@ -17,9 +17,7 @@ case Linux:
 case '*'
 end
 
-echo "outside of check"
-
-if begin $is_linux; or status --is-login; end 
+if begin $is_linux; or status --is-login; end
     ### path configuration
     # For PATH debugging, fish also prepends PATH with the universal variable
     # fish_user_paths
@@ -89,53 +87,44 @@ if begin $is_linux; or status --is-login; end
 end
 
 
-if status --is-interactive  # run in both login and interactive mode
-    # rbenv
-    if type -q rbenv
-        status --is-interactive; and source (rbenv init -|psub)
-    end
-
-    # chruby initialization moved to init-ruby.fish
-    # use: source /.local/init-ruby.fish
-
-     # Load and initialize Tacklebox configuration.  All tacklebox_* settings must
-    # be set prior to this line.
-    source ~/.tacklebox/tacklebox.fish
+# rbenv
+if type -q rbenv
+    status --is-interactive; and source (rbenv init -|psub)
 end
 
-if status --is-interactive
-    # Note that fish adds in paths from /etc/paths and /etc/paths.d, so this has
-    # to be placed here.
+# chruby initialization moved to init-ruby.fish
+# use: source /.local/init-ruby.fish
 
-    # pyenv; adds ~/.pyenv/shims to path, and sets pyenv auto-completions.
-    # make sure to run this AFTER brew/ruby config (which prepends /usr/local/bin to path).
-    # shims path must be before /usr/local/bin
-    if type -q pyenv # check for pyenv
-        source (pyenv init -|psub)
-    end
+# Load and initialize Tacklebox configuration.  All tacklebox_* settings must
+# be set prior to this line.
+source ~/.tacklebox/tacklebox.fish
 
-    # pipsi must come after pyenv
-    # added by pipsi (https://github.com/mitsuhiko/pipsi)
-    set -x PATH $HOME/.local/bin $PATH
+# Note that fish adds in paths from /etc/paths and /etc/paths.d, so this has
+# to be placed here.
 
-    if status --is-login  # exclude for sub-shell
-        echo "THIS IS A LOGIN SHELL"
-        # set python version to version pointed to by pyenv
-        set -gx VIRTUALFISH_DEFAULT_PYTHON (which -p python)
+# pyenv; adds ~/.pyenv/shims to path, and sets pyenv auto-completions.
+# make sure to run this AFTER brew/ruby config (which prepends /usr/local/bin to path).
+# shims path must be before /usr/local/bin
+if type -q pyenv # check for pyenv
+    source (pyenv init -|psub)
+end
 
-        # activate plugins
-        # http://virtualfish.readthedocs.io/en/latest/plugins.html#auto-activation
-        eval (python -m virtualfish auto_activation projects)
-    end
+# pipsi must come after pyenv
+# added by pipsi (https://github.com/mitsuhiko/pipsi)
+set -x PATH $HOME/.local/bin $PATH
 
-    if status --is-login
-        # bootstrap fisher
-        if not functions -q fisher
-            set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
-            curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
-            fish -c fisher
-        end
-    end
+# set python version to version pointed to by pyenv
+set -gx VIRTUALFISH_DEFAULT_PYTHON (which -p python)
+
+# activate plugins
+# http://virtualfish.readthedocs.io/en/latest/plugins.html#auto-activation
+eval (python -m virtualfish auto_activation projects)
+
+# bootstrap fisher
+if not functions -q fisher
+    set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
+    curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
+    fish -c fisher
 end
 
 ## If you need to auto-set envvars for specific venvs, use the virtualhooks tackle module.
