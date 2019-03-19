@@ -9,15 +9,18 @@
 # $ brew switch fish x.y.z
 # see: https://zoltanaltfatter.com/2017/09/07/Install-a-specific-version-of-formula-with-homebrew/
 
+set -g is_osx
+set -g is_linux
+
 switch (uname):
 case Darwin:
-    set -g is_osx true
+    set is_osx true
 case Linux:
-    set -g is_linux true
+    set is_linux true
 case '*'
 end
 
-if begin $is_linux; or status --is-login; end
+if begin eval $is_linux; or status --is-login; end
     ### path configuration
     # For PATH debugging, fish also prepends PATH with the universal variable
     # fish_user_paths
@@ -43,7 +46,7 @@ if begin $is_linux; or status --is-login; end
 
     # for textmate
     set -gx EDITOR "/usr/local/bin/mate -w"
-
+i
     # python
     set -gx PYTHONPATH ~/dev/python
     set -gx PYTHONDONTWRITEBYTECODE true # -x == export
