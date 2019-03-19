@@ -9,7 +9,17 @@
 # $ brew switch fish x.y.z
 # see: https://zoltanaltfatter.com/2017/09/07/Install-a-specific-version-of-formula-with-homebrew/
 
-if status --is-login
+switch (uname):
+case Darwin:
+    set -g is_osx true
+case Linux:
+    set -g is_linux true
+case '*'
+end
+
+echo "outside of check"
+
+if begin $is_linux; or status --is-login; end 
     ### path configuration
     # For PATH debugging, fish also prepends PATH with the universal variable
     # fish_user_paths
@@ -109,6 +119,7 @@ if status --is-interactive
     set -x PATH $HOME/.local/bin $PATH
 
     if status --is-login  # exclude for sub-shell
+        echo "THIS IS A LOGIN SHELL"
         # set python version to version pointed to by pyenv
         set -gx VIRTUALFISH_DEFAULT_PYTHON (which -p python)
 
