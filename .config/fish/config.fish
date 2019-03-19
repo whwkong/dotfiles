@@ -9,8 +9,8 @@
 # $ brew switch fish x.y.z
 # see: https://zoltanaltfatter.com/2017/09/07/Install-a-specific-version-of-formula-with-homebrew/
 
-# path configuration
 if status --is-login
+    ### path configuration
     # For PATH debugging, fish also prepends PATH with the universal variable
     # fish_user_paths
     # see: https://fishshell.com/docs/current/tutorial.html#tut_path
@@ -28,10 +28,8 @@ if status --is-login
     set -gx PATH "/usr/local/opt/ruby/bin" $PATH
     set -gx PATH "/usr/local/opt/openssl/bin" $PATH
     set -gx PATH ~/.gems/bin $PATH
-end
 
-# env var configuration
-if status --is-login
+    ### env var configuration
     # for powerline
     set -gx TERM "xterm-256color"
 
@@ -118,6 +116,15 @@ if status --is-interactive
         # http://virtualfish.readthedocs.io/en/latest/plugins.html#auto-activation
         eval (python -m virtualfish auto_activation projects)
     end
+
+    if status --is-login
+        # bootstrap fisher
+        if not functions -q fisher
+            set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
+            curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
+            fish -c fisher
+        end
+    end
 end
 
 ## If you need to auto-set envvars for specific venvs, use the virtualhooks tackle module.
@@ -133,7 +140,7 @@ end
 # see: https://github.com/kennethreitz/fish-pipenv/issues/18
 #
 
-# Tacklebox 
+# Tacklebox
 # Which modules would you like to load? (modules can be found in ~/.tackle/modules/*)
 # Custom modules may be added to ~/.tacklebox/modules/
 # Example format: set tacklebox_modules virtualfish virtualhooks
