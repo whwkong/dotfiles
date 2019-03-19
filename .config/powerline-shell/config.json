@@ -1,0 +1,20 @@
+{
+  "segments": [
+    "virtual_env",
+    "newline",
+    "username",
+    "ssh",
+    "git",
+    "newline",
+    "cwd",
+    "newline",
+    "root",
+    "exit_code"
+  ],
+  "cwd": {
+    "mode": "plain",
+    "max_depth": 3,
+    "max_dir_size": 15
+  },
+  "theme": "default"
+}

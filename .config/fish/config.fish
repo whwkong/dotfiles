@@ -46,7 +46,7 @@ if begin eval $is_linux; or status --is-login; end
 
     # for textmate
     set -gx EDITOR "/usr/local/bin/mate -w"
-i
+
     # python
     set -gx PYTHONPATH ~/dev/python
     set -gx PYTHONDONTWRITEBYTECODE true # -x == export
