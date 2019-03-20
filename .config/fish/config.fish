@@ -44,8 +44,13 @@ if begin eval $is_linux; or status --is-login; end
     # for powerline
     set -gx TERM "xterm-256color"
 
-    # for textmate
-    set -gx EDITOR "/usr/local/bin/mate -w"
+    if eval $is_linux
+        set -gx LD_PRELOAD /usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
+        set -gx EDITOR "/usr/bin/vim"
+    else if eval $is_osx
+        # for textmate
+        set -gx EDITOR "/usr/local/bin/mate -w"
+    end
 
     # python
     set -gx PYTHONPATH ~/dev/python
@@ -103,6 +108,7 @@ end
 source ~/.tacklebox/tacklebox.fish
 
 # Note that fish adds in paths from /etc/paths and /etc/paths.d, so this has
+
 # to be placed here.
 
 # pyenv; adds ~/.pyenv/shims to path, and sets pyenv auto-completions.
