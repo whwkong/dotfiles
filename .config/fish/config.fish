@@ -47,6 +47,9 @@ if begin eval $is_linux; or status --is-login; end
     if eval $is_linux
         set -gx LD_PRELOAD /usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
         set -gx EDITOR "/usr/bin/vim"
+
+        # for ANKI 2.0 - picking up GTK theme on gnone
+        set -gx GTK2_RC_FILES $HOME/.gtkrc-2.0
     else if eval $is_osx
         # for textmate
         set -gx EDITOR "/usr/local/bin/mate -w"
