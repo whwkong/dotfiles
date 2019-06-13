@@ -1,0 +1,18 @@
+# vscode paredit 
+ctrl + left/right arrow     back/forward sexp
+ctrl + up/down arrow        up/down sexp
+
+Wrap around with ()         ctrl + alt + shift 9
+                            ctrl + alt + (
+Wrap around with []         ctrl + alt + [
+Wrap around with {}         ctrl + alt + {
+
+Barf Sexp backward          ctrl + alt + shift + .
+Slurp Sexp backward         ctrl + alt + shift + ,
+
+Barf Sexp forward           ctrl + alt + ,
+Slurp Sexp forward          ctrl + alt + .
+
+Splice & kill back/forward  shift + alt + up/down
+
+Splice Sexp                 shift + alt + s
