@@ -8,6 +8,7 @@
 # osx specific editor
 export EDITOR="/usr/local/bin/mate -w"  # see Textmate | Preferences | Terminal
 
+export SHELL=$(which bash)
 
 # enables shell command completion for gcloud.
 if [ -f ~/Library/google-cloud-sdk/completion.bash.inc ]; then
