@@ -1,0 +1,13 @@
+ctrl+alt+c ctrl+alt+j   - jack-in calva
+ctrl+alt+c alt+n        - switch namespace in REPL to current file
+ctrl+alt+c ctrl+alt+n   - load current namespace in REPL
+
+ctrl+alt+c enter        - load current file
+ctrl+alt+c e            - evaluate current form
+ctrl+alt+c space        - evaulate current top-level form
+
+
+# send to REPL
+# add ctrl+alt modifier
+ctrl+alt+c ctrl+alt+e       - evaluate current form in REPL
+ctrl+alt+c ctrl+alt+space   - evaulate current top-level form in REPL
