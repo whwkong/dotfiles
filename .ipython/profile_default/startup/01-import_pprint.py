@@ -1,4 +1,4 @@
-from pprint import pprint
+from pprint import pprint as pp
 
 
 class BColors:
@@ -12,4 +12,4 @@ class BColors:
     UNDERLINE = '\033[4m'
 
 
-print(BColors.OKGREEN + "pprint imported." + BColors.OKBLUE + "  Just use pprint()" + BColors.ENDC)
+print(BColors.OKGREEN + "pprint imported." + BColors.OKBLUE + "  Just use pp()" + BColors.ENDC)
