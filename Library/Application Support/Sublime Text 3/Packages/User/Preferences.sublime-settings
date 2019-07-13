@@ -14,8 +14,9 @@
 	"font_size": 14,
 	"ignored_packages":
 	[
-		"ColorPicker",
+		"GitGutter",
 		"SublimeLinter",
+		"SublimeLinter-flake8",
 		"Vintage"
 	],
 	"indent_guide_options":

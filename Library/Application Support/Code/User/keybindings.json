@@ -10,5 +10,15 @@
     {
         "key": "shift+cmd+r",
         "command": "python.buildWorkspaceSymbols"
+    },
+    {
+        "key": "escape",
+        "command": "calva.clearInlineResults",
+        "when": "-editorTextFocus && !editorHasMultipleSelections && !editorReadOnly && !hasOtherSuggestions && !suggestWidgetVisible && editorLangId == 'clojure'"
+    },
+    {
+        "key": "escape",
+        "command": "-calva.clearInlineResults",
+        "when": "editorTextFocus && !editorHasMultipleSelections && !editorReadOnly && !hasOtherSuggestions && !suggestWidgetVisible && editorLangId == 'clojure'"
     }
 ]
