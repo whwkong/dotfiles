@@ -3,6 +3,9 @@
 # use `brew install ctags`.  see: https://github.com/Microsoft/vscode-python#optional-steps
 # if Symbols not working, delete .vscode/tags file.
 
+Index:
+ * code-view
+
 ⌘⌥ K        # Bookmarks toggle
 ⌘⌥ J/L      # Bookmarks prev/next
 
