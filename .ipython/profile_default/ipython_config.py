@@ -596,7 +596,7 @@
 
 ## If True, any %store-d variables will be automatically restored when IPython
 #  starts.
-#c.StoreMagics.autorestore = False
+c.StoreMagics.autorestore = True
 
 c = get_config()
 
