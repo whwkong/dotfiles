@@ -1,9 +1,0 @@
-# see: sublime-cheatsheet.md
-Command Palette         shift ⌘ P
-
-# packages
-Git Blame               ^⌥ B
-
-# replace in selection
-Find | Replace          ⌥ ⌘ F   (select find in selection) 
-

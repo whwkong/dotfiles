@@ -1,2 +1,0 @@
-# create 1GB file
-truncate -s 1G output.file

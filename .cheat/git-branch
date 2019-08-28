@@ -1,9 +1,0 @@
-# show which branches are tracking a remote branche
-git branch -vv
-
-# set up-stream tracking branch
-git branch -u upstream/foo
-git branch --set-upstream-to=upstream/foo
-
-# list all branches, both remote-tracking branches and local branches.
-git branch -a, --all

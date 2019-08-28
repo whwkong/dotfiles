@@ -1,6 +1,0 @@
-# to get location of a fish script use type
-type vf
-
-# return all matching pathnames for argument
-which -a python 
-

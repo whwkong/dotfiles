@@ -1,2 +1,0 @@
-# hard reset from origin 
-git reset --hard origin/master

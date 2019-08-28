@@ -1,5 +1,0 @@
-# remove file from working directory, stage, and repo
-git rm
-# remove file from repo
-git rm --cached
-

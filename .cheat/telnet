@@ -1,6 +1,0 @@
-$ telnet [host-name] [port]
-GET /path/to/resource HTTP/1.0
-
-$ telnet 127.0.0.1 5001
-GET /schedule/week HTTP/1.0
-

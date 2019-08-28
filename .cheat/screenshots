@@ -1,7 +1,0 @@
-shift ⌘ 3           # entire screen
-  + ctrl              # ...to clipboard
-shift ⌘ 4           # portion of screen
-  + ctrl              # ...to clipboard
-shift ⌘ 4 space     # window
-
-(can also take shots of menu or touch-bar)

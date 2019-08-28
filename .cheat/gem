@@ -1,7 +1,0 @@
-# It's never necessary to do a global install -
-# which installs for all users.
-sudo gem install gemname
-
-# installs a gem locally for the user
-gem install gemname
-

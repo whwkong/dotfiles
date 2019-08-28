@@ -1,2 +1,0 @@
-# quick and dirty way without remote tracking
-git subtree add -P <path> git@github.com:<>/repo.git master

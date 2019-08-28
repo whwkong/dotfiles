@@ -1,3 +1,0 @@
-pip freeze | xargs pip uninstall -y                     # uninstall all packages
-pip freeze | grep -v "^-e" | xargs pip uninstall -y     # ignore packages installed via cvs
-virtualenv --clear MYENV                                # same

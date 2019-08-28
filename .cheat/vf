@@ -1,4 +1,0 @@
-# using vf with diff versions of python
-# see : http://virtualfish.readthedocs.io/en/latest/usage.html#using-different-pythons
-vf new --python my_python3_env
-vf new -p python3 my_python3_env

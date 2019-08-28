@@ -1,4 +1,0 @@
-# regex javascript 
-
-[\W+]?      - eat up whitespace; ? denotes 0 or 1 matches
-
