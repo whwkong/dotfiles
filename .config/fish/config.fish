@@ -91,6 +91,7 @@ if begin eval $is_linux; or status --is-login; end
     set -gx CHEATCOLORS true
     set -gx CHEAT_USER_DIR "$HOME/.cheat"
     set -gx CHEATPATH "$HOME/.cheat:$HOME/.cheat/local:$HOME/.config/cheat:$HOME/.config/cheat/local"
+    set -gx CHEAT_PATH "$HOME/.cheat:$HOME/.cheat/local:$HOME/.config/cheat:$HOME/.config/cheat/local"
 
     # Load local config
     if test -e ~/.config/fish/localfish/config_local.fish
