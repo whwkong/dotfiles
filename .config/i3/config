@@ -37,7 +37,11 @@ set $mod Mod4
 set $terminal terminator
 
 # start up autolock
-exec xautolock -time 5 -locker i3lock -c 000000  # i3lock [-c color]
+exec --no-startup-id xautolock -time 5 -locker i3lock -c 000000  # i3lock [-c color]
+
+# start up dropbox
+exec --no-startup-id dropbox start
+
 
 # disable touchpad/mouse while typing
 # syndaemon
