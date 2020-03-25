@@ -266,5 +266,6 @@ exec i3-config-wizard
 # See: https://askubuntu.com/questions/912431/i3-for-dual-monitor-on-laptop
 exec sh -c 'xrandr | grep "HDMI-2 connected" && xrandr --output HDMI-2 --auto --right-of eDP-1'
 
+# starts up network-manager applet, see pretty wifi app
 exec --no-startup-id nm-applet
 
