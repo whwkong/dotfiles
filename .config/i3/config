@@ -30,6 +30,12 @@ mode "$mode_monitor" {
 bindsym $mod+Shift+p mode "$mode_monitor"
 
 
+# Screenshot bindings
+bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/'
+bindsym Control+Print exec gnome-screenshot -i
+
+
+
 # turn touchpad on/off
 bindsym $mod+F12 exec --no-startup-id ~/.config/i3/touchpad-on_off.sh devonoff
 
@@ -66,6 +72,12 @@ exec --no-startup-id xautolock -time 5 -locker i3lock -c 000000  # i3lock [-c co
 # start up dropbox
 exec --no-startup-id dropbox start
 
+# start up xflux
+# 10001 = NY zip code
+# 73301 = Austin
+# 80014 = Denver (-2h)
+exec --no-startup-id xflux -k 2000 -z 10001
+#  -k temperature, default=3400
 
 # disable touchpad/mouse while typing
 # syndaemon
