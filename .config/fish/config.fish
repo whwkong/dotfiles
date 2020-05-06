@@ -98,15 +98,6 @@ if begin eval $is_linux; or status --is-login; end
     end
 end
 
-
-# rbenv
-if type -q rbenv
-    status --is-interactive; and source (rbenv init -|psub)
-end
-
-# chruby initialization moved to init-ruby.fish
-# use: source /.local/init-ruby.fish
-
 # Load and initialize Tacklebox configuration.  All tacklebox_* settings must
 # be set prior to this line.
 source ~/.tacklebox/tacklebox.fish
@@ -140,11 +131,11 @@ if not functions -q fisher
     fish -c fisher
 end
 
-## If you need to auto-set envvars for specific venvs, use the virtualhooks tackle module.
-## Place all venv initialization in the
-## $VIRTUAL_ENV/virtualhooks.fish file.
-## see: https://github.com/justinmayer/tackle/tree/master/modules/virtualhooks#usage
-#
+# If you need to auto-set envvars for specific venvs, use the virtualhooks tackle module.
+# Place all venv initialization in the
+# $VIRTUAL_ENV/virtualhooks.fish file.
+# see: https://github.com/justinmayer/tackle/tree/master/modules/virtualhooks#usage
+
 
 # if using the [pipenv extension for fisherman](https://github.com/kennethreitz/fish-pipenv),
 # then it launches `pipenv shell` whenever you enter a directory with a Pipfile.
