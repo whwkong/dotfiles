@@ -76,8 +76,8 @@ exec --no-startup-id dropbox start
 # 10001 = NY zip code
 # 73301 = Austin
 # 80014 = Denver (-2h)
-exec --no-startup-id xflux -k 2000 -z 10001
-#  -k temperature, default=3400
+exec --no-startup-id xflux -k 3400 -z 10001
+#  -k temperature, default=3400, min=2000
 
 # disable touchpad/mouse while typing
 # syndaemon
