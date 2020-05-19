@@ -33,19 +33,16 @@ if begin eval $is_linux; or status --is-login; end
     set -gx PATH ~/dev/scripts/bash $PATH
     set -gx PATH ~/dev/scripts/fish $PATH
     set -gx PATH $PATH ~/Library/google-cloud-sdk/bin
-    set -gx PATH $PATH /usr/local/lib/ruby/gems/2.6.0/bin
     set -gx PATH $PATH /usr/local/sbin
 
-    set -gx PATH "/usr/local/opt/ruby/bin" $PATH
     set -gx PATH "/usr/local/opt/openssl/bin" $PATH
-    set -gx PATH ~/.gems/bin $PATH
 
     ### env var configuration
     # for powerline
     set -gx TERM "xterm-256color"
 
     if eval $is_linux
-        set -gx LD_PRELOAD /usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
+        # set -gx LD_PRELOAD /usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
         set -gx EDITOR "/usr/bin/vim"
 
         # for ANKI 2.0 - picking up GTK theme on gnone
@@ -58,14 +55,6 @@ if begin eval $is_linux; or status --is-login; end
     # python
     set -gx PYTHONPATH ~/dev/python
     set -gx PYTHONDONTWRITEBYTECODE true # -x == export
-
-    # requirements for ruby
-    set -gx LDFLAGS "-L/usr/local/opt/openssl/lib"
-    set -gx CPPFLAGS "-I/usr/local/opt/openssl/include"
-    set -gx PKG_CONFIG_PATH /usr/local/opt/openssl/lib/pkgconfig
-
-    # Ruby exports
-    set -gx GEM_HOME $HOME/.gems
 
     # directory where all your virtualenvs are kept
     #   virtualenvwrapper's WORKON_HOME is for bash only
@@ -107,7 +96,7 @@ source ~/.tacklebox/tacklebox.fish
 # to be placed here.
 
 # pyenv; adds ~/.pyenv/shims to path, and sets pyenv auto-completions.
-# make sure to run this AFTER brew/ruby config (which prepends /usr/local/bin to path).
+# make sure to run this AFTER any brew/ruby config (which prepends /usr/local/bin to path).
 # shims path must be before /usr/local/bin
 if type -q pyenv # check for pyenv
     source (pyenv init -|psub)
