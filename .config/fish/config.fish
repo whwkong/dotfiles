@@ -109,10 +109,6 @@ set -x PATH $HOME/.local/bin $PATH
 # set python version to version pointed to by pyenv
 set -gx VIRTUALFISH_DEFAULT_PYTHON (which -p python3)
 
-# activate plugins
-# http://virtualfish.readthedocs.io/en/latest/plugins.html#auto-activation
-eval (python3 -m virtualfish auto_activation projects)
-
 # bootstrap fisher
 if not functions -q fisher
     set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
