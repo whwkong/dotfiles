@@ -69,7 +69,8 @@ if begin eval $is_linux; or status --is-login; end
 
     # Load tacklebox modules (modules can be found in ~/.tackle/modules/*)
     # Custom modules may be added to ~/.tacklebox/modules/
-    set -gx tacklebox_modules virtualfish virtualhooks
+    # set -gx tacklebox_modules virtualfish virtualhooks
+    set -gx tacklebox_modules virtualhooks
 
     # Which plugins would you like to enable? (plugins can be found in ~/.tackle/plugins/*)
     # Custom plugins may be added to ~/.tacklebox/plugins/
