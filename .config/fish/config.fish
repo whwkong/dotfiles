@@ -80,7 +80,7 @@ if begin eval $is_linux; or status --is-login; end
     # for cheat
     set -gx CHEATCOLORS true
     set -gx CHEAT_USER_DIR "$HOME/.cheat"
-    set -gx CHEAT_PATH "./.cheat:$HOME/.cheat:$HOME/.cheat/local:$HOME/.config/cheat:$HOME/.config/cheat/local"
+    set -gx CHEAT_PATH "./.cheat:$HOME/.config/cheat:$HOME/.config/cheat/local:$HOME/.config/cheat/django"
 
     # Load local config
     if test -e ~/.config/fish/localfish/config_local.fish
