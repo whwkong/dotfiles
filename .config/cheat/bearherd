@@ -1,2 +1,9 @@
+# Dev
 curl dev-bearherd.bht.ai:5055/api/status
+
+# Prod
+curl -s http://bearherd.bht.ai:5055/api/status
+
+# Enlive Data Only
+curl -s http://dev-bearherd.bht.ai:5055/api/status | jq '{ENLIVE}'
 
