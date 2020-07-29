@@ -66,3 +66,6 @@ if command -v python3 > /dev/null 2>&1; then export VIRTUALENV_PYTHON=$(which py
 
 # for any local configuration
 [[ -f ~/.bashrc_local ]] && . ~/.bashrc_local
+
+export PATH="~/.local/bin:$PATH"
+
