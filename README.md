@@ -32,8 +32,18 @@
     echo ".cfg" >> .gitignore
     git init --bare $HOME/.cfg
     config config --local status.showUntrackedFiles no
-    git clone https://github.com/whwkong/dotfiles.git
+    git clone https://github.com/whwkong/dotfiles.git 
+    # or use git clone git@github.com:whwkong/dotfiles.git
     config remote add origin https://github.com/whwkong/dotfiles.git
-    config checkout    
+    config checkout master
+```
+
+Set up your .gitconfig_local
+
+```bash
+    cat << EOF > .gitconfig_local
+    [user]
+        name = xyz
+        email = "somebody@example.com"
 ```
 
