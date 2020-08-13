@@ -33,6 +33,8 @@
 
 	ch = checkout
 	br = branch
+    ### most recent branch
+    brr = branch --sort=-committerdate
 	st = status
 	#############
 	brm = branch --merged
@@ -81,9 +83,10 @@
 	tree = log --graph --oneline --all --pretty=format:'%C(yellow)%h%Creset -%Cred%d%Creset %s %Cgreen%cr%Creset %Cblue%an%Creset %gn'
 
 	# reset commands {{{
+    rs = reset HEAD .       # reset stage
     r1 = reset HEAD^		# reset --mixed
     r2 = reset HEAD^^		# reset --mixed
-    rh = reset --hard
+    rh0 = reset --hard
     rh1 = reset HEAD^ --hard
     rh2 = reset HEAD^^ --hard
 
