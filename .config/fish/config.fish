@@ -90,7 +90,9 @@ end
 
 # Load and initialize Tacklebox configuration.  All tacklebox_* settings must
 # be set prior to this line.
-source ~/.tacklebox/tacklebox.fish
+if test -e ~/.tacklebox/tacklebox.fish
+    source ~/.tacklebox/tacklebox.fish
+end
 
 # Note that fish adds in paths from /etc/paths and /etc/paths.d, so this has
 
