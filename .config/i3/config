@@ -64,7 +64,8 @@ set $right semicolon
 set $mod Mod4
 
 # default was i3-sensible-terminal
-set $terminal terminator
+ set $terminal i3-sensible-terminal
+# set $terminal terminator
 
 # start up autolock
 exec --no-startup-id xautolock -time 5 -locker i3lock -c 000000  # i3lock [-c color]
