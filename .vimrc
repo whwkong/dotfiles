@@ -1,5 +1,7 @@
 " vim needs a more POSIX compatible shell than fish to work
 " see github.com/dag/vim-fish
+"
+" :source ~/.vimrc  - reload .vimrc
 if &shell =~# 'fish$'
     set shell=sh
 endif
@@ -29,6 +31,7 @@ set incsearch       " do incremental searching
 set showmode        " displays mode
 set splitbelow      " split panes to bottom and right
 set splitright
+set autoread        " reloads changed files
 
 " MacVim; yank now works with system clipboard. No need to prefix '"+'
 set clipboard=unnamed
