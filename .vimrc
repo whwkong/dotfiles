@@ -36,6 +36,9 @@ set autoread        " reloads changed files
 " MacVim; yank now works with system clipboard. No need to prefix '"+'
 set clipboard=unnamed
 
+" set ag as default search tool
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
 " Shift-enter inserts <CR>; <S-Enter> does not work on Mac.
 nmap <S-Enter> O<Esc>j
 nmap <CR> o<Esc>k
