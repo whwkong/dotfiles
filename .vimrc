@@ -176,6 +176,7 @@ set statusline+=%{&fenc!=''?&fenc:&enc}\ %* "encoding
 
 " vim plugin
 " see: https://github.com/junegunn/vim-plug
+" use :PlugInstall to install plugins :)
 "
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
@@ -194,6 +195,7 @@ Plug 'tpope/vim-sensible'
 
 Plug 'vim-syntastic/syntastic'
 Plug 'easymotion/vim-easymotion'
+Plug 'https://github.com/tpope/vim-commentary.git'  " this isn't working :/
 
 " Amazing color schemes :)
 " Plug 'dracula/vim', { 'as': 'dracula' }
