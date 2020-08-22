@@ -102,7 +102,8 @@ end
 # make sure to run this AFTER any brew/ruby config (which prepends /usr/local/bin to path).
 # shims path must be before /usr/local/bin
 if type -q pyenv # check for pyenv
-    source (pyenv init -|psub)
+    # source (pyenv init -|psub)   # see: https://fishshell.com/docs/2.4/commands.html#psub
+    source (pyenv init - | source)
 end
 
 # pipsi must come after pyenv

@@ -50,6 +50,10 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/dev
 export VIRTUALENVWRAPPER_PYTHON=~/.pyenv/shims/python3
 
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
+
+
 # updates PATH for the Google Cloud SDK.
 if [ -f ~/Library/google-cloud-sdk/path.bash.inc ]; then
   source ~/Library/google-cloud-sdk/path.bash.inc
@@ -61,7 +65,9 @@ fi
 # see: https://github.com/pyenv/pyenv#advanced-configuration
 # we need to place (pyenv init) here and not .bashrc, due to conflict with pipenv shell
 # see: https://www.bountysource.com/issues/41572382-wrong-python-inside-of-pipenv-shell
-if command -v pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if command -v pyenv 1> /dev/null 2>&1; then 
+    eval "$(pyenv init -)"
+fi
 
 # pipsi; this must come after pyenv init
 export PATH=~/.local/bin:$PATH
@@ -69,3 +75,4 @@ export PATH=~/.local/bin-2.7:$PATH
 
 
 [[ -s ~/.bashrc ]] && source ~/.bashrc
+
