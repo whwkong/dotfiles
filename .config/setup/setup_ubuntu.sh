@@ -1,11 +1,11 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash 
 
 set -euxo pipefail
 
 sudo apt update
 sudo apt-add-repository ppa:fish-shell/release-3
 sudo add-apt-repository ppa:nathan-renniewaldock/flux
-sudo apt install vim python3-pip silversearcher-ag fish curl httpie jq fluxgui -y
+sudo apt install vim python3-pip silversearcher-ag grc fish curl httpie jq fluxgui -y
 # i3 specifics
 sudo apt install i3 rofi scrot
 
