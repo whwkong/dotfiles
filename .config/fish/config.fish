@@ -94,6 +94,9 @@ if test -e ~/.tacklebox/tacklebox.fish
     source ~/.tacklebox/tacklebox.fish
 end
 
+# used by ptipython config
+set -gx XDG_CONFIG_HOME $HOME/.config
+
 # Note that fish adds in paths from /etc/paths and /etc/paths.d, so this has
 
 # to be placed here.

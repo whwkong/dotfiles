@@ -28,6 +28,10 @@ export PATH=$PATH:/usr/local/mysql/bin
 export PATH=$PATH:~/Library/google-cloud-sdk/bin
 export PATH=$HOME/gems/bin:$PATH
 
+# xdg
+# used by ptipython config
+export XDG_CONFIG_HOME=$HOME/.config
+
 # python specifics
 export PYTHONPATH=~/dev/python
 export PYTHONDONTWRITEBYTECODE=true
