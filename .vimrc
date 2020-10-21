@@ -52,9 +52,10 @@ nnoremap O O<Esc>
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
-" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
-" so that you can undo CTRL-U after inserting a line break.
+" CTRL-U in insert mode deletes all changes to line.  CTRL-G u starts a new
+" change as far as undo is concerned.
 inoremap <C-U> <C-G>u<C-U>
+inoremap <c-w> <c-g>u<c-w> 
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
