@@ -19,10 +19,15 @@ ssh-keygen -t rsa -b 4096 -C your_email@domain.com
 * sudo apt-add-repository ppa:jtaylor/keepass
 * sudo apt update
 * sudo apt install keepass2
+* [ ] install fzf
+* sudo apt install fzf
 
 * [ ] install vscode
 * [ ] install shan khan's settings sync/or use native vscode settings sync
   * [ ] sync code extensions.  (khan's settings does not sync extensions)
+  
+* [ ] install ctags
+* sudo apt-get install exuberant-ctags
 
 ## Setup dotfiles
 
@@ -54,6 +59,7 @@ config checkout master
 * [ ] `vf addplugin auto_activation`
 * [ ] `vf addplugin environment`
 * [ ] install [tacklebox](https://github.com/justinmayer/tacklebox)
+* [ ] `fisher install`
 
 ## Setup vim-plug
 
@@ -85,6 +91,7 @@ $ sudo snap install cheat
   * see <https://www.reddit.com/r/i3wm/comments/ia2sdo/psa_i3gaps_is_nice_for_productivity_too/>
 * [ ] install [xflux](https://justgetflux.com/linux.html) to `/usr/local/bin`
   * curently `fluxgui` is unmaintained; just use `xflux`.
+* [ ] or install [redshift](https://github.com/jonls/redshift)
 
 ## Setup optional apps
 
