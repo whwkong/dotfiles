@@ -79,7 +79,7 @@ exec --no-startup-id dropbox start
 # 80014 = Denver (-2h)
 # exec --no-startup-id xflux -k 2000 -z 10001
 #  -k temperature, default=3400, min=2000
-
+exec --no-startup-id redshift
 
 # disable touchpad/mouse while typing
 # syndaemon
