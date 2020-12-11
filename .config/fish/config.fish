@@ -104,9 +104,13 @@ set -gx XDG_CONFIG_HOME $HOME/.config
 # pyenv; adds ~/.pyenv/shims to path, and sets pyenv auto-completions.
 # make sure to run this AFTER any brew/ruby config (which prepends /usr/local/bin to path).
 # shims path must be before /usr/local/bin
-if type -q pyenv # check for pyenv
+set -gx PYENV_ROOT $HOME/.pyenv
+set -gx PATH $PYENV_ROOT/bin $PATH
+
+if type -q pyenv 1>/dev/null 2>&1   # check for pyenv
     # source (pyenv init -|psub)   # see: https://fishshell.com/docs/2.4/commands.html#psub
-    source (pyenv init - | source)
+    # source (pyenv init - | source)
+    pyenv init - | source
 end
 
 # pipsi must come after pyenv
