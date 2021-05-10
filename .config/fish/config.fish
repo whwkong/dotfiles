@@ -106,6 +106,7 @@ set -gx XDG_CONFIG_HOME $HOME/.config
 # shims path must be before /usr/local/bin
 set -gx PYENV_ROOT $HOME/.pyenv
 set -gx PATH $PYENV_ROOT/bin $PATH
+set -gx PATH $PYENV_ROOT/shims $PATH
 
 if type -q pyenv 1>/dev/null 2>&1   # check for pyenv
     # source (pyenv init -|psub)   # see: https://fishshell.com/docs/2.4/commands.html#psub
