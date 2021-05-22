@@ -88,6 +88,18 @@ if begin eval $is_linux; or status --is-login; end
     end
 end
 
+if begin eval $is_osx; or status --is-login; end
+    # set ruby for compilers
+    set -gx LDFLAGS "-L/usr/local/opt/ruby/lib"
+    set -gx CPPFLAGS "-I/usr/local/opt/ruby/include"#
+    # for pkg-config to find ruby
+    set -gx PKG_CONFIG_PATH "/usr/local/opt/ruby/lib/pkgconfig"
+
+    set -gx GUILE_LOAD_PATH "/usr/local/share/guile/site/3.0"
+    set -gx GUILE_LOAD_COMPILED_PATH "/usr/local/lib/guile/3.0/site-ccache"
+    set -gx  GUILE_SYSTEM_EXTENSIONS_PATH "/usr/local/lib/guile/3.0/extensions"
+end
+
 # Load and initialize Tacklebox configuration.  All tacklebox_* settings must
 # be set prior to this line.
 if test -e ~/.tacklebox/tacklebox.fish
