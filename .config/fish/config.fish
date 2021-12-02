@@ -126,6 +126,8 @@ if type -q pyenv 1>/dev/null 2>&1   # check for pyenv
     pyenv init - | source
 end
 
+set -gx PYTHONBREAKPOINT ipdb.set_trace
+
 # pipsi must come after pyenv
 # added by pipsi (https://github.com/mitsuhiko/pipsi)
 set -x PATH $HOME/.local/bin $PATH
