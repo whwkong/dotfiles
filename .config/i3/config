@@ -9,7 +9,7 @@
 # layout, use the i3-config-wizard
 #
 # i3wm uses notify-send to send notifications; dunst is configured to display them.
-# dunstrc is in ~/.config/dunst
+# dunstrc is in ~/.config/dunst  to restart: $ killall dunst; notify-send foobar
 
 set $laptop_screen eDP1
 set $projector HDMI2
