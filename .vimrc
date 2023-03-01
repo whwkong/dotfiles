@@ -18,6 +18,10 @@ set nocompatible
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+" https://stackoverflow.com/questions/2287440/how-to-do-case-insensitive-search-in-vim
+set ignorecase
+set smartcase  "only usable if ignorecase is set
+
 if has("vms")
   set nobackup      " do not keep a backup file, use versions instead
 else
