@@ -10,6 +10,9 @@
 #
 # i3wm uses notify-send to send notifications; dunst is configured to display them.
 # dunstrc is in ~/.config/dunst  to restart: $ killall dunst; notify-send foobar
+# to disable dunst:
+# killall -SIGUSR1 dunst # pause 
+# killall -SIGUSR2 dunst # resume
 
 set $laptop_screen eDP1
 set $projector HDMI2
@@ -198,6 +201,18 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
+#bindsym $mod+q workspace 11  # too confusing to use q
+#bindsym $mod+w workspace 12  # can't use w, already bound
+#bindsym $mod+e workspace 13  # can't use, already bound
+#
+#bindsym $mod+r workspace 11   # r=resize command
+bindsym $mod+t workspace 11
+bindsym $mod+y workspace 12
+bindsym $mod+u workspace 13
+bindsym $mod+i workspace 14
+bindsym $mod+o workspace 15
+# bindsym $mod+p workspace 16  # mod+shift+p already bound, too confusing
+
 # switch to next workspace
 bindsym $mod+Ctrl+Left workspace prevonoutput
 bindsym $mod+Ctrl+Right workspace nextonoutput
@@ -213,6 +228,12 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+t move container to workspace 11
+bindsym $mod+Shift+y move container to workspace 12
+bindsym $mod+Shift+u move container to workspace 13
+bindsym $mod+Shift+i move container to workspace 14
+bindsym $mod+Shift+o move container to workspace 15
+# bindsym $mod+Shift+p move container to workspace 16  # already bound
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -257,7 +278,7 @@ bar {
     # From default config:
     # Font for window titles. Will also be used by the bar unless a different font
     # is used in the bar {} block below.
-    # 8 is the default size
+    # 8 is the default size  # change font size of status bar
     font pango:DejaVu Sans Mono 18
 }
 
