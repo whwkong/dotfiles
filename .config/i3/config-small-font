@@ -22,7 +22,7 @@
 #
 ## Multi-monitor bindings
 set $laptop_screen eDP1
-set $projector HDMI-2
+set $projector HDMI2
 
 # xrandr calls for setting up external monitors
 set $mode_monitor (l)eft of screen, (r)ight of screen, (a)bove screen, (b)elow screen, (m)irror, (p)rojector only, (o)ff
