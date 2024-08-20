@@ -182,3 +182,9 @@ set tacklebox_path ~/.tackle ~/.tacklebox
 # Load Tacklebox configuration
 . ~/.tacklebox/tacklebox.fish
 
+# asdf :D 
+. ~/.asdf/asdf.fish
+
+# For APA
+set -g DOCKER_CONTEXT "default"
+

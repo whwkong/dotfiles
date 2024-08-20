@@ -13,6 +13,8 @@
 # layout.
 #
 # i3wm uses notify-send to send notifications; dunst is configured to display them.
+# To disable notifications, disable the notification manager, not notify-send ie: kill dunst.
+#
 # dunstrc is in ~/.config/dunst  to restart: $ killall dunst; notify-send foobar
 # to disable dunst:
 # killall -SIGUSR1 dunst # pause 
@@ -22,7 +24,7 @@
 #
 ## Multi-monitor bindings
 set $laptop_screen eDP1
-set $projector HDMI2
+set $projector HDMI-2
 
 # xrandr calls for setting up external monitors
 set $mode_monitor (l)eft of screen, (r)ight of screen, (a)bove screen, (b)elow screen, (m)irror, (p)rojector only, (o)ff

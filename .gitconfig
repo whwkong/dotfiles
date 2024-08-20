@@ -97,7 +97,7 @@
     # }}}
 
     # clean up branches; delete branches that are reachable from current branch
-    bclean = "!f() { git fetch -p ; git branch --merged | egrep -v '(^\\*|master|dev|development|production)' | xargs git branch -d ; }; f"
+    bclean = "!f() { git fetch -p ; git branch --merged | egrep -v '(^\\*|master|dev|development|stage|staging|production)' | xargs git branch -d ; }; f"
     all = "!f() { ls | xargs -I{} git -C {} $1; }; f"
     lastcommit = show --name-status HEAD
 

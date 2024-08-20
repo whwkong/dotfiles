@@ -13,6 +13,8 @@
 # layout.
 #
 # i3wm uses notify-send to send notifications; dunst is configured to display them.
+# To disable notifications, disable the notification manager, not notify-send ie: kill dunst.
+#
 # dunstrc is in ~/.config/dunst  to restart: $ killall dunst; notify-send foobar
 # to disable dunst:
 # killall -SIGUSR1 dunst # pause 
@@ -98,7 +100,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 10  # use 14 for large displays
+font pango:monospace 14  # use 14 for large displays
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -304,6 +306,7 @@ bar {
     # is used in the bar {} block below.
     # 8 is the default size  # change font size of status bar
     # >>> use font 18 for large screens 
-    font pango:DejaVu Sans Mono 14
+    font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1 
+    font pango:DejaVu Sans Mono 16
 }
 
