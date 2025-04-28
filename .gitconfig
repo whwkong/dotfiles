@@ -77,12 +77,12 @@
 	#############
 
 	lol = log --oneline
+	cherry = cherry-pick
 	oneline = log --oneline
 	lognames = log --name-only
 	logstatus = log --name-status
-	graph = log --graph --oneline --decorate #  --all #log graph
-	tree = log --graph --oneline --pretty=format:'%C(yellow)%h%Creset -%Cred%d%Creset %s %Cgreen%cr%Creset %Cblue%an%Creset %gn'  # use git tree --all # to view all branches
-    # tree = log --graph --oneline --all --pretty=format:'%C(yellow)%h%Creset -%Cred%d%Creset %s %Cgreen%cr%Creset %Cblue%an%Creset %gn'
+	tree = log --graph --oneline --pretty=format:'%C(yellow)%h%Creset -%Cred%d%Creset %s %Cgreen%cr%Creset %Cblue%an%Creset %gn'  # use git graph --all to view all branches
+	graph = log --graph --oneline --decorate #  --all  to view all branches
 
 	# reset commands {{{
     rs = reset HEAD .       # reset stage
