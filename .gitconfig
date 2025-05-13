@@ -83,6 +83,7 @@
 	logstatus = log --name-status
 	tree = log --graph --oneline --pretty=format:'%C(yellow)%h%Creset -%Cred%d%Creset %s %Cgreen%cr%Creset %Cblue%an%Creset %gn'  # use git graph --all to view all branches
 	graph = log --graph --oneline --decorate #  --all  to view all branches
+	ahead = rev-list --left-right --count  # git ahead <commitA>..<commitB> 
 
 	# reset commands {{{
     rs = reset HEAD .       # reset stage
@@ -98,7 +99,7 @@
     # }}}
 
     # clean up branches; delete branches that are reachable from current branch
-    bclean = "!f() { git fetch -p ; git branch --merged | egrep -v '(^\\*|master|dev|development|stage|staging|production)' | xargs git branch -d ; }; f"
+    bclean = "!f() { git fetch -p ; git branch --merged | egrep -v '(^\\*|main|master|dev|development|stage|staging|production)' | xargs git branch -d ; }; f"
     all = "!f() { ls | xargs -I{} git -C {} $1; }; f"
     lastcommit = show --name-status HEAD
 
@@ -120,3 +121,4 @@
 	# required = true
 [status]
 	submoduleSummary = true
+

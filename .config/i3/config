@@ -307,6 +307,6 @@ bar {
     # 8 is the default size  # change font size of status bar
     # >>> use font 18 for large screens 
     font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1 
-    font pango:DejaVu Sans Mono 16
+    font pango:DejaVu Sans Mono 14
 }
 
