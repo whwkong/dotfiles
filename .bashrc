@@ -69,3 +69,6 @@ if command -v python3 > /dev/null 2>&1; then export VIRTUALENV_PYTHON=$(which py
 
 export PATH="~/.local/bin:$PATH"
 
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

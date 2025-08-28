@@ -46,3 +46,9 @@ Set up your .gitconfig_local
         email = "somebody@example.com"
 ```
 
+Install [powerline-shell](https://github.com/b-ryan/powerline-shell) for the prompt:
+
+```bash
+pip install powerline-shell
+```
+

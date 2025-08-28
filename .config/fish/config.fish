@@ -185,8 +185,12 @@ set tacklebox_path ~/.tackle ~/.tacklebox
 . ~/.tacklebox/tacklebox.fish
 
 # asdf :D 
-. ~/.asdf/asdf.fish
+source /opt/homebrew/opt/asdf/libexec/asdf.fish
 
 # For APA
 set -g DOCKER_CONTEXT "default"
 
+ssh-add
+
+set -gx PYTHONBREAKPOINT ipdb.set_trace
+source /opt/homebrew/opt/asdf/libexec/asdf.fish
