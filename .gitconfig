@@ -34,6 +34,7 @@
 
 	ch = checkout
 	br = branch
+    cp = cherry-pick
     ### most recent branch
     brr = branch --sort=-committerdate
 	st = status
